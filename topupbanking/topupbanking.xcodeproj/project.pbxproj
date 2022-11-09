@@ -17,8 +17,8 @@
 		CEA744D5291C26B2009350A0 /* topupbankingUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA744D4291C26B2009350A0 /* topupbankingUITestsLaunchTests.swift */; };
 		CEA744E3291C2E3C009350A0 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA744E2291C2E3C009350A0 /* AlertView.swift */; };
 		CEA744EB291C2F78009350A0 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEA744EA291C2F78009350A0 /* LaunchScreen.xib */; };
-		CEA744EF291C342E009350A0 /* RegistrationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEA744EE291C342E009350A0 /* RegistrationView.xib */; };
 		CEA744F1291C35F8009350A0 /* SpinnerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEA744F0291C35F8009350A0 /* SpinnerView.xib */; };
+		CEA744F3291C3735009350A0 /* RegistrationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEA744F2291C3735009350A0 /* RegistrationView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,8 +53,8 @@
 		CEA744D4291C26B2009350A0 /* topupbankingUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = topupbankingUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		CEA744E2291C2E3C009350A0 /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		CEA744EA291C2F78009350A0 /* LaunchScreen.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
-		CEA744EE291C342E009350A0 /* RegistrationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegistrationView.xib; sourceTree = "<group>"; };
 		CEA744F0291C35F8009350A0 /* SpinnerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpinnerView.xib; sourceTree = "<group>"; };
+		CEA744F2291C3735009350A0 /* RegistrationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegistrationView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -196,7 +196,7 @@
 		CEA744EC291C337E009350A0 /* Registration */ = {
 			isa = PBXGroup;
 			children = (
-				CEA744EE291C342E009350A0 /* RegistrationView.xib */,
+				CEA744F2291C3735009350A0 /* RegistrationView.xib */,
 			);
 			path = Registration;
 			sourceTree = "<group>";
@@ -312,10 +312,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CEA744EF291C342E009350A0 /* RegistrationView.xib in Resources */,
 				CEA744BB291C26B2009350A0 /* Assets.xcassets in Resources */,
 				CEA744F1291C35F8009350A0 /* SpinnerView.xib in Resources */,
 				CEA744EB291C2F78009350A0 /* LaunchScreen.xib in Resources */,
+				CEA744F3291C3735009350A0 /* RegistrationView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
