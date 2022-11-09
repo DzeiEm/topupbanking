@@ -1,9 +1,3 @@
-//
-//  SceneDelegate.swift
-//  topupbanking
-//
-//  Created by Julija M. on 2022-11-09.
-//
 
 import UIKit
 
