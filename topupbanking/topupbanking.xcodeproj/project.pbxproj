@@ -10,14 +10,15 @@
 		CEA744AF291C26B0009350A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA744AE291C26B0009350A0 /* AppDelegate.swift */; };
 		CEA744B1291C26B0009350A0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA744B0291C26B0009350A0 /* SceneDelegate.swift */; };
 		CEA744B3291C26B0009350A0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA744B2291C26B0009350A0 /* ViewController.swift */; };
-		CEA744B6291C26B0009350A0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEA744B4291C26B0009350A0 /* Main.storyboard */; };
 		CEA744B9291C26B0009350A0 /* topupbanking.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CEA744B7291C26B0009350A0 /* topupbanking.xcdatamodeld */; };
 		CEA744BB291C26B2009350A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEA744BA291C26B2009350A0 /* Assets.xcassets */; };
-		CEA744BE291C26B2009350A0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEA744BC291C26B2009350A0 /* LaunchScreen.storyboard */; };
 		CEA744C9291C26B2009350A0 /* topupbankingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA744C8291C26B2009350A0 /* topupbankingTests.swift */; };
 		CEA744D3291C26B2009350A0 /* topupbankingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA744D2291C26B2009350A0 /* topupbankingUITests.swift */; };
 		CEA744D5291C26B2009350A0 /* topupbankingUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA744D4291C26B2009350A0 /* topupbankingUITestsLaunchTests.swift */; };
 		CEA744E3291C2E3C009350A0 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA744E2291C2E3C009350A0 /* AlertView.swift */; };
+		CEA744EB291C2F78009350A0 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEA744EA291C2F78009350A0 /* LaunchScreen.xib */; };
+		CEA744EF291C342E009350A0 /* RegistrationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEA744EE291C342E009350A0 /* RegistrationView.xib */; };
+		CEA744F1291C35F8009350A0 /* SpinnerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEA744F0291C35F8009350A0 /* SpinnerView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,10 +43,8 @@
 		CEA744AE291C26B0009350A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEA744B0291C26B0009350A0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		CEA744B2291C26B0009350A0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		CEA744B5291C26B0009350A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CEA744B8291C26B0009350A0 /* topupbanking.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = topupbanking.xcdatamodel; sourceTree = "<group>"; };
 		CEA744BA291C26B2009350A0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		CEA744BD291C26B2009350A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CEA744BF291C26B2009350A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEA744C4291C26B2009350A0 /* topupbankingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = topupbankingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEA744C8291C26B2009350A0 /* topupbankingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = topupbankingTests.swift; sourceTree = "<group>"; };
@@ -53,6 +52,9 @@
 		CEA744D2291C26B2009350A0 /* topupbankingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = topupbankingUITests.swift; sourceTree = "<group>"; };
 		CEA744D4291C26B2009350A0 /* topupbankingUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = topupbankingUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		CEA744E2291C2E3C009350A0 /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
+		CEA744EA291C2F78009350A0 /* LaunchScreen.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
+		CEA744EE291C342E009350A0 /* RegistrationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegistrationView.xib; sourceTree = "<group>"; };
+		CEA744F0291C35F8009350A0 /* SpinnerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpinnerView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 		CEA744A2291C26B0009350A0 = {
 			isa = PBXGroup;
 			children = (
+				CEA744EA291C2F78009350A0 /* LaunchScreen.xib */,
 				CEA744AD291C26B0009350A0 /* topupbanking */,
 				CEA744C7291C26B2009350A0 /* topupbankingTests */,
 				CEA744D1291C26B2009350A0 /* topupbankingUITests */,
@@ -111,9 +114,7 @@
 				CEA744AE291C26B0009350A0 /* AppDelegate.swift */,
 				CEA744B0291C26B0009350A0 /* SceneDelegate.swift */,
 				CEA744B2291C26B0009350A0 /* ViewController.swift */,
-				CEA744B4291C26B0009350A0 /* Main.storyboard */,
 				CEA744BA291C26B2009350A0 /* Assets.xcassets */,
-				CEA744BC291C26B2009350A0 /* LaunchScreen.storyboard */,
 				CEA744BF291C26B2009350A0 /* Info.plist */,
 				CEA744B7291C26B0009350A0 /* topupbanking.xcdatamodeld */,
 			);
@@ -141,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				CEA744E2291C2E3C009350A0 /* AlertView.swift */,
+				CEA744F0291C35F8009350A0 /* SpinnerView.xib */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -155,6 +157,8 @@
 		CEA744E5291C2E93009350A0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				CEA744ED291C338B009350A0 /* Home */,
+				CEA744EC291C337E009350A0 /* Registration */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -187,6 +191,21 @@
 			children = (
 			);
 			path = Requests;
+			sourceTree = "<group>";
+		};
+		CEA744EC291C337E009350A0 /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				CEA744EE291C342E009350A0 /* RegistrationView.xib */,
+			);
+			path = Registration;
+			sourceTree = "<group>";
+		};
+		CEA744ED291C338B009350A0 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -293,9 +312,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CEA744BE291C26B2009350A0 /* LaunchScreen.storyboard in Resources */,
+				CEA744EF291C342E009350A0 /* RegistrationView.xib in Resources */,
 				CEA744BB291C26B2009350A0 /* Assets.xcassets in Resources */,
-				CEA744B6291C26B0009350A0 /* Main.storyboard in Resources */,
+				CEA744F1291C35F8009350A0 /* SpinnerView.xib in Resources */,
+				CEA744EB291C2F78009350A0 /* LaunchScreen.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -359,25 +379,6 @@
 			targetProxy = CEA744CF291C26B2009350A0 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		CEA744B4291C26B0009350A0 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CEA744B5291C26B0009350A0 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		CEA744BC291C26B2009350A0 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CEA744BD291C26B2009350A0 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		CEA744D6291C26B2009350A0 /* Debug */ = {
@@ -505,8 +506,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = topupbanking/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.xib;
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationLandscapeRight;
@@ -534,8 +534,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = topupbanking/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.xib;
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationLandscapeRight;
