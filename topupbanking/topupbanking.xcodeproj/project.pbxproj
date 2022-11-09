@@ -17,6 +17,7 @@
 		CEA744C9291C26B2009350A0 /* topupbankingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA744C8291C26B2009350A0 /* topupbankingTests.swift */; };
 		CEA744D3291C26B2009350A0 /* topupbankingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA744D2291C26B2009350A0 /* topupbankingUITests.swift */; };
 		CEA744D5291C26B2009350A0 /* topupbankingUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA744D4291C26B2009350A0 /* topupbankingUITestsLaunchTests.swift */; };
+		CEA744E3291C2E3C009350A0 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA744E2291C2E3C009350A0 /* AlertView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		CEA744CE291C26B2009350A0 /* topupbankingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = topupbankingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEA744D2291C26B2009350A0 /* topupbankingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = topupbankingUITests.swift; sourceTree = "<group>"; };
 		CEA744D4291C26B2009350A0 /* topupbankingUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = topupbankingUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		CEA744E2291C2E3C009350A0 /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,11 @@
 		CEA744AD291C26B0009350A0 /* topupbanking */ = {
 			isa = PBXGroup;
 			children = (
+				CEA744E7291C2ED4009350A0 /* API */,
+				CEA744E6291C2EA4009350A0 /* ViewModels */,
+				CEA744E5291C2E93009350A0 /* Views */,
+				CEA744E4291C2E5F009350A0 /* Utilities */,
+				CEA744E1291C2E25009350A0 /* Helpers */,
 				CEA744AE291C26B0009350A0 /* AppDelegate.swift */,
 				CEA744B0291C26B0009350A0 /* SceneDelegate.swift */,
 				CEA744B2291C26B0009350A0 /* ViewController.swift */,
@@ -128,6 +135,58 @@
 				CEA744D4291C26B2009350A0 /* topupbankingUITestsLaunchTests.swift */,
 			);
 			path = topupbankingUITests;
+			sourceTree = "<group>";
+		};
+		CEA744E1291C2E25009350A0 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				CEA744E2291C2E3C009350A0 /* AlertView.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		CEA744E4291C2E5F009350A0 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		CEA744E5291C2E93009350A0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CEA744E6291C2EA4009350A0 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		CEA744E7291C2ED4009350A0 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				CEA744E9291C2EE8009350A0 /* Requests */,
+				CEA744E8291C2EDE009350A0 /* Responses */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		CEA744E8291C2EDE009350A0 /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Responses;
+			sourceTree = "<group>";
+		};
+		CEA744E9291C2EE8009350A0 /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Requests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,6 +320,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEA744E3291C2E3C009350A0 /* AlertView.swift in Sources */,
 				CEA744B3291C26B0009350A0 /* ViewController.swift in Sources */,
 				CEA744AF291C26B0009350A0 /* AppDelegate.swift in Sources */,
 				CEA744B1291C26B0009350A0 /* SceneDelegate.swift in Sources */,
