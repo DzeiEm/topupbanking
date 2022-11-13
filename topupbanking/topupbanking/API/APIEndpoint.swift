@@ -2,24 +2,25 @@
 import Foundation
 
 enum APIEndpoint {
-    case getUsers
+    case getUser
+    case getAccount
     case getTransactions
     
     var url: URL? {
         switch self {
-//        case .getEpisodes:
-//            return makeURL(endpoint: "episodes?series=breaking+bad")
-//        case .getQuotes:
-//            return makeURL(endpoint: "quotes")
-//        case .getCharacters:
-//            return makeURL(endpoint: "characters")
-//        }
+        case .getUser:
+            return makeURL(endpoint: "user")
+        case .getAccount:
+            return makeURL(endpoint: "account")
+        case .getTransactions:
+            return makeURL(endpoint: "transaction" )
+        }
     }
 }
 
 extension APIEndpoint {
     private var BaseUrlString: String {
-        "https://www.breakingbadapi.com/api/"
+        "https://6368dedf15219b849608f700.mockapi.io/api/v3/"
     }
 
     private func makeURL(endpoint: String, queryItems: [URLQueryItem]? = nil) -> URL? {
