@@ -18,28 +18,39 @@ class RegistrationViewController: UIViewController {
     @IBOutlet private weak var buttonLabel: UIButton!
     
     let userManager = UserManager()
+    let navigate = Navigate()
+    let loggedInUser = UserManager.loggedInAccount
     
     //MARK: - ACTIONS
     @IBAction func loginButtonTapped() {
         
         if registrationTypeSegmentController.selectedSegmentIndex == 0 {
             do {
-                try UserManager.register(
+                try? UserManager.register(
                     phonenumber: phoneNumberTextfield.text,
                     password: passwordTextfield.text,
                     confirmPassword: confirmPasswordTextfield.text)
+                
+                if let loggedInUser = UserManager.loggedInAccount {
+                    navigate.toHomeViewController()
+                    return
+                }
             } catch let error as Errors {
-                displayError()
+                displayError(errorType: error)
             }
             
         } else {
             do {
-                try UserManager.login(
+                try? UserManager.login(
                     phonenumber: phoneNumberTextfield.text,
                     password: passwordTextfield.text)
+                if loggedInUser?.username == UserManager.loggedInAccount?.username &&
+                    loggedInUser?.password == UserManager.loggedInAccount?.password {
+                    navigate.toHomeViewController()
+                }
                 
             } catch let error as Errors {
-                
+                displayError(errorType: error)
             }
         }
     }
@@ -61,19 +72,12 @@ class RegistrationViewController: UIViewController {
 extension RegistrationViewController {
  
     private func displayError(errorType: Errors) -> String {
-        if errorType == Errors.RegistrationError {
-            // registration error
-        }
-        if errorType == Errors.LoginError {
-            //login error
-        }
-        if errorType == Errors.General {
-            //general error
-        }
+      // display error
+        return "Error"
     }
     
-    private func highlighttextfield(textfield: UITextField) {
-        textfield.isHighlighted: true ?? false
-    }
+//    private func highlighttextfield(textfield: UITextField) {
+//        textfield.isHighlighted: true ?? false
+//    }
     
 }
