@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		CEA744AF291C26B0009350A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA744AE291C26B0009350A0 /* AppDelegate.swift */; };
 		CEA744B1291C26B0009350A0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA744B0291C26B0009350A0 /* SceneDelegate.swift */; };
-		CEA744B3291C26B0009350A0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA744B2291C26B0009350A0 /* ViewController.swift */; };
 		CEA744B9291C26B0009350A0 /* topupbanking.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CEA744B7291C26B0009350A0 /* topupbanking.xcdatamodeld */; };
 		CEA744BB291C26B2009350A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEA744BA291C26B2009350A0 /* Assets.xcassets */; };
 		CEA744C9291C26B2009350A0 /* topupbankingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA744C8291C26B2009350A0 /* topupbankingTests.swift */; };
@@ -19,6 +18,16 @@
 		CEA744EB291C2F78009350A0 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEA744EA291C2F78009350A0 /* LaunchScreen.xib */; };
 		CEA744F1291C35F8009350A0 /* SpinnerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEA744F0291C35F8009350A0 /* SpinnerView.xib */; };
 		CEA744F3291C3735009350A0 /* RegistrationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEA744F2291C3735009350A0 /* RegistrationView.xib */; };
+		CEA744F7292102C7009350A0 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA744F6292102C7009350A0 /* RegistrationViewController.swift */; };
+		CEA744F92921077A009350A0 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA744F82921077A009350A0 /* Errors.swift */; };
+		CEA744FB29210AE5009350A0 /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA744FA29210AE5009350A0 /* RegistrationViewModel.swift */; };
+		CEA744FD29210CE5009350A0 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA744FC29210CE5009350A0 /* LoginViewModel.swift */; };
+		CEA744FF29210E03009350A0 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA744FE29210E03009350A0 /* APIManager.swift */; };
+		CEA7450129211245009350A0 /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA7450029211245009350A0 /* KeychainHelper.swift */; };
+		CEA74504292112AE009350A0 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CEA74503292112AE009350A0 /* KeychainSwift */; };
+		CEA7450729211319009350A0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA7450629211319009350A0 /* User.swift */; };
+		CEA74509292114BE009350A0 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA74508292114BE009350A0 /* APIError.swift */; };
+		CEA7450B292114E8009350A0 /* APIEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA7450A292114E8009350A0 /* APIEndpoint.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,7 +51,6 @@
 		CEA744AB291C26B0009350A0 /* topupbanking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = topupbanking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEA744AE291C26B0009350A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEA744B0291C26B0009350A0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CEA744B2291C26B0009350A0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CEA744B8291C26B0009350A0 /* topupbanking.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = topupbanking.xcdatamodel; sourceTree = "<group>"; };
 		CEA744BA291C26B2009350A0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CEA744BF291C26B2009350A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -55,6 +63,15 @@
 		CEA744EA291C2F78009350A0 /* LaunchScreen.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		CEA744F0291C35F8009350A0 /* SpinnerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpinnerView.xib; sourceTree = "<group>"; };
 		CEA744F2291C3735009350A0 /* RegistrationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegistrationView.xib; sourceTree = "<group>"; };
+		CEA744F6292102C7009350A0 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		CEA744F82921077A009350A0 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
+		CEA744FA29210AE5009350A0 /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
+		CEA744FC29210CE5009350A0 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		CEA744FE29210E03009350A0 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		CEA7450029211245009350A0 /* KeychainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelper.swift; sourceTree = "<group>"; };
+		CEA7450629211319009350A0 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		CEA74508292114BE009350A0 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		CEA7450A292114E8009350A0 /* APIEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoint.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEA74504292112AE009350A0 /* KeychainSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,6 +124,7 @@
 		CEA744AD291C26B0009350A0 /* topupbanking */ = {
 			isa = PBXGroup;
 			children = (
+				CEA745052921130B009350A0 /* Model */,
 				CEA744E7291C2ED4009350A0 /* API */,
 				CEA744E6291C2EA4009350A0 /* ViewModels */,
 				CEA744E5291C2E93009350A0 /* Views */,
@@ -113,7 +132,6 @@
 				CEA744E1291C2E25009350A0 /* Helpers */,
 				CEA744AE291C26B0009350A0 /* AppDelegate.swift */,
 				CEA744B0291C26B0009350A0 /* SceneDelegate.swift */,
-				CEA744B2291C26B0009350A0 /* ViewController.swift */,
 				CEA744BA291C26B2009350A0 /* Assets.xcassets */,
 				CEA744BF291C26B2009350A0 /* Info.plist */,
 				CEA744B7291C26B0009350A0 /* topupbanking.xcdatamodeld */,
@@ -143,6 +161,7 @@
 			children = (
 				CEA744E2291C2E3C009350A0 /* AlertView.swift */,
 				CEA744F0291C35F8009350A0 /* SpinnerView.xib */,
+				CEA7450029211245009350A0 /* KeychainHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -166,6 +185,8 @@
 		CEA744E6291C2EA4009350A0 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				CEA744FA29210AE5009350A0 /* RegistrationViewModel.swift */,
+				CEA744FC29210CE5009350A0 /* LoginViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -175,6 +196,9 @@
 			children = (
 				CEA744E9291C2EE8009350A0 /* Requests */,
 				CEA744E8291C2EDE009350A0 /* Responses */,
+				CEA744FE29210E03009350A0 /* APIManager.swift */,
+				CEA74508292114BE009350A0 /* APIError.swift */,
+				CEA7450A292114E8009350A0 /* APIEndpoint.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -197,6 +221,8 @@
 			isa = PBXGroup;
 			children = (
 				CEA744F2291C3735009350A0 /* RegistrationView.xib */,
+				CEA744F6292102C7009350A0 /* RegistrationViewController.swift */,
+				CEA744F82921077A009350A0 /* Errors.swift */,
 			);
 			path = Registration;
 			sourceTree = "<group>";
@@ -206,6 +232,14 @@
 			children = (
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		CEA745052921130B009350A0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CEA7450629211319009350A0 /* User.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -224,6 +258,9 @@
 			dependencies = (
 			);
 			name = topupbanking;
+			packageProductDependencies = (
+				CEA74503292112AE009350A0 /* KeychainSwift */,
+			);
 			productName = topupbanking;
 			productReference = CEA744AB291C26B0009350A0 /* topupbanking.app */;
 			productType = "com.apple.product-type.application";
@@ -296,6 +333,9 @@
 				Base,
 			);
 			mainGroup = CEA744A2291C26B0009350A0;
+			packageReferences = (
+				CEA74502292112AE009350A0 /* XCRemoteSwiftPackageReference "keychain-swift" */,
+			);
 			productRefGroup = CEA744AC291C26B0009350A0 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -340,11 +380,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEA744F7292102C7009350A0 /* RegistrationViewController.swift in Sources */,
 				CEA744E3291C2E3C009350A0 /* AlertView.swift in Sources */,
-				CEA744B3291C26B0009350A0 /* ViewController.swift in Sources */,
 				CEA744AF291C26B0009350A0 /* AppDelegate.swift in Sources */,
+				CEA7450129211245009350A0 /* KeychainHelper.swift in Sources */,
+				CEA744FF29210E03009350A0 /* APIManager.swift in Sources */,
+				CEA7450B292114E8009350A0 /* APIEndpoint.swift in Sources */,
+				CEA74509292114BE009350A0 /* APIError.swift in Sources */,
+				CEA744FB29210AE5009350A0 /* RegistrationViewModel.swift in Sources */,
+				CEA744FD29210CE5009350A0 /* LoginViewModel.swift in Sources */,
 				CEA744B1291C26B0009350A0 /* SceneDelegate.swift in Sources */,
 				CEA744B9291C26B0009350A0 /* topupbanking.xcdatamodeld in Sources */,
+				CEA744F92921077A009350A0 /* Errors.swift in Sources */,
+				CEA7450729211319009350A0 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -667,6 +715,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CEA74502292112AE009350A0 /* XCRemoteSwiftPackageReference "keychain-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/evgenyneu/keychain-swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CEA74503292112AE009350A0 /* KeychainSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CEA74502292112AE009350A0 /* XCRemoteSwiftPackageReference "keychain-swift" */;
+			productName = KeychainSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		CEA744B7291C26B0009350A0 /* topupbanking.xcdatamodeld */ = {
