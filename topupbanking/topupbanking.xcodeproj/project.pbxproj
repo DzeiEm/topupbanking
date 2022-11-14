@@ -40,6 +40,8 @@
 		CEA8F55B2922A8890021506B /* ViewControllersFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA8F55A2922A8890021506B /* ViewControllersFactory.swift */; };
 		CEA8F55E2922AA220021506B /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA8F55D2922AA210021506B /* DependencyContainer.swift */; };
 		CEA8F5602922C8DE0021506B /* UserDefaultsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA8F55F2922C8DE0021506B /* UserDefaultsHelper.swift */; };
+		CEA8F5622922CD790021506B /* BalanceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA8F5612922CD790021506B /* BalanceCell.swift */; };
+		CEA8F5642922CDB30021506B /* BalanceCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEA8F5632922CDB30021506B /* BalanceCellView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +98,8 @@
 		CEA8F55A2922A8890021506B /* ViewControllersFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllersFactory.swift; sourceTree = "<group>"; };
 		CEA8F55D2922AA210021506B /* DependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainer.swift; sourceTree = "<group>"; };
 		CEA8F55F2922C8DE0021506B /* UserDefaultsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsHelper.swift; sourceTree = "<group>"; };
+		CEA8F5612922CD790021506B /* BalanceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceCell.swift; sourceTree = "<group>"; };
+		CEA8F5632922CDB30021506B /* BalanceCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BalanceCellView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,7 +209,6 @@
 			isa = PBXGroup;
 			children = (
 				CEA7451829212846009350A0 /* Transaction */,
-				CEA7451329211DAB009350A0 /* TransactionCell */,
 				CEA744ED291C338B009350A0 /* Home */,
 				CEA744EC291C337E009350A0 /* Registration */,
 			);
@@ -260,6 +263,8 @@
 		CEA744ED291C338B009350A0 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				CEA7451329211DAB009350A0 /* TransactionCell */,
+				CEA8F5652922D0800021506B /* BalanceCell */,
 				CEA7450F29211B01009350A0 /* HomeView.xib */,
 				CEA7451129211B19009350A0 /* HomeViewController.swift */,
 			);
@@ -316,6 +321,15 @@
 				CEA8F55D2922AA210021506B /* DependencyContainer.swift */,
 			);
 			path = Factories;
+			sourceTree = "<group>";
+		};
+		CEA8F5652922D0800021506B /* BalanceCell */ = {
+			isa = PBXGroup;
+			children = (
+				CEA8F5632922CDB30021506B /* BalanceCellView.xib */,
+				CEA8F5612922CD790021506B /* BalanceCell.swift */,
+			);
+			path = BalanceCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -433,6 +447,7 @@
 				CEA7451C2921287E009350A0 /* TransactionView.xib in Resources */,
 				CEA7451729211E36009350A0 /* TransactionCell.xib in Resources */,
 				CEA744EB291C2F78009350A0 /* LaunchScreen.xib in Resources */,
+				CEA8F5642922CDB30021506B /* BalanceCellView.xib in Resources */,
 				CEA744F3291C3735009350A0 /* RegistrationView.xib in Resources */,
 				CEA7451029211B01009350A0 /* HomeView.xib in Resources */,
 			);
@@ -472,6 +487,7 @@
 				CEA8F5562922A79F0021506B /* MainCoordinator.swift in Sources */,
 				CEA744FF29210E03009350A0 /* APIManager.swift in Sources */,
 				CEA7450B292114E8009350A0 /* APIEndpoint.swift in Sources */,
+				CEA8F5622922CD790021506B /* BalanceCell.swift in Sources */,
 				CEA74509292114BE009350A0 /* APIError.swift in Sources */,
 				CEA744FB29210AE5009350A0 /* RegistrationViewModel.swift in Sources */,
 				CEA744FD29210CE5009350A0 /* LoginViewModel.swift in Sources */,
