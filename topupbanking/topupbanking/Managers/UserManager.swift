@@ -18,7 +18,18 @@ final class UserManager {
     
     static func register(phonenumber: String?, password: String?, confirmPassword: String?) throws {
     
-      
+        let userAccount = try RegistrationViewModel.validateLoginCredentials(<#T##self: RegistrationViewModel##RegistrationViewModel#>)
+
+        if RegistrationValidation.isProfileIsTaken(profile.username) {
+            throw AuthenticationError.General.userAlreadyExist
+        }
+        
+        try RegistrationValidation.isPasswordSecure(password: profile.password)
+        try RegistrationValidation.isPasswordMatch(password: profile.password, confirmPassword: profile.confirmPassword)
+        
+        UserDefaultsHelper.saveProfile(profile)
+        ProfileManager.loggedInAccount = profile
+        profiles.append(profile)
     }
     
     static func login(phonenumber: String?,password: String?) throws {

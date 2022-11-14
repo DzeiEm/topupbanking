@@ -1,10 +1,10 @@
 
-
 import UIKit
 
 class RegistrationViewController: UIViewController {
     
     enum SegmentTitle: String {
+        
         case Register = "Register"
         case Login = "Login"
     }
@@ -18,7 +18,6 @@ class RegistrationViewController: UIViewController {
     @IBOutlet private weak var buttonLabel: UIButton!
     
     let userManager = UserManager()
-    let navigate = Navigate()
     let loggedInUser = UserManager.loggedInAccount
     
     //MARK: - ACTIONS
@@ -32,25 +31,35 @@ class RegistrationViewController: UIViewController {
                     confirmPassword: confirmPasswordTextfield.text)
                 
                 if let loggedInUser = UserManager.loggedInAccount {
-                    navigate.toHomeViewController()
+                    navigateToHomeViewControlller()
                     return
                 }
-            } catch let error as Errors {
-                displayError(errorType: error)
+            } catch let registrationError as Errors.RegistrationError {
+                displayErrorLabel(message: registrationError.error)
+                
+            } catch let loginError as Errors.LoginError {
+                displayErrorLabel(message: loginError.error)
+                
+            } catch let generalError as Errors.General {
+                displayErrorLabel(message: generalError.error)
+                
+            } catch {
+                displayErrorLabel(message: "UNEXPECTED ERROR OCCURED")
             }
             
         } else {
+            
             do {
                 try? UserManager.login(
                     phonenumber: phoneNumberTextfield.text,
                     password: passwordTextfield.text)
                 if loggedInUser?.username == UserManager.loggedInAccount?.username &&
                     loggedInUser?.password == UserManager.loggedInAccount?.password {
-                    navigate.toHomeViewController()
+                    navigateToHomeViewControlller()
                 }
                 
-            } catch let error as Errors {
-                displayError(errorType: error)
+            } catch {
+               displayErrorLabel(message: "UNEXPECTED ERROR OCCURED")
             }
         }
     }
@@ -66,18 +75,65 @@ class RegistrationViewController: UIViewController {
         
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        errorLabel.isHidden = true
+        phoneNumberTextfield.delegate = self
+        passwordTextfield.delegate = self
+        confirmPasswordTextfield.delegate = self
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        phoneNumberTextfield.delegate =  self
+        passwordTextfield.delegate = self
+        confirmPasswordTextfield.delegate = self
+    }
+    
 }
 
 
 extension RegistrationViewController {
  
-    private func displayError(errorType: Errors) -> String {
-      // display error
-        return "Error"
+    private func displayErrorLabel(message: String) {
+        errorLabel.isHidden = false
+        errorLabel.textColor = .red
+        errorLabel.text = message
+    }
+        
+    private func navigateToHomeViewControlller() {
+        let homeScreen = HomeViewController()
+        homeScreen.modalPresentationStyle = .fullScreen
+        present(homeScreen, animated: true, completion: nil)
+        return
+    }
+}
+
+extension RegistrationViewController: UITextFieldDelegate {
+    
+    internal func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        buttonLabel.isEnabled = true
+        return true
     }
     
-//    private func highlighttextfield(textfield: UITextField) {
-//        textfield.isHighlighted: true ?? false
-//    }
+    private func hideTextfield( textfield: UITextField?, hide: Bool) {
+        textfield?.isHidden = hide
+    }
     
+    private func clearTextfield(_ textfield: UITextField ) {
+        textfield.text = ""
+    }
+    
+    private func isPhoneValid(number: String) -> Bool {
+        
+        if number.contains("+370") {
+            number.count == 11
+            return true
+        }
+        
+        if number.starts(with: "8") {
+            number.count == 9
+            return true
+        }
+        return false
+    }
 }

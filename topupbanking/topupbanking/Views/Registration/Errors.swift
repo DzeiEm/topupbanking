@@ -43,10 +43,11 @@ class Errors {
                 return "Unexpected error appears 😱"
             }
         }
-        
-        enum Secure: Error {
-            case containsNumbers
-            case containsLowerCases
+    }
+    
+    enum Secure: Error {
+        case containsNumbers
+        case containsLowerCases
             case containsUpperCases
             case containsRequiredPasswordLength
             

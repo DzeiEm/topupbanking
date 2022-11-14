@@ -2,12 +2,12 @@
 import Foundation
 
 class User: Codable {
-    var username: String
+    var phone: String
     var password: String
     var confirmPassword: String?
     
-    init(username: String, password: String, confirmPassword: String?) {
-        self.username = username
+    init(phone: String, password: String, confirmPassword: String?) {
+        self.phone = phone
         self.password = password
         self.confirmPassword = confirmPassword
     }
