@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		28F34C844429DA200B836B5D /* Pods_topupbanking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA98A83BA297BBEDDF6A1306 /* Pods_topupbanking.framework */; };
+		41D0128AE7F368CF814EF6C1 /* Pods_topupbankingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBBBEDC5462ABF31F4147B1D /* Pods_topupbankingTests.framework */; };
+		CB9C2F44B55A4BEFBC7046E6 /* Pods_topupbanking_topupbankingUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 578FA5372BA0849330049DD5 /* Pods_topupbanking_topupbankingUITests.framework */; };
 		CEA744AF291C26B0009350A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA744AE291C26B0009350A0 /* AppDelegate.swift */; };
 		CEA744B1291C26B0009350A0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA744B0291C26B0009350A0 /* SceneDelegate.swift */; };
 		CEA744B9291C26B0009350A0 /* topupbanking.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CEA744B7291C26B0009350A0 /* topupbanking.xcdatamodeld */; };
@@ -14,11 +17,8 @@
 		CEA744C9291C26B2009350A0 /* topupbankingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA744C8291C26B2009350A0 /* topupbankingTests.swift */; };
 		CEA744D3291C26B2009350A0 /* topupbankingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA744D2291C26B2009350A0 /* topupbankingUITests.swift */; };
 		CEA744D5291C26B2009350A0 /* topupbankingUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA744D4291C26B2009350A0 /* topupbankingUITestsLaunchTests.swift */; };
-		CEA744E3291C2E3C009350A0 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA744E2291C2E3C009350A0 /* AlertView.swift */; };
 		CEA744EB291C2F78009350A0 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEA744EA291C2F78009350A0 /* LaunchScreen.xib */; };
 		CEA744F1291C35F8009350A0 /* SpinnerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEA744F0291C35F8009350A0 /* SpinnerView.xib */; };
-		CEA744F3291C3735009350A0 /* RegistrationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEA744F2291C3735009350A0 /* RegistrationView.xib */; };
-		CEA744F7292102C7009350A0 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA744F6292102C7009350A0 /* RegistrationViewController.swift */; };
 		CEA744F92921077A009350A0 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA744F82921077A009350A0 /* Errors.swift */; };
 		CEA744FB29210AE5009350A0 /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA744FA29210AE5009350A0 /* RegistrationViewModel.swift */; };
 		CEA744FD29210CE5009350A0 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA744FC29210CE5009350A0 /* LoginViewModel.swift */; };
@@ -42,6 +42,9 @@
 		CEA8F5602922C8DE0021506B /* UserDefaultsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA8F55F2922C8DE0021506B /* UserDefaultsHelper.swift */; };
 		CEA8F5622922CD790021506B /* BalanceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA8F5612922CD790021506B /* BalanceCell.swift */; };
 		CEA8F5642922CDB30021506B /* BalanceCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEA8F5632922CDB30021506B /* BalanceCellView.xib */; };
+		CEA8F5672928DBA70021506B /* LoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEA8F5662928DBA70021506B /* LoginView.xib */; };
+		CEA8F5692928E6CB0021506B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA8F5682928E6CB0021506B /* LoginViewController.swift */; };
+		CEA8F56C292903EA0021506B /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA8F56B292903EA0021506B /* CustomButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +65,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		07502F0E1C322BD144843C3C /* Pods-topupbankingTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-topupbankingTests.release.xcconfig"; path = "Target Support Files/Pods-topupbankingTests/Pods-topupbankingTests.release.xcconfig"; sourceTree = "<group>"; };
+		1490020E7E7808171A566EE8 /* Pods-topupbanking-topupbankingUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-topupbanking-topupbankingUITests.debug.xcconfig"; path = "Target Support Files/Pods-topupbanking-topupbankingUITests/Pods-topupbanking-topupbankingUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		578FA5372BA0849330049DD5 /* Pods_topupbanking_topupbankingUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_topupbanking_topupbankingUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C7318AFAC1523D7BED555EB /* Pods-topupbanking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-topupbanking.debug.xcconfig"; path = "Target Support Files/Pods-topupbanking/Pods-topupbanking.debug.xcconfig"; sourceTree = "<group>"; };
+		A440C6DEB17542C2F3A6449D /* Pods-topupbankingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-topupbankingTests.debug.xcconfig"; path = "Target Support Files/Pods-topupbankingTests/Pods-topupbankingTests.debug.xcconfig"; sourceTree = "<group>"; };
+		CC0684E9CDDB73DE8937F1A2 /* Pods-topupbanking-topupbankingUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-topupbanking-topupbankingUITests.release.xcconfig"; path = "Target Support Files/Pods-topupbanking-topupbankingUITests/Pods-topupbanking-topupbankingUITests.release.xcconfig"; sourceTree = "<group>"; };
 		CEA744AB291C26B0009350A0 /* topupbanking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = topupbanking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEA744AE291C26B0009350A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEA744B0291C26B0009350A0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -73,11 +82,8 @@
 		CEA744CE291C26B2009350A0 /* topupbankingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = topupbankingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEA744D2291C26B2009350A0 /* topupbankingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = topupbankingUITests.swift; sourceTree = "<group>"; };
 		CEA744D4291C26B2009350A0 /* topupbankingUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = topupbankingUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		CEA744E2291C2E3C009350A0 /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		CEA744EA291C2F78009350A0 /* LaunchScreen.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		CEA744F0291C35F8009350A0 /* SpinnerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpinnerView.xib; sourceTree = "<group>"; };
-		CEA744F2291C3735009350A0 /* RegistrationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegistrationView.xib; sourceTree = "<group>"; };
-		CEA744F6292102C7009350A0 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		CEA744F82921077A009350A0 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		CEA744FA29210AE5009350A0 /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
 		CEA744FC29210CE5009350A0 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
@@ -100,6 +106,12 @@
 		CEA8F55F2922C8DE0021506B /* UserDefaultsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsHelper.swift; sourceTree = "<group>"; };
 		CEA8F5612922CD790021506B /* BalanceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceCell.swift; sourceTree = "<group>"; };
 		CEA8F5632922CDB30021506B /* BalanceCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BalanceCellView.xib; sourceTree = "<group>"; };
+		CEA8F5662928DBA70021506B /* LoginView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginView.xib; sourceTree = "<group>"; };
+		CEA8F5682928E6CB0021506B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		CEA8F56B292903EA0021506B /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		D12EF1FBC2B985CDB474127D /* Pods-topupbanking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-topupbanking.release.xcconfig"; path = "Target Support Files/Pods-topupbanking/Pods-topupbanking.release.xcconfig"; sourceTree = "<group>"; };
+		EA98A83BA297BBEDDF6A1306 /* Pods_topupbanking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_topupbanking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EBBBEDC5462ABF31F4147B1D /* Pods_topupbankingTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_topupbankingTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +120,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEA74504292112AE009350A0 /* KeychainSwift in Frameworks */,
+				28F34C844429DA200B836B5D /* Pods_topupbanking.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,6 +128,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41D0128AE7F368CF814EF6C1 /* Pods_topupbankingTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -122,12 +136,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB9C2F44B55A4BEFBC7046E6 /* Pods_topupbanking_topupbankingUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9F78F079E3772DE9BC68A830 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9C7318AFAC1523D7BED555EB /* Pods-topupbanking.debug.xcconfig */,
+				D12EF1FBC2B985CDB474127D /* Pods-topupbanking.release.xcconfig */,
+				1490020E7E7808171A566EE8 /* Pods-topupbanking-topupbankingUITests.debug.xcconfig */,
+				CC0684E9CDDB73DE8937F1A2 /* Pods-topupbanking-topupbankingUITests.release.xcconfig */,
+				A440C6DEB17542C2F3A6449D /* Pods-topupbankingTests.debug.xcconfig */,
+				07502F0E1C322BD144843C3C /* Pods-topupbankingTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		CEA744A2291C26B0009350A0 = {
 			isa = PBXGroup;
 			children = (
@@ -135,6 +163,8 @@
 				CEA744C7291C26B2009350A0 /* topupbankingTests */,
 				CEA744D1291C26B2009350A0 /* topupbankingUITests */,
 				CEA744AC291C26B0009350A0 /* Products */,
+				9F78F079E3772DE9BC68A830 /* Pods */,
+				FEB625E1E6F09A36108FA3BA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -190,7 +220,6 @@
 		CEA744E1291C2E25009350A0 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				CEA744E2291C2E3C009350A0 /* AlertView.swift */,
 				CEA744F0291C35F8009350A0 /* SpinnerView.xib */,
 				CEA7450029211245009350A0 /* KeychainHelper.swift */,
 				CEA8F55F2922C8DE0021506B /* UserDefaultsHelper.swift */,
@@ -208,6 +237,7 @@
 		CEA744E5291C2E93009350A0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				CEA8F56A292903C70021506B /* CustomElements */,
 				CEA7451829212846009350A0 /* Transaction */,
 				CEA744ED291C338B009350A0 /* Home */,
 				CEA744EC291C337E009350A0 /* Registration */,
@@ -253,9 +283,9 @@
 		CEA744EC291C337E009350A0 /* Registration */ = {
 			isa = PBXGroup;
 			children = (
-				CEA744F2291C3735009350A0 /* RegistrationView.xib */,
-				CEA744F6292102C7009350A0 /* RegistrationViewController.swift */,
 				CEA744F82921077A009350A0 /* Errors.swift */,
+				CEA8F5662928DBA70021506B /* LoginView.xib */,
+				CEA8F5682928E6CB0021506B /* LoginViewController.swift */,
 			);
 			path = Registration;
 			sourceTree = "<group>";
@@ -332,6 +362,24 @@
 			path = BalanceCell;
 			sourceTree = "<group>";
 		};
+		CEA8F56A292903C70021506B /* CustomElements */ = {
+			isa = PBXGroup;
+			children = (
+				CEA8F56B292903EA0021506B /* CustomButton.swift */,
+			);
+			path = CustomElements;
+			sourceTree = "<group>";
+		};
+		FEB625E1E6F09A36108FA3BA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EA98A83BA297BBEDDF6A1306 /* Pods_topupbanking.framework */,
+				578FA5372BA0849330049DD5 /* Pods_topupbanking_topupbankingUITests.framework */,
+				EBBBEDC5462ABF31F4147B1D /* Pods_topupbankingTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -339,9 +387,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CEA744D8291C26B2009350A0 /* Build configuration list for PBXNativeTarget "topupbanking" */;
 			buildPhases = (
+				915D2C0C4DAE1606FCE489AD /* [CP] Check Pods Manifest.lock */,
 				CEA744A7291C26B0009350A0 /* Sources */,
 				CEA744A8291C26B0009350A0 /* Frameworks */,
 				CEA744A9291C26B0009350A0 /* Resources */,
+				1E563D82D93CF5F5FE681A3C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -359,6 +409,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CEA744DB291C26B2009350A0 /* Build configuration list for PBXNativeTarget "topupbankingTests" */;
 			buildPhases = (
+				FC980261FBAAB1159A225801 /* [CP] Check Pods Manifest.lock */,
 				CEA744C0291C26B2009350A0 /* Sources */,
 				CEA744C1291C26B2009350A0 /* Frameworks */,
 				CEA744C2291C26B2009350A0 /* Resources */,
@@ -377,9 +428,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CEA744DE291C26B2009350A0 /* Build configuration list for PBXNativeTarget "topupbankingUITests" */;
 			buildPhases = (
+				99D7AB738ACF657E1443B8E4 /* [CP] Check Pods Manifest.lock */,
 				CEA744CA291C26B2009350A0 /* Sources */,
 				CEA744CB291C26B2009350A0 /* Frameworks */,
 				CEA744CC291C26B2009350A0 /* Resources */,
+				3998BC8AD4718E8107E0EC84 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -444,11 +497,11 @@
 			files = (
 				CEA744BB291C26B2009350A0 /* Assets.xcassets in Resources */,
 				CEA744F1291C35F8009350A0 /* SpinnerView.xib in Resources */,
+				CEA8F5672928DBA70021506B /* LoginView.xib in Resources */,
 				CEA7451C2921287E009350A0 /* TransactionView.xib in Resources */,
 				CEA7451729211E36009350A0 /* TransactionCell.xib in Resources */,
 				CEA744EB291C2F78009350A0 /* LaunchScreen.xib in Resources */,
 				CEA8F5642922CDB30021506B /* BalanceCellView.xib in Resources */,
-				CEA744F3291C3735009350A0 /* RegistrationView.xib in Resources */,
 				CEA7451029211B01009350A0 /* HomeView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -469,13 +522,114 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1E563D82D93CF5F5FE681A3C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-topupbanking/Pods-topupbanking-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-topupbanking/Pods-topupbanking-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-topupbanking/Pods-topupbanking-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3998BC8AD4718E8107E0EC84 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-topupbanking-topupbankingUITests/Pods-topupbanking-topupbankingUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-topupbanking-topupbankingUITests/Pods-topupbanking-topupbankingUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-topupbanking-topupbankingUITests/Pods-topupbanking-topupbankingUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		915D2C0C4DAE1606FCE489AD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-topupbanking-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		99D7AB738ACF657E1443B8E4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-topupbanking-topupbankingUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FC980261FBAAB1159A225801 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-topupbankingTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		CEA744A7291C26B0009350A0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CEA744F7292102C7009350A0 /* RegistrationViewController.swift in Sources */,
-				CEA744E3291C2E3C009350A0 /* AlertView.swift in Sources */,
 				CEA7450E29211A12009350A0 /* UserManager.swift in Sources */,
 				CEA8F55B2922A8890021506B /* ViewControllersFactory.swift in Sources */,
 				CEA744AF291C26B0009350A0 /* AppDelegate.swift in Sources */,
@@ -486,12 +640,14 @@
 				CEA7451529211E14009350A0 /* TransactionCell.swift in Sources */,
 				CEA8F5562922A79F0021506B /* MainCoordinator.swift in Sources */,
 				CEA744FF29210E03009350A0 /* APIManager.swift in Sources */,
+				CEA8F5692928E6CB0021506B /* LoginViewController.swift in Sources */,
 				CEA7450B292114E8009350A0 /* APIEndpoint.swift in Sources */,
 				CEA8F5622922CD790021506B /* BalanceCell.swift in Sources */,
 				CEA74509292114BE009350A0 /* APIError.swift in Sources */,
 				CEA744FB29210AE5009350A0 /* RegistrationViewModel.swift in Sources */,
 				CEA744FD29210CE5009350A0 /* LoginViewModel.swift in Sources */,
 				CEA744B1291C26B0009350A0 /* SceneDelegate.swift in Sources */,
+				CEA8F56C292903EA0021506B /* CustomButton.swift in Sources */,
 				CEA744B9291C26B0009350A0 /* topupbanking.xcdatamodeld in Sources */,
 				CEA8F5602922C8DE0021506B /* UserDefaultsHelper.swift in Sources */,
 				CEA7451A2921285F009350A0 /* TransactionViewController.swift in Sources */,
@@ -649,6 +805,7 @@
 		};
 		CEA744D9291C26B2009350A0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9C7318AFAC1523D7BED555EB /* Pods-topupbanking.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -677,6 +834,7 @@
 		};
 		CEA744DA291C26B2009350A0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D12EF1FBC2B985CDB474127D /* Pods-topupbanking.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -705,6 +863,7 @@
 		};
 		CEA744DC291C26B2009350A0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A440C6DEB17542C2F3A6449D /* Pods-topupbankingTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -725,6 +884,7 @@
 		};
 		CEA744DD291C26B2009350A0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 07502F0E1C322BD144843C3C /* Pods-topupbankingTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -745,6 +905,7 @@
 		};
 		CEA744DF291C26B2009350A0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1490020E7E7808171A566EE8 /* Pods-topupbanking-topupbankingUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -763,6 +924,7 @@
 		};
 		CEA744E0291C26B2009350A0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CC0684E9CDDB73DE8937F1A2 /* Pods-topupbanking-topupbankingUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

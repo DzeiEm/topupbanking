@@ -1,33 +1,88 @@
 
 import UIKit
 import Foundation
+import KeychainSwift
 
-enum UserDefaultsKey: String {
-   case userAccounts
-}
 
 class UserDefaultsHelper {
+    
+    enum UserDefaultsKey {
+       
+        case userAccounts
+    }
     
     private static var userDefaults: UserDefaults {
         UserDefaults.standard
     }
     
-    static func saveUserAccount(_ user: User) {
+    private static let keyChain = KeychainSwift()
         
-        var savedUserAccounts: [User] = []
-
+    static var currentlyLoggedInAccount: User? {
+        get {
+            guard let currentUser = userDefaults.object(forKey: UserDefaultsKey.currentlyLoggedinUser) as? Data else {
+                return nil
+            }
+            return try? JSONDecoder().decode(User.self, from: currentUser)
+            
+        } set {
+            let currentUser = try? JSONEncoder().encode(newValue)
+            userDefaults.set(currentUser, forKey: UserDefaultsKey.currentlyLoggedinUser)
+        }
+    }
+    
+    static var users: [User?] {
+        get {
+            guard let userAccounts = userDefaults.object(forKey: UserDefaultsKey.users) as? Data else {
+                return nil
+            }
+            return try? JSONDecoder().decode(User.self, from: userAccounts)
+            
+        } set {
+            let userAccounts = try? JSONEncoder().encode(newValue)
+            userDefaults.set(userAccounts, forKey: UserDefaultsKey.users)
+        }
+    }
+    
+   
+    static func saveUserAccount(_ user: User, _password: String) {
+        guard users != nil else {
+            users = [user]
+            return
+        }
+    
+    }
+    
+    static func savePAssword(_ password: String, phoneNo: String) {
+        keyChain.set(<#T##value: String##String#>, forKey: <#T##String#>)
     }
     
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 extension UserDefaultsHelper {
     
     static var userAccounts: [User]? {
         get {
-            object(forKey: .userAccounts, type: [User].self) as! [User]?
+            object(forKey: .users, type: [User].self) as! [User]?
         }
         set {
-            saveObject(object: newValue, forKey: .userAccounts)
+            saveObject(object: newValue, forKey: .users)
         }
     }
 

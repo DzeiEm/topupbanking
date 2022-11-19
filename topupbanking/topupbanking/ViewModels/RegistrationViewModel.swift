@@ -18,8 +18,8 @@ final class RegistrationViewModel {
     }
     
     static func checkIsPhoneNumberUnique(_ phone: String) -> Bool {
-        return UserDefaultsHelper
         
+        return UserDefaultsHelper.
     }
     
    static func isPasswordSecure(password: String) throws {
@@ -39,12 +39,12 @@ final class RegistrationViewModel {
     }
     
     func isPassworsMatch(password: String?, confirmPassword: String?) throws {
+        
         if password != confirmPassword {
             throw Errors.RegistrationError.passwordDoNotMatch
         }
         return
     }
-   
 }
 
 extension RegistrationViewModel {

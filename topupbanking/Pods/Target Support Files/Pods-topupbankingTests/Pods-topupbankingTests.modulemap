@@ -1,0 +1,6 @@
+framework module Pods_topupbankingTests {
+  umbrella header "Pods-topupbankingTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

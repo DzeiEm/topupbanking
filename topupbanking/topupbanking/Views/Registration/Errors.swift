@@ -61,7 +61,6 @@ class Errors {
                     return "Password should contains upper case letters 🆙"
                 case .containsRequiredPasswordLength:
                     return "Password should contain at lest 8 characters 8️⃣"
-                }
             }
         }
     }
