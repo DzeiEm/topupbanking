@@ -3,23 +3,25 @@ import Foundation
 
 final class RegistrationViewModel {
    
-   static func checkIstextfieldsAreNotEmpty(number: String?, password: String?, confirmPassword: String?) throws -> User {
+   static func checkIstextfieldsAreNotEmpty(phoneNo: String?,
+                                            password: String?,
+                                            confirmPassword: String?) throws -> User {
         
-       guard let number = number,
+       guard let phoneNo = phoneNo,
              let password = password,
              let confirmPassword = confirmPassword,
-             !number.isEmpty,
+             !phoneNo.isEmpty,
              !password.isEmpty,
              !confirmPassword.isEmpty else {
            
            throw Errors.General.emptyFields
        }
-        return User(phone: number, password: password, confirmPassword: confirmPassword)
+        return User(phone: phoneNo, password: password, confirmPassword: confirmPassword)
     }
     
-    static func checkIsPhoneNumberUnique(_ phone: String) -> Bool {
-        
-        return UserDefaultsHelper.
+    static func checkIsPhoneNumberUnique(_ phoneNo: String) -> Bool {
+        return true
+    
     }
     
    static func isPasswordSecure(password: String) throws {

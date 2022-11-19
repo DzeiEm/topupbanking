@@ -19,11 +19,14 @@ class Errors {
     
     enum LoginError: Error {
         case credentialsDoNotMatch
+        case userNotFound
         
         var error: String {
             switch self {
             case .credentialsDoNotMatch:
                 return " Username or password is incorect 😬 "
+            case .userNotFound:
+                return "User not found"
             }
         }
     }

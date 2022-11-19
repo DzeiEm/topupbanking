@@ -15,7 +15,7 @@ class LoginViewController: UIViewController {
         case register
     }
     
-    enum AccountCurrency: String {
+   enum AccountCurrency: String {
         case eur = "EUR"
         case usd = "USD"
         case gbp = "GBP"
@@ -36,6 +36,7 @@ class LoginViewController: UIViewController {
     private var availableTextFields: [UITextField] = []
     let dropdown = DropDown()
     let userManager = UserManager()
+    let navigate = Navigator()
     private var segment: SegmentMode = .login
 
     
@@ -52,7 +53,7 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func submitButtonTapped() {
-        LoginViewModel.loginOrRegisterUser(segment: SegmentMode)
+        //
     }
     
     @IBAction func onSegmentControllerTypeChanged(_ sender: Any) {
@@ -81,6 +82,48 @@ class LoginViewController: UIViewController {
     
 }
 
+private extension LoginViewController {
+    
+    func loginOrRegister() {
+        switch segment {
+        case .login:
+            login()
+        case .register:
+            register()
+        }
+    }
+    
+    func login() {
+        do {
+            try? userManager.login(phone: phoneNumberTextfield.text,
+                                   password: passwordTextfield.text)
+            navigate.proceedToHomeScreen()
+        } catch let loginError as Errors.LoginError {
+            // TODO: Display warning
+        } catch let generalError as Errors.General {
+            // TODO: - display warning
+        } catch {
+            print(Errors.General.unexpectedError)
+        }
+    }
+    
+    func register() {
+        do {
+            try? userManager.register(phone: phoneNumberTextfield.text,
+                                          password: passwordTextfield.text,
+                                          confirmPassword: confirmPasswordTextfield.text)
+                navigate.proceedToHomeScreen()
+            } catch let registrationError as Errors.RegistrationError {
+                //TODO: display warning
+            } catch let generalError as Errors.General {
+                //TODO: Diaplay warning
+            } catch let securityError as Errors.Secure {
+                //TODO: Diaplay warning
+            } catch {
+                print(Errors.General.unexpectedError)
+            }
+        }
+    }
 
 extension LoginViewController {
     

@@ -1,97 +1,60 @@
 
 import UIKit
 import Foundation
-import KeychainSwift
 
-
-class UserDefaultsHelper {
+class UserDefaultsManager {
     
-    enum UserDefaultsKey {
-       
-        case userAccounts
+    enum UserDefaultsKey: String {
+    
+        case userAccounts = "UserAccounts"
+        case currentLoggedinUser = "CurentltLoggedinUser"
     }
     
     private static var userDefaults: UserDefaults {
         UserDefaults.standard
     }
-    
-    private static let keyChain = KeychainSwift()
-        
+            
     static var currentlyLoggedInAccount: User? {
         get {
-            guard let currentUser = userDefaults.object(forKey: UserDefaultsKey.currentlyLoggedinUser) as? Data else {
+            guard let currentUser = userDefaults.object(forKey: UserDefaultsKey.currentLoggedinUser.rawValue) as? Data else {
                 return nil
             }
             return try? JSONDecoder().decode(User.self, from: currentUser)
-            
+
         } set {
             let currentUser = try? JSONEncoder().encode(newValue)
-            userDefaults.set(currentUser, forKey: UserDefaultsKey.currentlyLoggedinUser)
+            userDefaults.set(currentUser, forKey: UserDefaultsKey.currentLoggedinUser.rawValue)
         }
+        
     }
-    
-    static var users: [User?] {
+
+    static var users: [User]? {
         get {
-            guard let userAccounts = userDefaults.object(forKey: UserDefaultsKey.users) as? Data else {
+            guard let userAccounts = userDefaults.object(forKey: UserDefaultsKey.userAccounts.rawValue) as? Data else {
                 return nil
             }
-            return try? JSONDecoder().decode(User.self, from: userAccounts)
-            
+            return try? JSONDecoder().decode([User].self, from: userAccounts)
+
         } set {
             let userAccounts = try? JSONEncoder().encode(newValue)
-            userDefaults.set(userAccounts, forKey: UserDefaultsKey.users)
+            userDefaults.set(userAccounts, forKey: UserDefaultsKey.userAccounts.rawValue)
         }
+  
     }
     
-   
-    static func saveUserAccount(_ user: User, _password: String) {
+    static func saveUserAccount(_ user: User , _ password: String) {
         guard users != nil else {
             users = [user]
             return
         }
-    
+        
+        users?.append(user)
+        KeychainHelper.savePassword(password, phoneNo: user.phone)
     }
-    
-    static func savePAssword(_ password: String, phoneNo: String) {
-        keyChain.set(<#T##value: String##String#>, forKey: <#T##String#>)
-    }
-    
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-extension UserDefaultsHelper {
-    
-    static var userAccounts: [User]? {
-        get {
-            object(forKey: .users, type: [User].self) as! [User]?
-        }
-        set {
-            saveObject(object: newValue, forKey: .users)
-        }
-    }
-
-}
-
-
-// MARK: - Helpers
-
-extension UserDefaultsHelper {
+extension UserDefaultsManager {
     
     // MARK: - SAVE
     

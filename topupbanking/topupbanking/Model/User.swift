@@ -5,4 +5,5 @@ struct User: Codable {
     
     var phone: String
     var password: String
+    var confirmPassword: String?
 }
