@@ -11,7 +11,6 @@
 		41D0128AE7F368CF814EF6C1 /* Pods_topupbankingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBBBEDC5462ABF31F4147B1D /* Pods_topupbankingTests.framework */; };
 		CB9C2F44B55A4BEFBC7046E6 /* Pods_topupbanking_topupbankingUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 578FA5372BA0849330049DD5 /* Pods_topupbanking_topupbankingUITests.framework */; };
 		CE1003FC292924AE00E2526A /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1003FB292924AE00E2526A /* Navigator.swift */; };
-		CE1003FE2929393500E2526A /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1003FD2929393500E2526A /* UserManager.swift */; };
 		CEA744AF291C26B0009350A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA744AE291C26B0009350A0 /* AppDelegate.swift */; };
 		CEA744B1291C26B0009350A0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA744B0291C26B0009350A0 /* SceneDelegate.swift */; };
 		CEA744B9291C26B0009350A0 /* topupbanking.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CEA744B7291C26B0009350A0 /* topupbanking.xcdatamodeld */; };
@@ -69,7 +68,6 @@
 		A440C6DEB17542C2F3A6449D /* Pods-topupbankingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-topupbankingTests.debug.xcconfig"; path = "Target Support Files/Pods-topupbankingTests/Pods-topupbankingTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CC0684E9CDDB73DE8937F1A2 /* Pods-topupbanking-topupbankingUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-topupbanking-topupbankingUITests.release.xcconfig"; path = "Target Support Files/Pods-topupbanking-topupbankingUITests/Pods-topupbanking-topupbankingUITests.release.xcconfig"; sourceTree = "<group>"; };
 		CE1003FB292924AE00E2526A /* Navigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
-		CE1003FD2929393500E2526A /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		CEA744AB291C26B0009350A0 /* topupbanking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = topupbanking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEA744AE291C26B0009350A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEA744B0291C26B0009350A0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -313,7 +311,6 @@
 			isa = PBXGroup;
 			children = (
 				CEA8F55F2922C8DE0021506B /* UserDefaultsManager.swift */,
-				CE1003FD2929393500E2526A /* UserManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -631,7 +628,6 @@
 				CEA8F5602922C8DE0021506B /* UserDefaultsManager.swift in Sources */,
 				CEA7451A2921285F009350A0 /* TransactionViewController.swift in Sources */,
 				CEA744F92921077A009350A0 /* Errors.swift in Sources */,
-				CE1003FE2929393500E2526A /* UserManager.swift in Sources */,
 				CEA7450729211319009350A0 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

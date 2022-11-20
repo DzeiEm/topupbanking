@@ -24,8 +24,8 @@ class LoginViewController: UIViewController {
     //MARK: - Outlets
     
     @IBOutlet private weak var dropdownView: UIView!
-    @IBOutlet private weak var dropdownButton: UIButton!
-    @IBOutlet private weak var currencyAccountLabel: UILabel!
+    @IBOutlet weak var dropdownButton: UIButton!
+    @IBOutlet weak var currencyAccountLabel: UILabel!
     @IBOutlet private weak var registrationTypeSegmentController: UISegmentedControl!
     @IBOutlet private weak var phoneNumberTextfield: UITextField!
     @IBOutlet private weak var passwordTextfield: UITextField!
@@ -35,9 +35,10 @@ class LoginViewController: UIViewController {
     
     private var availableTextFields: [UITextField] = []
     let dropdown = DropDown()
-    let userManager = UserManager()
+    let userManager = UserDefaultsManager()
+    let loggedInUser = UserDefaultsManager.currentlyLoggedInAccount
     let navigate = Navigator()
-    private var segment: SegmentMode = .login
+    private var segment: SegmentMode = .register
 
     
     let accountCurrencyValues = [
@@ -50,10 +51,14 @@ class LoginViewController: UIViewController {
     
     @IBAction func dropdownButtonTapped() {
         dropdown.show()
+        print("Dropdown tapped")
     }
     
+    
     @IBAction func submitButtonTapped() {
+        print("SUBMIT BUTTION TAPPED")
         loginOrRegister()
+        
     }
     
     @IBAction func onSegmentControllerTypeChanged(_ sender: Any) {
@@ -98,12 +103,18 @@ private extension LoginViewController {
         do {
             try? userManager.login(phone: phoneNumberTextfield.text,
                                    password: passwordTextfield.text)
-            navigate.proceedToHomeScreen()
+            
+            if let loggedInUser = UserDefaultsManager.currentlyLoggedInAccount {
+                navigate.proceedToHomeScreen()
+                return
+            }
+            
         } catch let loginError as Errors.LoginError {
-            // TODO: Display warning
+            displayError(message: loginError.error)
         } catch let generalError as Errors.General {
-            // TODO: - display warning
+            displayError(message: generalError.error)
         } catch {
+            displayError(message: Errors.General.unexpectedError.error )
             print(Errors.General.unexpectedError)
         }
     }
@@ -113,18 +124,29 @@ private extension LoginViewController {
             try? userManager.register(phone: phoneNumberTextfield.text,
                                           password: passwordTextfield.text,
                                           confirmPassword: confirmPasswordTextfield.text)
+            
+            guard let loggedInUser = UserDefaultsManager.currentlyLoggedInAccount else {
+                return
+            }
+            
+            if loggedInUser.phone == UserDefaultsManager.currentlyLoggedInAccount?.phone &&
+                loggedInUser.password == UserDefaultsManager.currentlyLoggedInAccount?.password {
                 navigate.proceedToHomeScreen()
+            }
+            
             } catch let registrationError as Errors.RegistrationError {
-                //TODO: display warning
+                displayError(message: registrationError.error)
             } catch let generalError as Errors.General {
-                //TODO: Diaplay warning
+                displayError(message: generalError.error)
             } catch let securityError as Errors.Secure {
-                //TODO: Diaplay warning
+                    displayError(message: securityError.error)
             } catch {
+                displayError(message: Errors.General.unexpectedError.error)
                 print(Errors.General.unexpectedError)
             }
         }
     }
+
 
 extension LoginViewController {
     
@@ -153,11 +175,13 @@ extension LoginViewController {
         
         switch segment {
         case .login:
+            print("LOGIN SEGMENT")
             confirmPasswordTextfield.isHidden = true
             registrationButton.titleLabel?.text = SegmentTitle.Login.rawValue
             dropdownView.isHidden = true
             clearAllTextfields()
         case .register:
+            print("REGISTER SEGMENT")
             confirmPasswordTextfield.isHidden = false
             registrationButton.titleLabel?.text = SegmentTitle.Register.rawValue
             dropdownView.isHidden = false
@@ -169,8 +193,10 @@ extension LoginViewController {
         
         dropdown.anchorView = dropdown
         dropdown.dataSource = accountCurrencyValues
-        dropdown.bottomOffset = CGPoint(x: 10, y: 120)
+        dropdown.bottomOffset = CGPoint(x: 10, y: 110)
         dropdown.width = 118
+        dropdown.shadowColor = .gray
+        dropdown.selectionBackgroundColor = .green
         
         dropdown.direction = .bottom
         dropdown.selectionAction = { (index: Int, item: String) in
@@ -189,6 +215,7 @@ extension LoginViewController {
     }
 }
 
+
 extension LoginViewController: UITextFieldDelegate {
     
     func textFieldDidChangeSelection(_ textField: UITextField) {
@@ -196,3 +223,11 @@ extension LoginViewController: UITextFieldDelegate {
     }
 }
 
+
+extension LoginViewController {
+    
+    private func displayError(message: String) {
+        errorLabel.text = message
+        errorLabel.isHidden = false
+    }
+}

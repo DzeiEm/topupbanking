@@ -8,6 +8,15 @@ class LoginViewModel {
     static func setCurrentLoggedinUser(_ user: User) {
         UserDefaultsManager.currentlyLoggedInAccount = user
     }
+    
+//    static var loggedInAccount: User? {
+//        willSet(newUserAccount) {
+//            print("About to set phone no", newUserAccount?.phone ?? "nil" )
+//        }
+//        didSet {
+//            print("About to set phone no", loggedInAccount?.phone ?? "nil" )
+//        }
+//    }
 }
 
 
