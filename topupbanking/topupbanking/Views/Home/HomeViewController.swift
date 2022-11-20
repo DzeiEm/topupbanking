@@ -5,7 +5,7 @@ class HomeViewController: UIViewController {
 
     enum ButtonTitle: String {
         case transfer = "Transfer money"
-        case history = "Transaction History"
+        case history = "History"
     }
     
     // MARK: - OUTLETS
@@ -22,6 +22,17 @@ class HomeViewController: UIViewController {
         
         print("Transfer money tapped")
     }
+    
+    
+    @IBAction func logoutBUttonTapped() {
+        
+        print("LOGOU BUTTON TAPPED")
+        let loginScreen = LoginViewController()
+        loginScreen.modalPresentationStyle = .fullScreen
+        present(loginScreen, animated: true, completion: nil)
+    }
+    
+    // MARK: - Life cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -3,24 +3,7 @@ import UIKit
 
 class LoginViewModel {
     
-    static var users = [User]()
-    
-    static func setCurrentLoggedinUser(_ user: User) {
-        UserDefaultsManager.currentlyLoggedInAccount = user
-    }
-    
-//    static var loggedInAccount: User? {
-//        willSet(newUserAccount) {
-//            print("About to set phone no", newUserAccount?.phone ?? "nil" )
-//        }
-//        didSet {
-//            print("About to set phone no", loggedInAccount?.phone ?? "nil" )
-//        }
-//    }
-}
-
-
-extension LoginViewModel {
+    let userManager = UserManager()
     
     //MARK: - phone number
     
@@ -35,6 +18,14 @@ extension LoginViewModel {
         }
         
         return User(phone: phoneNo, password: password)
+    }
+    
+    static func setAccountCurrency(account: String?) -> String {
+        
+        guard let account = account else {
+            return "EUR"
+        }
+        return account
     }
     
     static func checkIsPasswordMatchesWithCredentials(_ phoneNo: String?, _ password: String?) throws {
@@ -67,18 +58,10 @@ extension LoginViewModel {
          return User(phone: phoneNo, password: password, confirmPassword: confirmPassword)
      }
     
-    static func checkIsPhoneNumberUnique(_ phoneNo: String?) throws -> Bool {
-        
-        guard let phoneNo = phoneNo else {
-            return false
-        }
-    
-        guard let phoneNumbers = UserDefaultsManager.users else { return false }
-        
-        return phoneNumbers.contains { number in
+    static func checkIsPhoneNumberUnique(_ phoneNo: String?) -> Bool {
+        return UserManager.users.contains(where: { number in
             number.phone == phoneNo
-            
-        }
+        }) ?? false
     }
     
     

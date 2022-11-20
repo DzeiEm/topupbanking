@@ -35,11 +35,10 @@ class LoginViewController: UIViewController {
     
     private var availableTextFields: [UITextField] = []
     let dropdown = DropDown()
-    let userManager = UserDefaultsManager()
-    let loggedInUser = UserDefaultsManager.currentlyLoggedInAccount
-    let navigate = Navigator()
+    let userManager = UserManager()
+    let loggedInUser = UserManager.loggedInAccount
     private var segment: SegmentMode = .register
-
+    var selectedAccountCurrency: AccountCurrency.RawValue = ""
     
     let accountCurrencyValues = [
         AccountCurrency.eur.rawValue,
@@ -73,6 +72,8 @@ class LoginViewController: UIViewController {
         configureViewForSegment()
     }
     
+    
+    
     // MARK: - Life Cycle
     
     override func viewWillAppear(_ animated: Bool) {
@@ -104,9 +105,13 @@ private extension LoginViewController {
             try? userManager.login(phone: phoneNumberTextfield.text,
                                    password: passwordTextfield.text)
             
-            if let loggedInUser = UserDefaultsManager.currentlyLoggedInAccount {
-                navigate.proceedToHomeScreen()
+      
+            guard let loggedInUser = UserManager.loggedInAccount else {
                 return
+            }
+            if loggedInUser.phone == UserManager.loggedInAccount?.phone &&
+                loggedInUser.password == UserManager.loggedInAccount?.password {
+               proceedToHomeScreen()
             }
             
         } catch let loginError as Errors.LoginError {
@@ -123,15 +128,13 @@ private extension LoginViewController {
         do {
             try? userManager.register(phone: phoneNumberTextfield.text,
                                           password: passwordTextfield.text,
-                                          confirmPassword: confirmPasswordTextfield.text)
+                                      confirmPassword: confirmPasswordTextfield.text,
+                                      currency: selectedAccountCurrency)
             
-            guard let loggedInUser = UserDefaultsManager.currentlyLoggedInAccount else {
+            if let loggedInUser = UserManager.loggedInAccount {
+                print("LOGGEDIN: \(loggedInUser)")
+                proceedToHomeScreen()
                 return
-            }
-            
-            if loggedInUser.phone == UserDefaultsManager.currentlyLoggedInAccount?.phone &&
-                loggedInUser.password == UserDefaultsManager.currentlyLoggedInAccount?.password {
-                navigate.proceedToHomeScreen()
             }
             
             } catch let registrationError as Errors.RegistrationError {
@@ -149,30 +152,26 @@ private extension LoginViewController {
 
 
 extension LoginViewController {
-    
-    private func clearAllTextfields() {
         
+    private func clearAllTextfields() {
         phoneNumberTextfield.text = nil
         passwordTextfield.text = nil
         confirmPasswordTextfield.text = nil
     }
     
     private func setTextfieldsDelegates() {
-
         phoneNumberTextfield.delegate = self
         passwordTextfield.delegate = self
         confirmPasswordTextfield.delegate = self
     }
     
     private func configureInitialView() {
-        
         segment = .register
         registrationButton.isAccesible(isAccesible: false)
         errorLabel.isHidden = true
     }
     
     private func configureViewForSegment() {
-        
         switch segment {
         case .login:
             print("LOGIN SEGMENT")
@@ -190,7 +189,6 @@ extension LoginViewController {
     }
     
     private func configureCurrencyAccountDropdownSection() {
-        
         dropdown.anchorView = dropdown
         dropdown.dataSource = accountCurrencyValues
         dropdown.bottomOffset = CGPoint(x: 10, y: 110)
@@ -202,11 +200,29 @@ extension LoginViewController {
         dropdown.selectionAction = { (index: Int, item: String) in
             self.currencyAccountLabel.text = self.accountCurrencyValues[index]
             self.currencyAccountLabel.textColor = .black
+            self.onCurrencyAccountChanged(index)
         }
     }
     
+    private func onCurrencyAccountChanged(_ index: Int) {
+        switch index {
+        case 0:
+            print("EUR SELECTED \((0))")
+            return selectedAccountCurrency = AccountCurrency.eur.rawValue
+        case 1:
+            print("USD SELECTED \((1))")
+            return selectedAccountCurrency = AccountCurrency.usd.rawValue
+        case 2:
+            print("gBP SELECTED \((2))")
+            return selectedAccountCurrency = AccountCurrency.gbp.rawValue
+        default:
+            print("NOTHING SELECTED, default setting applies")
+            selectedAccountCurrency = AccountCurrency.eur.rawValue
+        }
+    }
+    
+    
     private func configureSubmitButton() {
-        
         let allTextFieldsFilled = availableTextFields.allSatisfy { textField in
             guard let text = textField.text else { return false }
             return !text.isEmpty
@@ -230,4 +246,11 @@ extension LoginViewController {
         errorLabel.text = message
         errorLabel.isHidden = false
     }
+    
+    func proceedToHomeScreen() {
+        let homeScreen = HomeViewController()
+        homeScreen.modalPresentationStyle = .fullScreen
+        present(homeScreen, animated: true)
+    }
+    
 }

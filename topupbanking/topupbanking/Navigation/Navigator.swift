@@ -9,19 +9,19 @@ class Navigator: UIViewController {
     
     func proceedToHomeScreen() {
         let homeScreen = HomeViewController()
-        modalPresentationStyle = .fullScreen
+        homeScreen.modalPresentationStyle = .fullScreen
         present(homeScreen, animated: true)
     }
     
     func proceedToLoginScreen() {
         let loginScreen = LoginViewController()
-        modalPresentationStyle = .fullScreen
+        loginScreen.modalPresentationStyle = .fullScreen
         present(loginScreen, animated: true)
     }
     
     func proceedToTransactionScreen() {
         let transactionScreen = TransactionViewController()
-        modalPresentationStyle = .fullScreen
+        transactionScreen.modalPresentationStyle = .fullScreen
         present(transactionScreen, animated: true)
     }
 }
