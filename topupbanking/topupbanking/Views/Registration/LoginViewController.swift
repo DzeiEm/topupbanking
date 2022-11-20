@@ -25,7 +25,7 @@ class LoginViewController: UIViewController {
     
     @IBOutlet private weak var dropdownView: UIView!
     @IBOutlet private weak var dropdownButton: UIButton!
-    @IBOutlet private weak var countryLabel: UILabel!
+    @IBOutlet private weak var currencyAccountLabel: UILabel!
     @IBOutlet private weak var registrationTypeSegmentController: UISegmentedControl!
     @IBOutlet private weak var phoneNumberTextfield: UITextField!
     @IBOutlet private weak var passwordTextfield: UITextField!
@@ -53,7 +53,7 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func submitButtonTapped() {
-        //
+        loginOrRegister()
     }
     
     @IBAction func onSegmentControllerTypeChanged(_ sender: Any) {
@@ -78,6 +78,7 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setTextfieldsDelegates()
+        configureCurrencyAccountDropdownSection()
     }
     
 }
@@ -135,7 +136,7 @@ extension LoginViewController {
     }
     
     private func setTextfieldsDelegates() {
-        
+
         phoneNumberTextfield.delegate = self
         passwordTextfield.delegate = self
         confirmPasswordTextfield.delegate = self
@@ -154,9 +155,27 @@ extension LoginViewController {
         case .login:
             confirmPasswordTextfield.isHidden = true
             registrationButton.titleLabel?.text = SegmentTitle.Login.rawValue
+            dropdownView.isHidden = true
+            clearAllTextfields()
         case .register:
             confirmPasswordTextfield.isHidden = false
             registrationButton.titleLabel?.text = SegmentTitle.Register.rawValue
+            dropdownView.isHidden = false
+            clearAllTextfields()
+        }
+    }
+    
+    private func configureCurrencyAccountDropdownSection() {
+        
+        dropdown.anchorView = dropdown
+        dropdown.dataSource = accountCurrencyValues
+        dropdown.bottomOffset = CGPoint(x: 10, y: 120)
+        dropdown.width = 118
+        
+        dropdown.direction = .bottom
+        dropdown.selectionAction = { (index: Int, item: String) in
+            self.currencyAccountLabel.text = self.accountCurrencyValues[index]
+            self.currencyAccountLabel.textColor = .black
         }
     }
     

@@ -11,9 +11,10 @@ struct UserManager {
     }
     
     func register(phone: String?, password: String?, confirmPassword: String?) throws {
+        
         try LoginViewModel.checkIstextfieldsAreNotEmpty(phoneNo: phone, password: password, confirmPassword: confirmPassword)
         try LoginViewModel.checkIsPhoneNumberUnique(phone)
-        try LoginViewModel.checkIsPasswordSecure(password: password ?? "")
+        try LoginViewModel.checkIsPasswordSecure(password: password)
         try LoginViewModel.checkIsPasswordMatches(password: password, confirmPassword: confirmPassword)
     }
 }

@@ -10,7 +10,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
     ) -> Bool {
         window = UIWindow()
-        window?.rootViewController = RegistrationViewController()
+        window?.rootViewController = LoginViewController()
         window?.makeKeyAndVisible()
         return true
     }
