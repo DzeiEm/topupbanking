@@ -7,4 +7,5 @@ struct User: Codable {
     var password: String
     var confirmPassword: String?
     var accountCurrency: String?
+    var balance: Double?
 }

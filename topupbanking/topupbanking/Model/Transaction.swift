@@ -2,6 +2,8 @@
 import Foundation
 
 struct Transaction {
-    let senderName: String
+    let senderId: String
+    let receiverId: String
     let amount: Double
+    
 }
