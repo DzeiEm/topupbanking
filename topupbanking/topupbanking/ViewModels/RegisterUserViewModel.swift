@@ -18,7 +18,8 @@ final class RegisterUserViewModel {
     
     
     func registerUser(id: String?, phone: String?, password: String?, accountCurrency: String?, balance: String?) {
-        guard let id = id,
+        guard
+              let id = id,
               let phone = phone,
               let password = password,
               let accountCurrency = accountCurrency,
@@ -40,6 +41,17 @@ final class RegisterUserViewModel {
                                      accountCurrency: accountCurrency,
                                      balance: balance)
         
+        apiManager.registerUser(user) { [weak self] result in
+            self?.isLoading.send(false)
+            
+            switch result {
+            case .success:
+                self?.onSuccess?()
+            case .failure(let error):
+                self?.onFailure?(error.description)
+            }
+            
+        }
         
     }
 }

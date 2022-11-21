@@ -17,7 +17,7 @@ class LoginViewModel {
             throw Errors.General.emptyFields
         }
         
-        return RegisterUserModel(phone: phoneNo, password: password)
+        return RegisterUserModel(id: <#T##String#>, phone: <#T##String#>, password: <#T##String#>, accountCurrency: <#T##String#>, balance: <#T##String#>)
     }
     
     static func setAccountCurrency(account: String?) -> String {

@@ -17,13 +17,15 @@ struct APIManager {
         static let content = "application/json"
     }
     
+
     private var keychain: KeychainHelper { KeychainHelper() }
     private let decoder = JSONDecoder()
     private let encoder = JSONEncoder()
     
-    private let userManager = UserManager
+    let userManager: UserManager
+   
     private var userIdentifier: Int? {
-        
+        userManager.getUserId()
     }
     
     private var urlSession: URLSession {
@@ -44,15 +46,42 @@ extension APIManager {
             return
         }
         
-        guard let = APIEndpoint
-                       
-                        
-                    
+        guard let url = APIEndpoint.registerUser.url  else {
+            completion(.failure(APIError.invalidURL))
+            return
+        }
+        
+        let registerUserRequest = RegisterUserRequest(id: String(userIdentifier),
+                                                      phone: user.phone,
+                                                      password: user.password,
+                                                      accountCurrency: user.accountCurrency,
+                                                      balance: user.balance)
+        
+        guard let requestBodyJSON = try? encoder.encode(registerUserRequest) else {
+            completion(.failure(APIError.serializationError))
+            return
+        }
+        
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = HTTPMethod.post
+        urlRequest.httpBody = requestBodyJSON
+        
+        urlSession.dataTask(with: urlRequest,
+                            completionHandler: { data, _, error in
+            
+            if let error = error {
+                completion(.failure(APIError.requestError(reason: error.localizedDescription)))
+            }
+            guard let data = data,
+                  let userResponse = try? decoder.decode(UserResponse.self, from: data)
+            else {
+                completion(.failure(.parsingError))
+            }
+            completion(.success(userResponse.id))
+        }).resume()
     }
     
     
-    
-
     func getUsers(completion: @escaping (Result<[RegisterUserModel], APIError>) -> Void) {
         
         guard let url = APIEndpoint.getUser.url else {
@@ -70,7 +99,7 @@ extension APIManager {
                 completion(.failure(APIError.parsingError))
                 return
             }
-//            completion(.success(user.compactMap({ user in
+            completion(.success(user.compactMap({ user in
                // TODO: User model
             })))
         }).resume()
@@ -92,7 +121,7 @@ extension APIManager {
                 completion(.failure(APIError.parsingError))
                 return
             }
-            //completion(.success(allTransactions.compactMap({ transaction in
+            completion(.success(allTransactions.compactMap({ transaction in
            // TODO: Transaction model
                 
             })))

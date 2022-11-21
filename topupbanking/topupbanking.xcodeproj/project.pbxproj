@@ -48,6 +48,7 @@
 		CEBF69AC292A7C3A009E96F9 /* AccountResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF69AB292A7C3A009E96F9 /* AccountResponse.swift */; };
 		CEBF69AE292BCB13009E96F9 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF69AD292BCB13009E96F9 /* Account.swift */; };
 		CEBF69B0292BCD47009E96F9 /* RegisterUserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF69AF292BCD47009E96F9 /* RegisterUserViewModel.swift */; };
+		CEBF69B7292BE2C0009E96F9 /* RegisterUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF69B6292BE2C0009E96F9 /* RegisterUserRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +116,7 @@
 		CEBF69AB292A7C3A009E96F9 /* AccountResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountResponse.swift; sourceTree = "<group>"; };
 		CEBF69AD292BCB13009E96F9 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		CEBF69AF292BCD47009E96F9 /* RegisterUserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUserViewModel.swift; sourceTree = "<group>"; };
+		CEBF69B6292BE2C0009E96F9 /* RegisterUserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUserRequest.swift; sourceTree = "<group>"; };
 		D12EF1FBC2B985CDB474127D /* Pods-topupbanking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-topupbanking.release.xcconfig"; path = "Target Support Files/Pods-topupbanking/Pods-topupbanking.release.xcconfig"; sourceTree = "<group>"; };
 		EA98A83BA297BBEDDF6A1306 /* Pods_topupbanking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_topupbanking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBBBEDC5462ABF31F4147B1D /* Pods_topupbankingTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_topupbankingTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -292,6 +294,7 @@
 		CEA744E9291C2EE8009350A0 /* Requests */ = {
 			isa = PBXGroup;
 			children = (
+				CEBF69B6292BE2C0009E96F9 /* RegisterUserRequest.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -681,6 +684,7 @@
 				CEA744FD29210CE5009350A0 /* LoginViewModel.swift in Sources */,
 				CEA744B1291C26B0009350A0 /* SceneDelegate.swift in Sources */,
 				CEBF69A6292A7AEC009E96F9 /* Transaction.swift in Sources */,
+				CEBF69B7292BE2C0009E96F9 /* RegisterUserRequest.swift in Sources */,
 				CEA8F56C292903EA0021506B /* CustomButton.swift in Sources */,
 				CEA744B9291C26B0009350A0 /* topupbanking.xcdatamodeld in Sources */,
 				CEA7451A2921285F009350A0 /* TransactionViewController.swift in Sources */,
