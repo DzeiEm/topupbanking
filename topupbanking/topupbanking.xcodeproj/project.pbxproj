@@ -49,6 +49,12 @@
 		CEBF69AE292BCB13009E96F9 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF69AD292BCB13009E96F9 /* Account.swift */; };
 		CEBF69B0292BCD47009E96F9 /* RegisterUserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF69AF292BCD47009E96F9 /* RegisterUserViewModel.swift */; };
 		CEBF69B7292BE2C0009E96F9 /* RegisterUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF69B6292BE2C0009E96F9 /* RegisterUserRequest.swift */; };
+		CEC72423292C06E20009C8B9 /* TransferMoneyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEC72422292C06E20009C8B9 /* TransferMoneyView.xib */; };
+		CEC72425292C09E90009C8B9 /* TransactionHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC72424292C09E90009C8B9 /* TransactionHistoryViewController.swift */; };
+		CEC72427292C0A340009C8B9 /* TransferMoneyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC72426292C0A340009C8B9 /* TransferMoneyViewController.swift */; };
+		CEC7242A292C0AB70009C8B9 /* TransactionHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC72429292C0AB60009C8B9 /* TransactionHistoryCell.swift */; };
+		CEC7242C292C0AFD0009C8B9 /* TransactionHistoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEC7242B292C0AFD0009C8B9 /* TransactionHistoryCell.xib */; };
+		CEDB31EE292C068700208AF5 /* TransactionHistoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEDB31ED292C068700208AF5 /* TransactionHistoryView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,6 +123,12 @@
 		CEBF69AD292BCB13009E96F9 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		CEBF69AF292BCD47009E96F9 /* RegisterUserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUserViewModel.swift; sourceTree = "<group>"; };
 		CEBF69B6292BE2C0009E96F9 /* RegisterUserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUserRequest.swift; sourceTree = "<group>"; };
+		CEC72422292C06E20009C8B9 /* TransferMoneyView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransferMoneyView.xib; sourceTree = "<group>"; };
+		CEC72424292C09E90009C8B9 /* TransactionHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionHistoryViewController.swift; sourceTree = "<group>"; };
+		CEC72426292C0A340009C8B9 /* TransferMoneyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferMoneyViewController.swift; sourceTree = "<group>"; };
+		CEC72429292C0AB60009C8B9 /* TransactionHistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionHistoryCell.swift; sourceTree = "<group>"; };
+		CEC7242B292C0AFD0009C8B9 /* TransactionHistoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionHistoryCell.xib; sourceTree = "<group>"; };
+		CEDB31ED292C068700208AF5 /* TransactionHistoryView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionHistoryView.xib; sourceTree = "<group>"; };
 		D12EF1FBC2B985CDB474127D /* Pods-topupbanking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-topupbanking.release.xcconfig"; path = "Target Support Files/Pods-topupbanking/Pods-topupbanking.release.xcconfig"; sourceTree = "<group>"; };
 		EA98A83BA297BBEDDF6A1306 /* Pods_topupbanking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_topupbanking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBBBEDC5462ABF31F4147B1D /* Pods_topupbankingTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_topupbankingTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -251,6 +263,8 @@
 		CEA744E5291C2E93009350A0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				CEBF69B9292C062B009E96F9 /* Transaction History */,
+				CEBF69B8292C0616009E96F9 /* TransferMoney */,
 				CEA8F56A292903C70021506B /* CustomElements */,
 				CEA7451829212846009350A0 /* Transaction */,
 				CEA744ED291C338B009350A0 /* Home */,
@@ -406,6 +420,50 @@
 			path = Xib;
 			sourceTree = "<group>";
 		};
+		CEBF69B8292C0616009E96F9 /* TransferMoney */ = {
+			isa = PBXGroup;
+			children = (
+				CEDB31F2292C06A500208AF5 /* Xib */,
+				CEC72426292C0A340009C8B9 /* TransferMoneyViewController.swift */,
+			);
+			path = TransferMoney;
+			sourceTree = "<group>";
+		};
+		CEBF69B9292C062B009E96F9 /* Transaction History */ = {
+			isa = PBXGroup;
+			children = (
+				CEC72428292C0A8D0009C8B9 /* cell */,
+				CEDB31F1292C069F00208AF5 /* Xib */,
+				CEC72424292C09E90009C8B9 /* TransactionHistoryViewController.swift */,
+			);
+			path = "Transaction History";
+			sourceTree = "<group>";
+		};
+		CEC72428292C0A8D0009C8B9 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				CEC72429292C0AB60009C8B9 /* TransactionHistoryCell.swift */,
+			);
+			path = cell;
+			sourceTree = "<group>";
+		};
+		CEDB31F1292C069F00208AF5 /* Xib */ = {
+			isa = PBXGroup;
+			children = (
+				CEDB31ED292C068700208AF5 /* TransactionHistoryView.xib */,
+				CEC7242B292C0AFD0009C8B9 /* TransactionHistoryCell.xib */,
+			);
+			path = Xib;
+			sourceTree = "<group>";
+		};
+		CEDB31F2292C06A500208AF5 /* Xib */ = {
+			isa = PBXGroup;
+			children = (
+				CEC72422292C06E20009C8B9 /* TransferMoneyView.xib */,
+			);
+			path = Xib;
+			sourceTree = "<group>";
+		};
 		FEB625E1E6F09A36108FA3BA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -533,9 +591,12 @@
 			files = (
 				CEA744BB291C26B2009350A0 /* Assets.xcassets in Resources */,
 				CEA744F1291C35F8009350A0 /* SpinnerView.xib in Resources */,
+				CEC72423292C06E20009C8B9 /* TransferMoneyView.xib in Resources */,
 				CEA8F5672928DBA70021506B /* LoginView.xib in Resources */,
 				CEA7451C2921287E009350A0 /* TransactionView.xib in Resources */,
+				CEC7242C292C0AFD0009C8B9 /* TransactionHistoryCell.xib in Resources */,
 				CEA7451729211E36009350A0 /* TransactionCell.xib in Resources */,
+				CEDB31EE292C068700208AF5 /* TransactionHistoryView.xib in Resources */,
 				CEA744EB291C2F78009350A0 /* LaunchScreen.xib in Resources */,
 				CEA8F5642922CDB30021506B /* BalanceCellView.xib in Resources */,
 				CEA7451029211B01009350A0 /* HomeView.xib in Resources */,
@@ -669,6 +730,7 @@
 				CE1003FC292924AE00E2526A /* Navigator.swift in Sources */,
 				CEBF69AA292A7C14009E96F9 /* UserResponse.swift in Sources */,
 				CEA744AF291C26B0009350A0 /* AppDelegate.swift in Sources */,
+				CEC72427292C0A340009C8B9 /* TransferMoneyViewController.swift in Sources */,
 				CEA7450129211245009350A0 /* KeychainHelper.swift in Sources */,
 				CEBF69AC292A7C3A009E96F9 /* AccountResponse.swift in Sources */,
 				CEA7451229211B19009350A0 /* HomeViewController.swift in Sources */,
@@ -678,6 +740,7 @@
 				CEA8F5692928E6CB0021506B /* LoginViewController.swift in Sources */,
 				CEA7450B292114E8009350A0 /* APIEndpoint.swift in Sources */,
 				CEA8F5622922CD790021506B /* BalanceCell.swift in Sources */,
+				CEC72425292C09E90009C8B9 /* TransactionHistoryViewController.swift in Sources */,
 				CEBF69A4292A50C6009E96F9 /* UserManager.swift in Sources */,
 				CEA74509292114BE009350A0 /* APIError.swift in Sources */,
 				CEA744FB29210AE5009350A0 /* RegistrationViewModel.swift in Sources */,
@@ -687,6 +750,7 @@
 				CEBF69B7292BE2C0009E96F9 /* RegisterUserRequest.swift in Sources */,
 				CEA8F56C292903EA0021506B /* CustomButton.swift in Sources */,
 				CEA744B9291C26B0009350A0 /* topupbanking.xcdatamodeld in Sources */,
+				CEC7242A292C0AB70009C8B9 /* TransactionHistoryCell.swift in Sources */,
 				CEA7451A2921285F009350A0 /* TransactionViewController.swift in Sources */,
 				CEBF69AE292BCB13009E96F9 /* Account.swift in Sources */,
 				CEBF69A8292A7BD7009E96F9 /* TransactionsResponse.swift in Sources */,
