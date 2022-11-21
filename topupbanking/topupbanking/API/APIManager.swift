@@ -6,6 +6,7 @@ struct APIManager {
     private enum HTTPMethod {
         static let get = "GET"
         static let post = "POST"
+        static let delete = "DELETE"
     }
     
     private enum HeaderKey {
@@ -20,6 +21,11 @@ struct APIManager {
     private let decoder = JSONDecoder()
     private let encoder = JSONEncoder()
     
+    private let userManager = UserManager
+    private var userIdentifier: Int? {
+        
+    }
+    
     private var urlSession: URLSession {
         let sessionConfiguration = URLSessionConfiguration.default
         sessionConfiguration.httpAdditionalHeaders = [
@@ -31,7 +37,23 @@ struct APIManager {
 
 extension APIManager {
     
-    func getUsers(completion: @escaping (Result<[User], APIError>) -> Void) {
+    func registerUser(_ user: RegisterUserModel, completion: @escaping(Result<Int, APIError>) -> Void) {
+        
+        guard let userIdentifier = userIdentifier else {
+            completion(.failure(APIError.serializationError))
+            return
+        }
+        
+        guard let = APIEndpoint
+                       
+                        
+                    
+    }
+    
+    
+    
+
+    func getUsers(completion: @escaping (Result<[RegisterUserModel], APIError>) -> Void) {
         
         guard let url = APIEndpoint.getUser.url else {
             completion(.failure(APIError.invalidURL))
@@ -48,8 +70,8 @@ extension APIManager {
                 completion(.failure(APIError.parsingError))
                 return
             }
-            completion(.success(user.compactMap({ user in
-               User(phone: "User name", password: "User password")
+//            completion(.success(user.compactMap({ user in
+               // TODO: User model
             })))
         }).resume()
     }
@@ -70,10 +92,8 @@ extension APIManager {
                 completion(.failure(APIError.parsingError))
                 return
             }
-            completion(.success(allTransactions.compactMap({ transaction in
-               Transaction(
-                senderName: "Name",
-                amount: 10)
+            //completion(.success(allTransactions.compactMap({ transaction in
+           // TODO: Transaction model
                 
             })))
         }).resume()

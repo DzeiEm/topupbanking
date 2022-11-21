@@ -26,7 +26,7 @@
 		CEA744FF29210E03009350A0 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA744FE29210E03009350A0 /* APIManager.swift */; };
 		CEA7450129211245009350A0 /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA7450029211245009350A0 /* KeychainHelper.swift */; };
 		CEA74504292112AE009350A0 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CEA74503292112AE009350A0 /* KeychainSwift */; };
-		CEA7450729211319009350A0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA7450629211319009350A0 /* User.swift */; };
+		CEA7450729211319009350A0 /* RegisterUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA7450629211319009350A0 /* RegisterUserModel.swift */; };
 		CEA74509292114BE009350A0 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA74508292114BE009350A0 /* APIError.swift */; };
 		CEA7450B292114E8009350A0 /* APIEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA7450A292114E8009350A0 /* APIEndpoint.swift */; };
 		CEA7451029211B01009350A0 /* HomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEA7450F29211B01009350A0 /* HomeView.xib */; };
@@ -46,6 +46,8 @@
 		CEBF69A8292A7BD7009E96F9 /* TransactionsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF69A7292A7BD7009E96F9 /* TransactionsResponse.swift */; };
 		CEBF69AA292A7C14009E96F9 /* UserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF69A9292A7C14009E96F9 /* UserResponse.swift */; };
 		CEBF69AC292A7C3A009E96F9 /* AccountResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF69AB292A7C3A009E96F9 /* AccountResponse.swift */; };
+		CEBF69AE292BCB13009E96F9 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF69AD292BCB13009E96F9 /* Account.swift */; };
+		CEBF69B0292BCD47009E96F9 /* RegisterUserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF69AF292BCD47009E96F9 /* RegisterUserViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,7 +93,7 @@
 		CEA744FC29210CE5009350A0 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		CEA744FE29210E03009350A0 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		CEA7450029211245009350A0 /* KeychainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelper.swift; sourceTree = "<group>"; };
-		CEA7450629211319009350A0 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		CEA7450629211319009350A0 /* RegisterUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUserModel.swift; sourceTree = "<group>"; };
 		CEA74508292114BE009350A0 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		CEA7450A292114E8009350A0 /* APIEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoint.swift; sourceTree = "<group>"; };
 		CEA7450F29211B01009350A0 /* HomeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeView.xib; sourceTree = "<group>"; };
@@ -111,6 +113,8 @@
 		CEBF69A7292A7BD7009E96F9 /* TransactionsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsResponse.swift; sourceTree = "<group>"; };
 		CEBF69A9292A7C14009E96F9 /* UserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponse.swift; sourceTree = "<group>"; };
 		CEBF69AB292A7C3A009E96F9 /* AccountResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountResponse.swift; sourceTree = "<group>"; };
+		CEBF69AD292BCB13009E96F9 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
+		CEBF69AF292BCD47009E96F9 /* RegisterUserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUserViewModel.swift; sourceTree = "<group>"; };
 		D12EF1FBC2B985CDB474127D /* Pods-topupbanking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-topupbanking.release.xcconfig"; path = "Target Support Files/Pods-topupbanking/Pods-topupbanking.release.xcconfig"; sourceTree = "<group>"; };
 		EA98A83BA297BBEDDF6A1306 /* Pods_topupbanking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_topupbanking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBBBEDC5462ABF31F4147B1D /* Pods_topupbankingTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_topupbankingTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -248,7 +252,7 @@
 				CEA8F56A292903C70021506B /* CustomElements */,
 				CEA7451829212846009350A0 /* Transaction */,
 				CEA744ED291C338B009350A0 /* Home */,
-				CEA744EC291C337E009350A0 /* Registration */,
+				CEA744EC291C337E009350A0 /* LoginRegister */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -256,6 +260,7 @@
 		CEA744E6291C2EA4009350A0 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				CEBF69AF292BCD47009E96F9 /* RegisterUserViewModel.swift */,
 				CEA744FA29210AE5009350A0 /* RegistrationViewModel.swift */,
 				CEA744FC29210CE5009350A0 /* LoginViewModel.swift */,
 			);
@@ -291,22 +296,22 @@
 			path = Requests;
 			sourceTree = "<group>";
 		};
-		CEA744EC291C337E009350A0 /* Registration */ = {
+		CEA744EC291C337E009350A0 /* LoginRegister */ = {
 			isa = PBXGroup;
 			children = (
+				CEBF69B2292BD281009E96F9 /* XIb */,
 				CEA744F82921077A009350A0 /* Errors.swift */,
-				CEA8F5662928DBA70021506B /* LoginView.xib */,
 				CEA8F5682928E6CB0021506B /* LoginViewController.swift */,
 			);
-			path = Registration;
+			path = LoginRegister;
 			sourceTree = "<group>";
 		};
 		CEA744ED291C338B009350A0 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				CEBF69B3292BD296009E96F9 /* Xib */,
 				CEA7451329211DAB009350A0 /* TransactionCell */,
 				CEA8F5652922D0800021506B /* BalanceCell */,
-				CEA7450F29211B01009350A0 /* HomeView.xib */,
 				CEA7451129211B19009350A0 /* HomeViewController.swift */,
 			);
 			path = Home;
@@ -315,8 +320,9 @@
 		CEA745052921130B009350A0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				CEA7450629211319009350A0 /* User.swift */,
+				CEA7450629211319009350A0 /* RegisterUserModel.swift */,
 				CEBF69A5292A7AEC009E96F9 /* Transaction.swift */,
+				CEBF69AD292BCB13009E96F9 /* Account.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -333,8 +339,8 @@
 		CEA7451329211DAB009350A0 /* TransactionCell */ = {
 			isa = PBXGroup;
 			children = (
+				CEBF69B4292BD2A8009E96F9 /* Xib */,
 				CEA7451429211E14009350A0 /* TransactionCell.swift */,
-				CEA7451629211E36009350A0 /* TransactionCell.xib */,
 			);
 			path = TransactionCell;
 			sourceTree = "<group>";
@@ -351,7 +357,7 @@
 		CEA8F5652922D0800021506B /* BalanceCell */ = {
 			isa = PBXGroup;
 			children = (
-				CEA8F5632922CDB30021506B /* BalanceCellView.xib */,
+				CEBF69B5292BD2CC009E96F9 /* Xib */,
 				CEA8F5612922CD790021506B /* BalanceCell.swift */,
 			);
 			path = BalanceCell;
@@ -363,6 +369,38 @@
 				CEA8F56B292903EA0021506B /* CustomButton.swift */,
 			);
 			path = CustomElements;
+			sourceTree = "<group>";
+		};
+		CEBF69B2292BD281009E96F9 /* XIb */ = {
+			isa = PBXGroup;
+			children = (
+				CEA8F5662928DBA70021506B /* LoginView.xib */,
+			);
+			path = XIb;
+			sourceTree = "<group>";
+		};
+		CEBF69B3292BD296009E96F9 /* Xib */ = {
+			isa = PBXGroup;
+			children = (
+				CEA7450F29211B01009350A0 /* HomeView.xib */,
+			);
+			path = Xib;
+			sourceTree = "<group>";
+		};
+		CEBF69B4292BD2A8009E96F9 /* Xib */ = {
+			isa = PBXGroup;
+			children = (
+				CEA7451629211E36009350A0 /* TransactionCell.xib */,
+			);
+			path = Xib;
+			sourceTree = "<group>";
+		};
+		CEBF69B5292BD2CC009E96F9 /* Xib */ = {
+			isa = PBXGroup;
+			children = (
+				CEA8F5632922CDB30021506B /* BalanceCellView.xib */,
+			);
+			path = Xib;
 			sourceTree = "<group>";
 		};
 		FEB625E1E6F09A36108FA3BA /* Frameworks */ = {
@@ -631,6 +669,7 @@
 				CEA7450129211245009350A0 /* KeychainHelper.swift in Sources */,
 				CEBF69AC292A7C3A009E96F9 /* AccountResponse.swift in Sources */,
 				CEA7451229211B19009350A0 /* HomeViewController.swift in Sources */,
+				CEBF69B0292BCD47009E96F9 /* RegisterUserViewModel.swift in Sources */,
 				CEA7451529211E14009350A0 /* TransactionCell.swift in Sources */,
 				CEA744FF29210E03009350A0 /* APIManager.swift in Sources */,
 				CEA8F5692928E6CB0021506B /* LoginViewController.swift in Sources */,
@@ -645,10 +684,11 @@
 				CEA8F56C292903EA0021506B /* CustomButton.swift in Sources */,
 				CEA744B9291C26B0009350A0 /* topupbanking.xcdatamodeld in Sources */,
 				CEA7451A2921285F009350A0 /* TransactionViewController.swift in Sources */,
+				CEBF69AE292BCB13009E96F9 /* Account.swift in Sources */,
 				CEBF69A8292A7BD7009E96F9 /* TransactionsResponse.swift in Sources */,
 				CEA744F92921077A009350A0 /* Errors.swift in Sources */,
 				CEBF69A2292A4CAA009E96F9 /* UserDefaultsHelper.swift in Sources */,
-				CEA7450729211319009350A0 /* User.swift in Sources */,
+				CEA7450729211319009350A0 /* RegisterUserModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

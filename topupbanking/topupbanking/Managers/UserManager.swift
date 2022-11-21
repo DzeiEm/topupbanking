@@ -1,12 +1,15 @@
 
 import Foundation
 
-final class UserManager {
+struct UserManager {
     
-    static var users: [User] = []
+    let keychain: KeychainHelper
+    private let userDefaults = UserDefaults.standard
+    
+    static var users: [RegisterUserModel] = []
     static var curencyAccount: String?
     
-    static var loggedInAccount: User? {
+    static var loggedInAccount: RegisterUserModel? {
         willSet(newUser) {
             print("About to set username", newUser?.phone ?? "nil" )
         }
@@ -14,6 +17,18 @@ final class UserManager {
             print("About to set username", loggedInAccount?.phone ?? "nil" )
         }
     }
+    
+    func getUserId() -> Int? {
+        guard let userId = KeychainHelper.keychain.get(KeychainHelper.Key.Credentials.userIdentifier.rawValue) else {
+            return nil
+        }
+        return Int(userId)
+    }
+    
+    func setUserId(_ userId: Int) {
+        KeychainHelper.keychain.set(String(userId), forKey: KeychainHelper.Key.Credentials.userIdentifier.rawValue)
+    }
+    
     
     func login(phone: String?, password: String?) throws {
         var user = try LoginViewModel.checkIsNotEmpty(phone, password: password)

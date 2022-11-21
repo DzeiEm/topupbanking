@@ -15,3 +15,12 @@ class KeychainHelper {
     }
 }
 
+extension KeychainHelper {
+    
+    enum Key {
+        enum Credentials: String {
+            case userIdentifier
+            case userToken
+        }
+    }
+}

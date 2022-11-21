@@ -14,8 +14,8 @@ class UserDefaultsHelper {
         UserDefaults.standard
     }
     
-    static func saveUser(_ user: User) {
-        var savedUsers: [User] = []
+    static func saveUser(_ user: RegisterUserModel) {
+        var savedUsers: [RegisterUserModel] = []
         savedUsers = users ?? []
         KeychainHelper.savePassword(user.password, phoneNo: user.phone)
        
@@ -28,9 +28,9 @@ class UserDefaultsHelper {
 
 extension UserDefaultsHelper {
     
-    static var users: [User]? {
+    static var users: [RegisterUserModel]? {
         get {
-            object(forKey: .users, type: [User].self) as! [User]?
+            object(forKey: .users, type: [RegisterUserModel].self) as! [RegisterUserModel]?
         }
         set {
             saveObject(object: newValue, forKey: .users)

@@ -7,7 +7,7 @@ class LoginViewModel {
     
     //MARK: - phone number
     
-    static func checkIsNotEmpty(_ phoneNo: String?, password: String?) throws -> User {
+    static func checkIsNotEmpty(_ phoneNo: String?, password: String?) throws -> RegisterUserModel {
         
         guard let phoneNo = phoneNo,
               let password = password,
@@ -17,7 +17,7 @@ class LoginViewModel {
             throw Errors.General.emptyFields
         }
         
-        return User(phone: phoneNo, password: password)
+        return RegisterUserModel(phone: phoneNo, password: password)
     }
     
     static func setAccountCurrency(account: String?) -> String {
@@ -44,7 +44,7 @@ extension LoginViewModel {
     
     static func checkIstextfieldsAreNotEmpty(phoneNo: String?,
                                              password: String?,
-                                             confirmPassword: String?) throws -> User {
+                                             confirmPassword: String?) throws -> RegisterUserModel {
          
         guard let phoneNo = phoneNo,
               let password = password,
@@ -55,7 +55,7 @@ extension LoginViewModel {
             
             throw Errors.General.emptyFields
         }
-         return User(phone: phoneNo, password: password, confirmPassword: confirmPassword)
+         return RegisterUserModel(phone: phoneNo, password: password, confirmPassword: confirmPassword)
      }
     
     static func checkIsPhoneNumberUnique(_ phoneNo: String?) -> Bool {

@@ -5,7 +5,7 @@ final class RegistrationViewModel {
    
    static func checkIstextfieldsAreNotEmpty(phoneNo: String?,
                                             password: String?,
-                                            confirmPassword: String?) throws -> User {
+                                            confirmPassword: String?) throws -> RegisterUserModel {
         
        guard let phoneNo = phoneNo,
              let password = password,
@@ -16,7 +16,7 @@ final class RegistrationViewModel {
            
            throw Errors.General.emptyFields
        }
-        return User(phone: phoneNo, password: password, confirmPassword: confirmPassword)
+        return RegisterUserModel(phone: phoneNo, password: password, confirmPassword: confirmPassword)
     }
     
     static func checkIsPhoneNumberUnique(_ phoneNo: String) -> Bool {

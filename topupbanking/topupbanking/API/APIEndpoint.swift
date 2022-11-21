@@ -2,12 +2,16 @@
 import Foundation
 
 enum APIEndpoint {
+    
+    case registerUser
     case getUser
     case getAccount
     case getTransactions
     
     var url: URL? {
         switch self {
+        case .registerUser:
+            return makeURL(endpoint: "user")
         case .getUser:
             return makeURL(endpoint: "user")
         case .getAccount:
