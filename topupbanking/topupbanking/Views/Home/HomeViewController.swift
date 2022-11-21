@@ -14,13 +14,11 @@ class HomeViewController: UIViewController {
     
     // MARK: - AUTLETS
     @IBAction func transactionHistoryButtonTapped() {
-     
-        print("Transactions button tapped")
+      proceedToTransactionHistoryScreen()
     }
     
     @IBAction func transferMoneyButtonTapped() {
-        
-        print("Transfer money tapped")
+        proceedToTransferMoneyScreen()
     }
     
     
@@ -38,5 +36,20 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         historyButtonLabel.titleLabel?.text = ButtonTitle.history.rawValue
         transferMoneyButtonLabel.titleLabel?.text = ButtonTitle.transfer.rawValue
+    }
+}
+
+extension HomeViewController {
+    
+    func proceedToTransactionHistoryScreen() {
+        let historyScreen = TransactionHistoryViewController()
+        historyScreen.modalPresentationStyle = .fullScreen
+        present(historyScreen, animated: true, completion: nil)
+    }
+    
+    func proceedToTransferMoneyScreen() {
+        let transferMoneyScreen = TransferMoneyViewControlller()
+        transferMoneyScreen.modalPresentationStyle = .fullScreen
+        present(transferMoneyScreen, animated: true, completion: nil)
     }
 }

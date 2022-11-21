@@ -443,6 +443,7 @@
 			isa = PBXGroup;
 			children = (
 				CEC72429292C0AB60009C8B9 /* TransactionHistoryCell.swift */,
+				CEC7242B292C0AFD0009C8B9 /* TransactionHistoryCell.xib */,
 			);
 			path = cell;
 			sourceTree = "<group>";
@@ -451,7 +452,6 @@
 			isa = PBXGroup;
 			children = (
 				CEDB31ED292C068700208AF5 /* TransactionHistoryView.xib */,
-				CEC7242B292C0AFD0009C8B9 /* TransactionHistoryCell.xib */,
 			);
 			path = Xib;
 			sourceTree = "<group>";
