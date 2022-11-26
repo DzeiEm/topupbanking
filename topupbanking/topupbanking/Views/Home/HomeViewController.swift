@@ -3,14 +3,16 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
-    enum ButtonTitle: String {
-        case transfer = "Transfer money"
-        case history = "History"
+    enum ScreenTitles: String {
+        case transferButtonLabel = "Transfer money"
+        case historyButtonLabel = "History"
+        case recentTransactionTableViewHeader = "Recent transactions"
     }
     
     // MARK: - OUTLETS
     @IBOutlet weak var historyButtonLabel: UIButton!
     @IBOutlet weak var transferMoneyButtonLabel: UIButton!
+    @IBOutlet weak var transactionTableHeader: UILabel!
     
     // MARK: - AUTLETS
     @IBAction func transactionHistoryButtonTapped() {
@@ -21,21 +23,19 @@ class HomeViewController: UIViewController {
         proceedToTransferMoneyScreen()
     }
     
-    
     @IBAction func logoutBUttonTapped() {
-        
-        print("LOGOU BUTTON TAPPED")
-        let loginScreen = LoginViewController()
-        loginScreen.modalPresentationStyle = .fullScreen
-        present(loginScreen, animated: true, completion: nil)
+        logOut()
     }
     
     // MARK: - Life cycle
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        historyButtonLabel.titleLabel?.text = ButtonTitle.history.rawValue
-        transferMoneyButtonLabel.titleLabel?.text = ButtonTitle.transfer.rawValue
+        historyButtonLabel.titleLabel?.text = ScreenTitles.historyButtonLabel.rawValue
+        transferMoneyButtonLabel.titleLabel?.text = ScreenTitles.transferButtonLabel.rawValue
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        transactionTableHeader.text = ScreenTitles.recentTransactionTableViewHeader.rawValue
     }
 }
 
@@ -51,5 +51,11 @@ extension HomeViewController {
         let transferMoneyScreen = TransferMoneyViewControlller()
         transferMoneyScreen.modalPresentationStyle = .fullScreen
         present(transferMoneyScreen, animated: true, completion: nil)
+    }
+    
+    func logOut() {
+        let loginScreen = LoginViewController()
+        loginScreen.modalPresentationStyle = .fullScreen
+        present(loginScreen, animated: true, completion: nil)
     }
 }

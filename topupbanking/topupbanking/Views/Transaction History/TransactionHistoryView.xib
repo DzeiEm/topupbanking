@@ -10,6 +10,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TransactionHistoryViewController" customModule="topupbanking" customModuleProvider="target">
             <connections>
+                <outlet property="screenLabel" destination="j8N-KP-XWO" id="HTf-gc-f2T"/>
+                <outlet property="tableView" destination="eeC-BG-hzg" id="LvF-BO-u7Y"/>
                 <outlet property="view" destination="iN0-l3-epB" id="7Tv-SI-OfL"/>
             </connections>
         </placeholder>
