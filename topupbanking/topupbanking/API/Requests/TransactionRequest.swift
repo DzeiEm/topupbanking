@@ -1,13 +1,12 @@
 
-import UIKit
+import Foundation
 
-struct TransactionsdResponse: Decodable {
-    let id: String
+struct TransactionRequest: Encodable {
+    
     let senderId: String
     let receiverId: String
     let amount: Double
     let currency: String
     let createdOn: Double
     let reference: String
-    let balance: Double
 }

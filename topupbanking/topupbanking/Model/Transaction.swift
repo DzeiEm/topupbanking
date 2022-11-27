@@ -3,10 +3,9 @@ import Foundation
 
 struct Transaction {
     
-    let senderId: String
-    let receiverId: String
-    let transactionId: String
-    let amount: Double
-    let currency: String
-    let phone: String
+    var senderNo: String
+    var receiverNo: String
+    var transactionId: String
+    var amount: Double
+    var currency: String
 }

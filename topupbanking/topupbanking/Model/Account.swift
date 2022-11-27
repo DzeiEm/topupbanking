@@ -1,10 +1,9 @@
 
 import Foundation
 
-struct Account: Decodable {
+struct Account {
     
-    let id: String
-    let phone: String
-    let currency: String
-    let balance: Double
+    var phone: String
+    var currency: String
+    var balance: String
 }

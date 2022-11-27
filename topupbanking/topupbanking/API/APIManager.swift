@@ -39,7 +39,7 @@ struct APIManager {
 
 extension APIManager {
     
-    func registerUser(_ user: RegisterUserModel, completion: @escaping(Result<Int, APIError>) -> Void) {
+    func registerUser(_ user: User, completion: @escaping(Result<String, APIError>) -> Void) {
         
         guard let userIdentifier = userIdentifier else {
             completion(.failure(APIError.serializationError))
@@ -51,11 +51,7 @@ extension APIManager {
             return
         }
         
-        let registerUserRequest = RegisterUserRequest(id: String(userIdentifier),
-                                                      phone: user.phone,
-                                                      password: user.password,
-                                                      accountCurrency: user.accountCurrency,
-                                                      balance: user.balance)
+        let registerUserRequest = UserRequest(phoneNumber: user.phone, password: user.password)
         
         guard let requestBodyJSON = try? encoder.encode(registerUserRequest) else {
             completion(.failure(APIError.serializationError))
@@ -82,7 +78,7 @@ extension APIManager {
     }
     
     
-    func getUsers(completion: @escaping (Result<[RegisterUserModel], APIError>) -> Void) {
+    func getUsers(completion: @escaping (Result<[User], APIError>) -> Void) {
         
         guard let url = APIEndpoint.getUser.url else {
             completion(.failure(APIError.invalidURL))
@@ -99,9 +95,7 @@ extension APIManager {
                 completion(.failure(APIError.parsingError))
                 return
             }
-            completion(.success(user.compactMap({ user in
-               // TODO: User model
-            })))
+            completion(.success())
         }).resume()
     }
     

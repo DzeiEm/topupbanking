@@ -33,9 +33,12 @@ class LoginViewController: UIViewController {
     @IBOutlet private weak var errorLabel: UILabel!
     @IBOutlet private weak var registrationButton: CustomButton!
     
+    //MARK: - Variables
+    
     private var availableTextFields: [UITextField] = []
     let dropdown = DropDown()
-    let userManager = UserManager()
+    var userManager = UserManager()
+//    var accountManager = AccountManager()
     let loggedInUser = UserManager.loggedInAccount
     private var segment: SegmentMode = .register
     var selectedAccountCurrency: AccountCurrency.RawValue = ""
@@ -50,14 +53,10 @@ class LoginViewController: UIViewController {
     
     @IBAction func dropdownButtonTapped() {
         dropdown.show()
-        print("Dropdown tapped")
     }
     
-    
     @IBAction func submitButtonTapped() {
-        print("SUBMIT BUTTION TAPPED")
         loginOrRegister()
-        
     }
     
     @IBAction func onSegmentControllerTypeChanged(_ sender: Any) {
@@ -72,8 +71,6 @@ class LoginViewController: UIViewController {
         configureViewForSegment()
     }
     
-    
-    
     // MARK: - Life Cycle
     
     override func viewWillAppear(_ animated: Bool) {
@@ -86,11 +83,9 @@ class LoginViewController: UIViewController {
         setTextfieldsDelegates()
         configureCurrencyAccountDropdownSection()
     }
-    
 }
 
 private extension LoginViewController {
-    
     func loginOrRegister() {
         switch segment {
         case .login:
@@ -114,7 +109,7 @@ private extension LoginViewController {
                proceedToHomeScreen()
             }
             
-        } catch let loginError as Errors.LoginError {
+        } catch let loginError as Errors.Login {
             displayError(message: loginError.error)
         } catch let generalError as Errors.General {
             displayError(message: generalError.error)
@@ -127,7 +122,7 @@ private extension LoginViewController {
     func register() {
         do {
             try? userManager.register(phone: phoneNumberTextfield.text,
-                                          password: passwordTextfield.text,
+                                      password: passwordTextfield.text,
                                       confirmPassword: confirmPasswordTextfield.text,
                                       currency: selectedAccountCurrency)
             
@@ -137,11 +132,12 @@ private extension LoginViewController {
                 return
             }
             
-            } catch let registrationError as Errors.RegistrationError {
+            } catch let registrationError as Errors.Registration {
                 displayError(message: registrationError.error)
             } catch let generalError as Errors.General {
                 displayError(message: generalError.error)
-            } catch let securityError as Errors.Secure {
+            } catch let securityError as Errors.Registration {
+                // TODO: Secure identification needed
                     displayError(message: securityError.error)
             } catch {
                 displayError(message: Errors.General.unexpectedError.error)
@@ -221,7 +217,6 @@ extension LoginViewController {
         }
     }
     
-    
     private func configureSubmitButton() {
         let allTextFieldsFilled = availableTextFields.allSatisfy { textField in
             guard let text = textField.text else { return false }
@@ -231,14 +226,12 @@ extension LoginViewController {
     }
 }
 
-
 extension LoginViewController: UITextFieldDelegate {
     
     func textFieldDidChangeSelection(_ textField: UITextField) {
         configureSubmitButton()
     }
 }
-
 
 extension LoginViewController {
     
@@ -252,5 +245,4 @@ extension LoginViewController {
         homeScreen.modalPresentationStyle = .fullScreen
         present(homeScreen, animated: true)
     }
-    
 }

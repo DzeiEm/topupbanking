@@ -2,9 +2,7 @@
 import UIKit
 import Foundation
 
-
 class UserDefaultsHelper {
-    
     
     enum UserDefaultsKey: String {
         case users
@@ -14,8 +12,8 @@ class UserDefaultsHelper {
         UserDefaults.standard
     }
     
-    static func saveUser(_ user: RegisterUserModel) {
-        var savedUsers: [RegisterUserModel] = []
+    static func saveUser(_ user: User) {
+        var savedUsers: [User] = []
         savedUsers = users ?? []
         KeychainHelper.savePassword(user.password, phoneNo: user.phone)
        
@@ -23,14 +21,13 @@ class UserDefaultsHelper {
         savedUsers.append(user)
         users = savedUsers
     }
-    
 }
 
 extension UserDefaultsHelper {
     
-    static var users: [RegisterUserModel]? {
+    static var users: [User]? {
         get {
-            object(forKey: .users, type: [RegisterUserModel].self) as! [RegisterUserModel]?
+            object(forKey: .users, type: [User].self) as! [User]?
         }
         set {
             saveObject(object: newValue, forKey: .users)

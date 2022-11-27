@@ -10,7 +10,6 @@
 		28F34C844429DA200B836B5D /* Pods_topupbanking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA98A83BA297BBEDDF6A1306 /* Pods_topupbanking.framework */; };
 		41D0128AE7F368CF814EF6C1 /* Pods_topupbankingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBBBEDC5462ABF31F4147B1D /* Pods_topupbankingTests.framework */; };
 		CB9C2F44B55A4BEFBC7046E6 /* Pods_topupbanking_topupbankingUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 578FA5372BA0849330049DD5 /* Pods_topupbanking_topupbankingUITests.framework */; };
-		CE1003FC292924AE00E2526A /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1003FB292924AE00E2526A /* Navigator.swift */; };
 		CEA744AF291C26B0009350A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA744AE291C26B0009350A0 /* AppDelegate.swift */; };
 		CEA744B1291C26B0009350A0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA744B0291C26B0009350A0 /* SceneDelegate.swift */; };
 		CEA744B9291C26B0009350A0 /* topupbanking.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CEA744B7291C26B0009350A0 /* topupbanking.xcdatamodeld */; };
@@ -21,12 +20,12 @@
 		CEA744EB291C2F78009350A0 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEA744EA291C2F78009350A0 /* LaunchScreen.xib */; };
 		CEA744F1291C35F8009350A0 /* SpinnerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEA744F0291C35F8009350A0 /* SpinnerView.xib */; };
 		CEA744F92921077A009350A0 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA744F82921077A009350A0 /* Errors.swift */; };
-		CEA744FB29210AE5009350A0 /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA744FA29210AE5009350A0 /* RegistrationViewModel.swift */; };
+		CEA744FB29210AE5009350A0 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA744FA29210AE5009350A0 /* RegisterViewModel.swift */; };
 		CEA744FD29210CE5009350A0 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA744FC29210CE5009350A0 /* LoginViewModel.swift */; };
 		CEA744FF29210E03009350A0 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA744FE29210E03009350A0 /* APIManager.swift */; };
 		CEA7450129211245009350A0 /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA7450029211245009350A0 /* KeychainHelper.swift */; };
 		CEA74504292112AE009350A0 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CEA74503292112AE009350A0 /* KeychainSwift */; };
-		CEA7450729211319009350A0 /* RegisterUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA7450629211319009350A0 /* RegisterUserModel.swift */; };
+		CEA7450729211319009350A0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA7450629211319009350A0 /* User.swift */; };
 		CEA74509292114BE009350A0 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA74508292114BE009350A0 /* APIError.swift */; };
 		CEA7450B292114E8009350A0 /* APIEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA7450A292114E8009350A0 /* APIEndpoint.swift */; };
 		CEA7451029211B01009350A0 /* HomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEA7450F29211B01009350A0 /* HomeView.xib */; };
@@ -47,8 +46,7 @@
 		CEBF69AA292A7C14009E96F9 /* UserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF69A9292A7C14009E96F9 /* UserResponse.swift */; };
 		CEBF69AC292A7C3A009E96F9 /* AccountResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF69AB292A7C3A009E96F9 /* AccountResponse.swift */; };
 		CEBF69AE292BCB13009E96F9 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF69AD292BCB13009E96F9 /* Account.swift */; };
-		CEBF69B0292BCD47009E96F9 /* RegisterUserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF69AF292BCD47009E96F9 /* RegisterUserViewModel.swift */; };
-		CEBF69B7292BE2C0009E96F9 /* RegisterUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF69B6292BE2C0009E96F9 /* RegisterUserRequest.swift */; };
+		CEBF69B7292BE2C0009E96F9 /* UserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF69B6292BE2C0009E96F9 /* UserRequest.swift */; };
 		CEC72423292C06E20009C8B9 /* TransferMoneyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEC72422292C06E20009C8B9 /* TransferMoneyView.xib */; };
 		CEC72425292C09E90009C8B9 /* TransactionHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC72424292C09E90009C8B9 /* TransactionHistoryViewController.swift */; };
 		CEC72427292C0A340009C8B9 /* TransferMoneyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC72426292C0A340009C8B9 /* TransferMoneyViewController.swift */; };
@@ -57,6 +55,11 @@
 		CEDB31EE292C068700208AF5 /* TransactionHistoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEDB31ED292C068700208AF5 /* TransactionHistoryView.xib */; };
 		CEF3DFA929322C95005B76C9 /* TransactionDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF3DFA829322C95005B76C9 /* TransactionDetailsViewController.swift */; };
 		CEF3DFAB29322CC4005B76C9 /* TransactionDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEF3DFAA29322CC4005B76C9 /* TransactionDetailsView.xib */; };
+		CEF3DFAF29325287005B76C9 /* AccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF3DFAE29325287005B76C9 /* AccountManager.swift */; };
+		CEF3DFB129339805005B76C9 /* AccountRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF3DFB029339805005B76C9 /* AccountRequest.swift */; };
+		CEF3DFB3293398A6005B76C9 /* TransactionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF3DFB2293398A6005B76C9 /* TransactionRequest.swift */; };
+		CEF3DFB529339EF4005B76C9 /* TokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF3DFB429339EF4005B76C9 /* TokenResponse.swift */; };
+		CEF3DFB72933A067005B76C9 /* LoginURLResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF3DFB62933A067005B76C9 /* LoginURLResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,7 +86,6 @@
 		9C7318AFAC1523D7BED555EB /* Pods-topupbanking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-topupbanking.debug.xcconfig"; path = "Target Support Files/Pods-topupbanking/Pods-topupbanking.debug.xcconfig"; sourceTree = "<group>"; };
 		A440C6DEB17542C2F3A6449D /* Pods-topupbankingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-topupbankingTests.debug.xcconfig"; path = "Target Support Files/Pods-topupbankingTests/Pods-topupbankingTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CC0684E9CDDB73DE8937F1A2 /* Pods-topupbanking-topupbankingUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-topupbanking-topupbankingUITests.release.xcconfig"; path = "Target Support Files/Pods-topupbanking-topupbankingUITests/Pods-topupbanking-topupbankingUITests.release.xcconfig"; sourceTree = "<group>"; };
-		CE1003FB292924AE00E2526A /* Navigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
 		CEA744AB291C26B0009350A0 /* topupbanking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = topupbanking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEA744AE291C26B0009350A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEA744B0291C26B0009350A0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -98,11 +100,11 @@
 		CEA744EA291C2F78009350A0 /* LaunchScreen.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		CEA744F0291C35F8009350A0 /* SpinnerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpinnerView.xib; sourceTree = "<group>"; };
 		CEA744F82921077A009350A0 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
-		CEA744FA29210AE5009350A0 /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
+		CEA744FA29210AE5009350A0 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		CEA744FC29210CE5009350A0 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		CEA744FE29210E03009350A0 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		CEA7450029211245009350A0 /* KeychainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelper.swift; sourceTree = "<group>"; };
-		CEA7450629211319009350A0 /* RegisterUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUserModel.swift; sourceTree = "<group>"; };
+		CEA7450629211319009350A0 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		CEA74508292114BE009350A0 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		CEA7450A292114E8009350A0 /* APIEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoint.swift; sourceTree = "<group>"; };
 		CEA7450F29211B01009350A0 /* HomeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeView.xib; sourceTree = "<group>"; };
@@ -123,8 +125,7 @@
 		CEBF69A9292A7C14009E96F9 /* UserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponse.swift; sourceTree = "<group>"; };
 		CEBF69AB292A7C3A009E96F9 /* AccountResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountResponse.swift; sourceTree = "<group>"; };
 		CEBF69AD292BCB13009E96F9 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
-		CEBF69AF292BCD47009E96F9 /* RegisterUserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUserViewModel.swift; sourceTree = "<group>"; };
-		CEBF69B6292BE2C0009E96F9 /* RegisterUserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUserRequest.swift; sourceTree = "<group>"; };
+		CEBF69B6292BE2C0009E96F9 /* UserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRequest.swift; sourceTree = "<group>"; };
 		CEC72422292C06E20009C8B9 /* TransferMoneyView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransferMoneyView.xib; sourceTree = "<group>"; };
 		CEC72424292C09E90009C8B9 /* TransactionHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionHistoryViewController.swift; sourceTree = "<group>"; };
 		CEC72426292C0A340009C8B9 /* TransferMoneyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferMoneyViewController.swift; sourceTree = "<group>"; };
@@ -133,6 +134,11 @@
 		CEDB31ED292C068700208AF5 /* TransactionHistoryView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionHistoryView.xib; sourceTree = "<group>"; };
 		CEF3DFA829322C95005B76C9 /* TransactionDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailsViewController.swift; sourceTree = "<group>"; };
 		CEF3DFAA29322CC4005B76C9 /* TransactionDetailsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionDetailsView.xib; sourceTree = "<group>"; };
+		CEF3DFAE29325287005B76C9 /* AccountManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountManager.swift; sourceTree = "<group>"; };
+		CEF3DFB029339805005B76C9 /* AccountRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountRequest.swift; sourceTree = "<group>"; };
+		CEF3DFB2293398A6005B76C9 /* TransactionRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRequest.swift; sourceTree = "<group>"; };
+		CEF3DFB429339EF4005B76C9 /* TokenResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenResponse.swift; sourceTree = "<group>"; };
+		CEF3DFB62933A067005B76C9 /* LoginURLResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginURLResponse.swift; sourceTree = "<group>"; };
 		D12EF1FBC2B985CDB474127D /* Pods-topupbanking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-topupbanking.release.xcconfig"; path = "Target Support Files/Pods-topupbanking/Pods-topupbanking.release.xcconfig"; sourceTree = "<group>"; };
 		EA98A83BA297BBEDDF6A1306 /* Pods_topupbanking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_topupbanking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBBBEDC5462ABF31F4147B1D /* Pods_topupbankingTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_topupbankingTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -180,14 +186,6 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		CE1003FA2929248B00E2526A /* Navigation */ = {
-			isa = PBXGroup;
-			children = (
-				CE1003FB292924AE00E2526A /* Navigator.swift */,
-			);
-			path = Navigation;
-			sourceTree = "<group>";
-		};
 		CEA744A2291C26B0009350A0 = {
 			isa = PBXGroup;
 			children = (
@@ -213,13 +211,11 @@
 		CEA744AD291C26B0009350A0 /* topupbanking */ = {
 			isa = PBXGroup;
 			children = (
-				CE1003FA2929248B00E2526A /* Navigation */,
 				CEA7450C292119FB009350A0 /* Managers */,
 				CEA745052921130B009350A0 /* Model */,
 				CEA744E7291C2ED4009350A0 /* API */,
 				CEA744E6291C2EA4009350A0 /* ViewModels */,
 				CEA744E5291C2E93009350A0 /* Views */,
-				CEA744E4291C2E5F009350A0 /* Utilities */,
 				CEA744E1291C2E25009350A0 /* Helpers */,
 				CEA744AE291C26B0009350A0 /* AppDelegate.swift */,
 				CEA744B0291C26B0009350A0 /* SceneDelegate.swift */,
@@ -257,13 +253,6 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
-		CEA744E4291C2E5F009350A0 /* Utilities */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Utilities;
-			sourceTree = "<group>";
-		};
 		CEA744E5291C2E93009350A0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -281,8 +270,7 @@
 		CEA744E6291C2EA4009350A0 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				CEBF69AF292BCD47009E96F9 /* RegisterUserViewModel.swift */,
-				CEA744FA29210AE5009350A0 /* RegistrationViewModel.swift */,
+				CEA744FA29210AE5009350A0 /* RegisterViewModel.swift */,
 				CEA744FC29210CE5009350A0 /* LoginViewModel.swift */,
 			);
 			path = ViewModels;
@@ -306,6 +294,8 @@
 				CEBF69A7292A7BD7009E96F9 /* TransactionsResponse.swift */,
 				CEBF69A9292A7C14009E96F9 /* UserResponse.swift */,
 				CEBF69AB292A7C3A009E96F9 /* AccountResponse.swift */,
+				CEF3DFB429339EF4005B76C9 /* TokenResponse.swift */,
+				CEF3DFB62933A067005B76C9 /* LoginURLResponse.swift */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -313,7 +303,9 @@
 		CEA744E9291C2EE8009350A0 /* Requests */ = {
 			isa = PBXGroup;
 			children = (
-				CEBF69B6292BE2C0009E96F9 /* RegisterUserRequest.swift */,
+				CEBF69B6292BE2C0009E96F9 /* UserRequest.swift */,
+				CEF3DFB029339805005B76C9 /* AccountRequest.swift */,
+				CEF3DFB2293398A6005B76C9 /* TransactionRequest.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -321,9 +313,9 @@
 		CEA744EC291C337E009350A0 /* LoginRegister */ = {
 			isa = PBXGroup;
 			children = (
-				CEBF69B2292BD281009E96F9 /* XIb */,
-				CEA744F82921077A009350A0 /* Errors.swift */,
 				CEA8F5682928E6CB0021506B /* LoginViewController.swift */,
+				CEA8F5662928DBA70021506B /* LoginView.xib */,
+				CEA744F82921077A009350A0 /* Errors.swift */,
 			);
 			path = LoginRegister;
 			sourceTree = "<group>";
@@ -342,7 +334,7 @@
 		CEA745052921130B009350A0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				CEA7450629211319009350A0 /* RegisterUserModel.swift */,
+				CEA7450629211319009350A0 /* User.swift */,
 				CEBF69A5292A7AEC009E96F9 /* Transaction.swift */,
 				CEBF69AD292BCB13009E96F9 /* Account.swift */,
 			);
@@ -354,6 +346,7 @@
 			children = (
 				CEBF69A1292A4CAA009E96F9 /* UserDefaultsHelper.swift */,
 				CEBF69A3292A50C6009E96F9 /* UserManager.swift */,
+				CEF3DFAE29325287005B76C9 /* AccountManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -391,14 +384,6 @@
 				CEA8F56B292903EA0021506B /* CustomButton.swift */,
 			);
 			path = CustomElements;
-			sourceTree = "<group>";
-		};
-		CEBF69B2292BD281009E96F9 /* XIb */ = {
-			isa = PBXGroup;
-			children = (
-				CEA8F5662928DBA70021506B /* LoginView.xib */,
-			);
-			path = XIb;
 			sourceTree = "<group>";
 		};
 		CEBF69B8292C0616009E96F9 /* TransferMoney */ = {
@@ -702,14 +687,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE1003FC292924AE00E2526A /* Navigator.swift in Sources */,
 				CEBF69AA292A7C14009E96F9 /* UserResponse.swift in Sources */,
 				CEA744AF291C26B0009350A0 /* AppDelegate.swift in Sources */,
+				CEF3DFB3293398A6005B76C9 /* TransactionRequest.swift in Sources */,
 				CEC72427292C0A340009C8B9 /* TransferMoneyViewController.swift in Sources */,
 				CEA7450129211245009350A0 /* KeychainHelper.swift in Sources */,
+				CEF3DFB129339805005B76C9 /* AccountRequest.swift in Sources */,
 				CEBF69AC292A7C3A009E96F9 /* AccountResponse.swift in Sources */,
+				CEF3DFAF29325287005B76C9 /* AccountManager.swift in Sources */,
 				CEA7451229211B19009350A0 /* HomeViewController.swift in Sources */,
-				CEBF69B0292BCD47009E96F9 /* RegisterUserViewModel.swift in Sources */,
 				CEA7451529211E14009350A0 /* TransactionCell.swift in Sources */,
 				CEA744FF29210E03009350A0 /* APIManager.swift in Sources */,
 				CEA8F5692928E6CB0021506B /* LoginViewController.swift in Sources */,
@@ -717,12 +703,13 @@
 				CEA8F5622922CD790021506B /* BalanceCell.swift in Sources */,
 				CEC72425292C09E90009C8B9 /* TransactionHistoryViewController.swift in Sources */,
 				CEBF69A4292A50C6009E96F9 /* UserManager.swift in Sources */,
+				CEF3DFB529339EF4005B76C9 /* TokenResponse.swift in Sources */,
 				CEA74509292114BE009350A0 /* APIError.swift in Sources */,
-				CEA744FB29210AE5009350A0 /* RegistrationViewModel.swift in Sources */,
+				CEA744FB29210AE5009350A0 /* RegisterViewModel.swift in Sources */,
 				CEA744FD29210CE5009350A0 /* LoginViewModel.swift in Sources */,
 				CEA744B1291C26B0009350A0 /* SceneDelegate.swift in Sources */,
 				CEBF69A6292A7AEC009E96F9 /* Transaction.swift in Sources */,
-				CEBF69B7292BE2C0009E96F9 /* RegisterUserRequest.swift in Sources */,
+				CEBF69B7292BE2C0009E96F9 /* UserRequest.swift in Sources */,
 				CEA8F56C292903EA0021506B /* CustomButton.swift in Sources */,
 				CEA744B9291C26B0009350A0 /* topupbanking.xcdatamodeld in Sources */,
 				CEC7242A292C0AB70009C8B9 /* TransactionHistoryCell.swift in Sources */,
@@ -732,7 +719,8 @@
 				CEF3DFA929322C95005B76C9 /* TransactionDetailsViewController.swift in Sources */,
 				CEA744F92921077A009350A0 /* Errors.swift in Sources */,
 				CEBF69A2292A4CAA009E96F9 /* UserDefaultsHelper.swift in Sources */,
-				CEA7450729211319009350A0 /* RegisterUserModel.swift in Sources */,
+				CEF3DFB72933A067005B76C9 /* LoginURLResponse.swift in Sources */,
+				CEA7450729211319009350A0 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
