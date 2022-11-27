@@ -6,6 +6,7 @@ enum APIError: Error {
     case serializationError
     case requestError(reason: String)
     case parsingError
+    case userNotFound
 
     var description: String {
         switch self {
@@ -17,6 +18,8 @@ enum APIError: Error {
             return reason
         case .parsingError:
             return "Parsing error"
+        case .userNotFound:
+            return "User not found"
         }
     }
 }

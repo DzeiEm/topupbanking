@@ -77,27 +77,33 @@ extension APIManager {
         }).resume()
     }
     
-    
-    func getUsers(completion: @escaping (Result<[User], APIError>) -> Void) {
-        
-        guard let url = APIEndpoint.getUser.url else {
+    func getUserbyPhone(_ number: String, completion: @escaping (Result<User, APIError>) -> Void) {
+        guard let url = APIEndpoint.getUserByPhone(number: number).url else {
             completion(.failure(APIError.invalidURL))
             return
         }
-        urlSession.dataTask(with: url, completionHandler: { data, _, error in
-            if let error = error {
+        
+        urlSession.dataTask(with: url) { data, _, error in
+            if let error {
                 completion(.failure(APIError.requestError(reason: error.localizedDescription)))
-                return
             }
-            guard let data = data,
-                  let user = try? decoder.decode([UserResponse].self, from: data)
+            guard let data,
+                  let usersResponse = try? decoder.decode([UserResponse].self, from: data)
             else {
                 completion(.failure(APIError.parsingError))
+            }
+            guard usersResponse.count > 0 else {
+                completion(.failure(APIError.userNotFound))
                 return
             }
-            completion(.success())
-        }).resume()
+            completion(.success(usersResponse[0].id)
+            )}.resume()
     }
+ 
+}
+
+
+extension APIManager {
     
     func getTransactions(completion: @escaping (Result<[Transaction], APIError>) -> Void) {
         guard let url = APIEndpoint.getTransactions.url else {
@@ -121,5 +127,4 @@ extension APIManager {
             })))
         }).resume()
     }
-    
 }
