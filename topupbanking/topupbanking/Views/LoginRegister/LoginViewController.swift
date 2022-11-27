@@ -124,7 +124,7 @@ private extension LoginViewController {
             try? userManager.register(phone: phoneNumberTextfield.text,
                                       password: passwordTextfield.text,
                                       confirmPassword: confirmPasswordTextfield.text,
-                                      currency: selectedAccountCurrency)
+                                      accountCurrency: selectedAccountCurrency, balance: "0.00")
             
             if let loggedInUser = UserManager.loggedInAccount {
                 print("LOGGEDIN: \(loggedInUser)")

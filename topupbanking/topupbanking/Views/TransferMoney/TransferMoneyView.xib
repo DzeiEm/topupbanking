@@ -65,7 +65,7 @@
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" title="Send"/>
                     <connections>
-                        <action selector="sendButtonTapped:" destination="-1" eventType="touchUpInside" id="1x9-DT-Tou"/>
+                        <action selector="sendButtonTapped" destination="-1" eventType="touchUpInside" id="agx-nV-13q"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VHA-Zn-29P" userLabel="backButton">

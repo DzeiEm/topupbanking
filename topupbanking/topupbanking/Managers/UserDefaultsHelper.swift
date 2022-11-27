@@ -17,7 +17,7 @@ class UserDefaultsHelper {
         savedUsers = users ?? []
         KeychainHelper.savePassword(user.password, phoneNo: user.phone)
        
-       // user.password = ""
+        user.password = ""
         savedUsers.append(user)
         users = savedUsers
     }
@@ -33,7 +33,6 @@ extension UserDefaultsHelper {
             saveObject(object: newValue, forKey: .users)
         }
     }
-
 }
 
 

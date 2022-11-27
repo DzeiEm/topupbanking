@@ -72,59 +72,60 @@ extension APIManager {
                   let userResponse = try? decoder.decode(UserResponse.self, from: data)
             else {
                 completion(.failure(.parsingError))
+                return
             }
             completion(.success(userResponse.id))
         }).resume()
     }
     
-    func getUserbyPhone(_ number: String, completion: @escaping (Result<User, APIError>) -> Void) {
-        guard let url = APIEndpoint.getUserByPhone(number: number).url else {
-            completion(.failure(APIError.invalidURL))
-            return
-        }
-        
-        urlSession.dataTask(with: url) { data, _, error in
-            if let error {
-                completion(.failure(APIError.requestError(reason: error.localizedDescription)))
-            }
-            guard let data,
-                  let usersResponse = try? decoder.decode([UserResponse].self, from: data)
-            else {
-                completion(.failure(APIError.parsingError))
-            }
-            guard usersResponse.count > 0 else {
-                completion(.failure(APIError.userNotFound))
-                return
-            }
-            completion(.success(usersResponse[0].id)
-            )}.resume()
-    }
+//    func getUserbyPhone(_ number: String, completion: @escaping (Result<User, APIError>) -> Void) {
+//        guard let url = APIEndpoint.getUserByPhone(number: number).url else {
+//            completion(.failure(APIError.invalidURL))
+//            return
+//        }
+//
+//        urlSession.dataTask(with: url) { data, _, error in
+//            if let error {
+//                completion(.failure(APIError.requestError(reason: error.localizedDescription)))
+//            }
+//            guard let data,
+//                  let usersResponse = try? decoder.decode([UserResponse].self, from: data)
+//            else {
+//                completion(.failure(APIError.parsingError))
+//            }
+//            guard usersResponse.count > 0 else {
+//                completion(.failure(APIError.userNotFound))
+//                return
+//            }
+//            completion(.success(usersResponse[0].id)
+//            )}.resume()
+//    }
  
 }
 
 
 extension APIManager {
     
-    func getTransactions(completion: @escaping (Result<[Transaction], APIError>) -> Void) {
-        guard let url = APIEndpoint.getTransactions.url else {
-            completion(.failure(APIError.invalidURL))
-            return
-        }
-        urlSession.dataTask(with: url, completionHandler: { data, _, error in
-            if let error = error {
-                completion(.failure(APIError.requestError(reason: error.localizedDescription)))
-                return
-            }
-            guard let data = data,
-                  let allTransactions = try? decoder.decode([TransactionsdResponse].self, from: data)
-            else {
-                completion(.failure(APIError.parsingError))
-                return
-            }
-            completion(.success(allTransactions.compactMap({ transaction in
-           // TODO: Transaction model
-                
-            })))
-        }).resume()
-    }
+//    func getTransactions(completion: @escaping (Result<[Transaction], APIError>) -> Void) {
+//        guard let url = APIEndpoint.getTransactions.url else {
+//            completion(.failure(APIError.invalidURL))
+//            return
+//        }
+//        urlSession.dataTask(with: url, completionHandler: { data, _, error in
+//            if let error = error {
+//                completion(.failure(APIError.requestError(reason: error.localizedDescription)))
+//                return
+//            }
+//            guard let data = data,
+//                  let allTransactions = try? decoder.decode([TransactionsdResponse].self, from: data)
+//            else {
+//                completion(.failure(APIError.parsingError))
+//                return
+//            }
+//            completion(.success(allTransactions.compactMap({ transaction in
+//           // TODO: Transaction model
+//                
+//            })))
+//        }).resume()
+//    }
 }

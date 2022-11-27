@@ -28,11 +28,12 @@ class TransferMoneyViewControlller: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        errorLabel.isHidden = true
+        print("TRANSFER MONEY SCREEN LOADED")
+        //errorLabel.isHidden = true
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        screenLabel.text = header
+       // screenLabel.text = header
     }
 
 }

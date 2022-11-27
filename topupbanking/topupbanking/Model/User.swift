@@ -1,7 +1,7 @@
 
 import Foundation
 
-class User {
+class User: Codable {
     
     var phone: String
     var password: String
