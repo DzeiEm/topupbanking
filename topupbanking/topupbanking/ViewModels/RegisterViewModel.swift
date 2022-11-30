@@ -6,7 +6,7 @@ class RegisterViewModel {
     
    static func checkIstextfieldsAreNotEmpty(phoneNo: String?,
                                             password: String?,
-                                            confirmPassword: String?) throws -> User {
+                                            confirmPassword: String?) throws -> UserRequest {
         
        guard let phoneNo = phoneNo,
              let password = password,
@@ -17,7 +17,7 @@ class RegisterViewModel {
        else {
            throw Errors.General.emptyFields
        }
-       return User(phone: phoneNo, password: password)
+       return UserRequest(phoneNumber: phoneNo, password: password)
     }
     
     static func isPhoneNumberIsTaken(_ phoneNo: String?) -> Bool {
@@ -27,7 +27,7 @@ class RegisterViewModel {
         }
     
         return UserManager.users.contains(where: { number in
-            number.phone == phoneNo
+            number.phoneNumber == phoneNo
         })
     }
     

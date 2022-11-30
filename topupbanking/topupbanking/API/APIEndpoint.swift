@@ -16,9 +16,9 @@ enum APIEndpoint {
     var url: URL? {
         switch self {
         case .registerUser:
-            return makeURL(endpoint: "/user")
+            return makeURL(endpoint: "user")
         case .getAllUsers:
-            return makeURL(endpoint: "/user")
+            return makeURL(endpoint: "user")
         case .getUserTokenBy(let id):
             let id = URLQueryItem(name: byId , value: String(id))
             return makeURL(endpoint: fetchAllUsers, queryItems: [id])
@@ -44,7 +44,7 @@ enum APIEndpoint {
 private extension APIEndpoint {
     
     var BaseUrlString: String {
-        "https://6368dedf15219b849608f700.mockapi.io/api/v3/"
+        "https://6368dedf15219b849608f700.mockapi.io/api/v3"
     }
     
     var searchQueryItem: String {

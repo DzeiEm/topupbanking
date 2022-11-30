@@ -39,7 +39,7 @@ class LoginViewController: UIViewController {
     let dropdown = DropDown()
   
 //    var accountManager = AccountManager()
-    let userManager = UserManager
+    let userManager = UserManager(apiManager: APIManager.init())
     let loggedInUser = UserManager.loggedInAccount
     private var segment: SegmentMode = .register
     var selectedAccountCurrency: AccountCurrency.RawValue = ""
@@ -105,7 +105,7 @@ private extension LoginViewController {
             guard let loggedInUser = UserManager.loggedInAccount else {
                 return
             }
-            if loggedInUser.phone == UserManager.loggedInAccount?.phone &&
+            if loggedInUser.phoneNumber == UserManager.loggedInAccount?.phoneNumber &&
                 loggedInUser.password == UserManager.loggedInAccount?.password {
                proceedToHomeScreen()
             }
@@ -123,9 +123,10 @@ private extension LoginViewController {
     func register() {
         do {
             try userManager.register(phone: phoneNumberTextfield.text,
-                                      password: passwordTextfield.text,
-                                      confirmPassword: confirmPasswordTextfield.text,
-                                     accountCurrency: selectedAccountCurrency, balance: String(userManager.accountBalance))
+                                     password: passwordTextfield.text,
+                                     confirmPassword: confirmPasswordTextfield.text,
+                                     accountCurrency: selectedAccountCurrency, balance: String(UserManager.accountBalance))
+            
             if let loggedInUser = UserManager.loggedInAccount {
                 print("LOGGEDIN: \(loggedInUser)")
                 proceedToHomeScreen()

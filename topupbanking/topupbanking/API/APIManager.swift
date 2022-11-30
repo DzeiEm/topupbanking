@@ -42,15 +42,16 @@ struct APIManager {
 
 extension APIManager {
     
-    func registerUser(_ user: User, completion: @escaping(Result<User, APIError>) -> Void) {
+    func registerUser(_ user: UserRequest, completion: @escaping(Result<UserRequest, APIError>) -> Void) {
       
         guard let url = APIEndpoint.registerUser.url  else {
             completion(.failure(APIError.invalidURL))
             return
         }
         
-        let registerUserRequest = UserRequest(phoneNumber: user.phone, password: user.password)
+        print("URL: \(url)")
         
+        let registerUserRequest = UserRequest(phoneNumber: user.phoneNumber, password: user.password)
         guard let requestBodyJSON = try? encoder.encode(registerUserRequest) else {
             completion(.failure(APIError.serializationError))
             return
@@ -72,7 +73,7 @@ extension APIManager {
                 completion(.failure(.parsingError))
                 return
             }
-            completion(.success(User(phone: userResponse.phoneNumber, password: userResponse.password)))
+            completion(.success(UserRequest(phoneNumber: userResponse.phoneNumber, password: userResponse.password)))
         }).resume()
     }
     

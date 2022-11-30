@@ -5,7 +5,7 @@ final class LoginViewModel {
     
     
     static func checkIsTextfieldsAreNotEmpty(phoneNo: String?,
-                                             password: String?) throws -> User {
+                                             password: String?) throws -> User? {
         
         guard let phoneNo = phoneNo,
               let password = password,
@@ -14,7 +14,7 @@ final class LoginViewModel {
             
             throw Errors.General.emptyFields
         }
-        return User(phone: phoneNo, password: password)
+        return User(phone: phoneNo, password: password, confirmPassword: nil)
     }
         
     static func checkIsPasswordMatchesWithCredentials(phoneNo: String?, password: String?) throws {
@@ -22,7 +22,7 @@ final class LoginViewModel {
         guard let phoneNo = phoneNo else {
             throw Errors.General.emptyFields
         }
-        guard password == KeychainHelper.getPasword(phoneNo: phoneNo) else {
+        guard password == KeychainHelper.getPasword(userPhoneKey: phoneNo) else {
             throw Errors.Login.credentialsDoNotMatch
         }
     }

@@ -6,21 +6,21 @@ class KeychainHelper {
     
     static var keychain = KeychainSwift()
     
-    static func savePassword(_ password: String, phoneNo: String) {
-        keychain.set(password, forKey: phoneNo)
+    static func savePassword(_ user: UserRequest) {
+        keychain.set(user.phoneNumber, forKey: user.password)
     }
     
-    static func getPasword(phoneNo: String) -> String? {
-        keychain.get(phoneNo)
+    static func getPasword(userPhoneKey: String) -> String? {
+        keychain.get(userPhoneKey)
     }
 }
-
-extension KeychainHelper {
-    
-    enum Key {
-        enum Credentials: String {
-            case userIdentifier
-            case userToken
-        }
-    }
-}
+//
+//extension KeychainHelper {
+//
+//    enum Key {
+//        enum Credentials: String {
+//            case userIdentifier
+//            case userToken
+//        }
+//    }
+//}

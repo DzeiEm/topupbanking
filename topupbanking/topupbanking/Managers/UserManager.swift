@@ -6,7 +6,7 @@ struct UserManager {
 //    let keychain: KeychainHelper
 //    private let userDefaults = UserDefaults.standard
     
-    static var users = [User]()
+    static var users = [UserRequest]()
     let apiManager: APIManager
     var onSuccess: (() -> Void)?
     var onFailure: ((String) -> Void)?
@@ -15,12 +15,12 @@ struct UserManager {
     static var curencyAccount: String = ""
 
     
-    static var loggedInAccount: User? {
+    static var loggedInAccount: UserRequest? {
         willSet(newUser) {
-            print("About to set username", newUser?.phone ?? "nil" )
+            print("About to set username", newUser?.phoneNumber ?? "nil" )
         }
         didSet {
-            print("About to set username", loggedInAccount?.phone ?? "nil" )
+            print("About to set username", loggedInAccount?.phoneNumber ?? "nil" )
         }
     }
     
@@ -50,17 +50,20 @@ struct UserManager {
                   balance: String?) throws {
         
        
+       
+        var confPass = confirmPassword
         let user = try RegisterViewModel.checkIstextfieldsAreNotEmpty(phoneNo: phone,
                                                                       password: password,
                                                                       confirmPassword: confirmPassword)
+        print("USER: \(user.phoneNumber), \(user.password)")
         
-        if RegisterViewModel.isPhoneNumberIsTaken(user.phone) {
+        if RegisterViewModel.isPhoneNumberIsTaken(user.phoneNumber) {
             throw Errors.Registration.userAlreadyExist
         }
         
         let acc = RegisterViewModel.setAccountCurrency(account: accountCurrency)
         try RegisterViewModel.isPasswordSecure(user.password)
-        try RegisterViewModel.isPassworsMatch(user.password, user.confirmPassword)
+        try RegisterViewModel.isPassworsMatch(user.password, confirmPassword)
         
 //        UserRequest(phoneNumber: user.phone, password: user.password)
 //        AccountRequest(phoneNumber: user.phone, currency: curencyAccount, balance: accountBalance)
@@ -75,14 +78,12 @@ struct UserManager {
             }
         }
         
-        let registerUser = UserRequest(phoneNumber: user.phone, password: user.password)
-     
+        let registerUser = UserRequest(phoneNumber: user.phoneNumber, password: user.password)
         
-        
-        
-//        UserDefaultsHelper.saveUser(user)
-//        UserManager.loggedInAccount = user
-//        UserManager.users.append(user)
+
+        UserDefaultsHelper.saveUser(user)
+        UserManager.loggedInAccount = user
+        UserManager.users.append(registerUser)
         
         
         //var accountCurrency = try? RegisterViewModel.setAccountCurrency(account: accountCurrency)

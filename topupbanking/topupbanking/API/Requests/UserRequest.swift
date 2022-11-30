@@ -1,9 +1,9 @@
 
 import Foundation
 
-struct UserRequest: Encodable {
+struct UserRequest: Codable{
     
-    let phoneNumber: String
-    let password: String
+    var phoneNumber: String
+    var password: String
 }
 
