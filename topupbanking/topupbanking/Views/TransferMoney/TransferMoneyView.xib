@@ -24,13 +24,13 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Transfer Money" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kgx-EZ-ass">
-                    <rect key="frame" x="20" y="79" width="353" height="20.333333333333329"/>
+                    <rect key="frame" x="20" y="109" width="353" height="20.333333333333343"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="axC-vZ-MGC">
-                    <rect key="frame" x="20" y="179.33333333333334" width="353" height="122.00000000000003"/>
+                    <rect key="frame" x="20" y="209.33333333333337" width="353" height="122"/>
                     <subviews>
                         <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="receiver number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5mN-Dx-W2o">
                             <rect key="frame" x="0.0" y="0.0" width="353" height="34"/>
@@ -50,18 +50,18 @@
                     </subviews>
                 </stackView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oT8-wF-I1v">
-                    <rect key="frame" x="20" y="321.33333333333331" width="123" height="30"/>
+                    <rect key="frame" x="20" y="351.33333333333331" width="123" height="30"/>
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                     <state key="normal" title="Select account"/>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="error label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2o8-ez-uM2">
-                    <rect key="frame" x="20" y="391.33333333333331" width="77.333333333333329" height="20.333333333333314"/>
+                    <rect key="frame" x="20" y="421.33333333333331" width="77.333333333333329" height="20.333333333333314"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" systemColor="systemRedColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3u6-df-Wm5">
-                    <rect key="frame" x="60" y="471.66666666666669" width="273" height="34.333333333333314"/>
+                    <rect key="frame" x="60" y="501.66666666666669" width="273" height="34.333333333333314"/>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" title="Send"/>
                     <connections>
@@ -69,7 +69,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VHA-Zn-29P" userLabel="backButton">
-                    <rect key="frame" x="20" y="119.33333333333331" width="20" height="20"/>
+                    <rect key="frame" x="20" y="149.33333333333334" width="20" height="20"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="20" id="BlY-V5-nui"/>
                         <constraint firstAttribute="width" constant="20" id="GBf-HX-GXF"/>
@@ -82,7 +82,7 @@
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <color key="backgroundColor" systemColor="systemGray6Color"/>
             <constraints>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="3u6-df-Wm5" secondAttribute="trailing" constant="60" id="2GF-Dn-umh"/>
                 <constraint firstItem="VHA-Zn-29P" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="AGJ-Lj-xHR"/>
@@ -92,7 +92,7 @@
                 <constraint firstItem="2o8-ez-uM2" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="K93-vz-dG4"/>
                 <constraint firstItem="2o8-ez-uM2" firstAttribute="top" secondItem="oT8-wF-I1v" secondAttribute="bottom" constant="40" id="Kgz-xw-qva"/>
                 <constraint firstItem="axC-vZ-MGC" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="Li3-xz-tm6"/>
-                <constraint firstItem="kgx-EZ-ass" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="20" id="NJf-JO-lao"/>
+                <constraint firstItem="kgx-EZ-ass" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="50" id="NJf-JO-lao"/>
                 <constraint firstItem="VHA-Zn-29P" firstAttribute="top" secondItem="kgx-EZ-ass" secondAttribute="bottom" constant="20" id="XxE-V2-Qgw"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="kgx-EZ-ass" secondAttribute="trailing" constant="20" id="aQJ-v4-Iny"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="axC-vZ-MGC" secondAttribute="trailing" constant="20" id="fPD-Lm-c8w"/>
@@ -106,8 +106,8 @@
     </objects>
     <resources>
         <image name="arrowshape.turn.up.backward.fill" catalog="system" width="128" height="104"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

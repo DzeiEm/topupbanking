@@ -11,7 +11,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="topupbanking" customModuleProvider="target">
             <connections>
+                <outlet property="balanceTableView" destination="oOa-h6-Lv1" id="Uu1-4B-v2a"/>
                 <outlet property="historyButtonLabel" destination="siF-8e-ymh" id="pKR-5B-fgM"/>
+                <outlet property="recentTransactionsTableview" destination="bSy-FI-RJ1" id="vTR-HH-4aT"/>
                 <outlet property="transactionTableHeader" destination="n28-gF-LuQ" id="xEF-X1-H1X"/>
                 <outlet property="transferMoneyButtonLabel" destination="xxs-aG-JbM" id="908-St-U59"/>
                 <outlet property="view" destination="iN0-l3-epB" id="IPq-lj-fU2"/>
@@ -88,27 +90,27 @@
                         <action selector="logoutBUttonTapped" destination="-1" eventType="touchUpInside" id="W2T-mD-hmJ"/>
                     </connections>
                 </button>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" sectionIndexMinimumDisplayRowCount="3" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="MhE-sj-0Pb" customClass="BalanceCell" customModule="topupbanking" customModuleProvider="target">
-                    <rect key="frame" x="20" y="130" width="353" height="194"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="oOa-h6-Lv1" userLabel="Balance Table View">
+                    <rect key="frame" x="20" y="145" width="353" height="208"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="194" id="TUH-bl-x91"/>
+                        <constraint firstAttribute="height" constant="208" id="Qc3-SY-7dI"/>
                     </constraints>
                 </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemGray4Color"/>
             <constraints>
+                <constraint firstItem="oOa-h6-Lv1" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="14n-GS-5pO"/>
                 <constraint firstItem="j8x-Ow-ngL" firstAttribute="top" secondItem="zES-jL-Scf" secondAttribute="bottom" constant="20" id="1l6-Sm-pE9"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="j8x-Ow-ngL" secondAttribute="bottom" constant="30" id="1mZ-dA-2yK"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="MhE-sj-0Pb" secondAttribute="trailing" constant="20" id="21L-Mo-we5"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="j8x-Ow-ngL" secondAttribute="trailing" constant="30" id="3qm-92-F4H"/>
                 <constraint firstItem="zES-jL-Scf" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="30" id="64c-iB-HiH"/>
+                <constraint firstItem="zES-jL-Scf" firstAttribute="top" secondItem="oOa-h6-Lv1" secondAttribute="bottom" constant="64" id="Fxm-uy-YkW"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="wZi-c0-EmO" secondAttribute="trailing" constant="30" id="GkI-TT-nlc"/>
-                <constraint firstItem="MhE-sj-0Pb" firstAttribute="top" secondItem="wZi-c0-EmO" secondAttribute="bottom" constant="50.329999999999998" id="Kc0-1B-kaw"/>
                 <constraint firstItem="wZi-c0-EmO" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="50" id="Mtr-Yj-80I"/>
-                <constraint firstItem="MhE-sj-0Pb" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="miC-Wg-YIv"/>
-                <constraint firstItem="zES-jL-Scf" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="417" id="rFe-PF-XXj"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="oOa-h6-Lv1" secondAttribute="trailing" constant="20" id="iff-dI-nKF"/>
+                <constraint firstItem="oOa-h6-Lv1" firstAttribute="top" secondItem="wZi-c0-EmO" secondAttribute="bottom" constant="65.333333333333343" id="jBV-zi-j6N"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="zES-jL-Scf" secondAttribute="trailing" constant="30" id="soX-vF-Xmj"/>
                 <constraint firstItem="j8x-Ow-ngL" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="30" id="yq9-NP-vWO"/>
             </constraints>

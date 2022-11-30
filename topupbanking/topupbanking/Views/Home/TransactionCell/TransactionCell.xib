@@ -8,7 +8,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="83" id="wBS-Lj-alo">
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TransactionCell" rowHeight="83" id="wBS-Lj-alo" customClass="TransactionHistoryCell" customModule="topupbanking" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="416" height="83"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wBS-Lj-alo" id="Ee2-OK-sBy">
@@ -18,18 +18,19 @@
                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="DW1-db-XYH">
                         <rect key="frame" x="0.0" y="0.0" width="416" height="83"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uvO-F1-Vjn">
-                                <rect key="frame" x="0.0" y="4" width="75" height="75"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="faceid" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="uvO-F1-Vjn">
+                                <rect key="frame" x="0.0" y="5.3333333333333357" width="75" height="73"/>
+                                <color key="tintColor" red="0.95777768460000001" green="0.74812150850000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="75" id="2i7-X6-v8P"/>
                                     <constraint firstAttribute="width" constant="75" id="hlP-3g-DOQ"/>
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="dD1-aW-6Xx">
-                                <rect key="frame" x="77" y="3.6666666666666643" width="242" height="76"/>
+                                <rect key="frame" x="77" y="3.6666666666666643" width="287.66666666666669" height="76"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="transaction" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ceC-sG-gyK">
-                                        <rect key="frame" x="0.0" y="0.0" width="242" height="54"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="287.66666666666669" height="54"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -47,7 +48,7 @@
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EUR 100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DNd-yz-fpF">
-                                <rect key="frame" x="321" y="31.333333333333336" width="95" height="20.333333333333336"/>
+                                <rect key="frame" x="366.66666666666669" y="31.333333333333336" width="49.333333333333314" height="20.333333333333336"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -62,7 +63,14 @@
                     <constraint firstItem="DW1-db-XYH" firstAttribute="top" secondItem="Ee2-OK-sBy" secondAttribute="top" id="nO8-bD-quw"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="receiverNameLabel" destination="ceC-sG-gyK" id="cTM-sQ-egv"/>
+                <outlet property="sentAmount" destination="DNd-yz-fpF" id="9HW-vL-8Wg"/>
+            </connections>
             <point key="canvasLocation" x="270.2290076335878" y="-58.802816901408455"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="faceid" catalog="system" width="128" height="115"/>
+    </resources>
 </document>

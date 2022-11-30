@@ -17,7 +17,7 @@ class RegisterViewModel {
        else {
            throw Errors.General.emptyFields
        }
-       return User(phone: phoneNo, password: password, confirmPassword: confirmPassword)
+       return User(phone: phoneNo, password: password)
     }
     
     static func isPhoneNumberIsTaken(_ phoneNo: String?) -> Bool {
@@ -54,6 +54,10 @@ class RegisterViewModel {
     static func setAccountCurrency(account: String?) -> String {
         
         guard let account = account else {
+            return ""
+        }
+      
+        if account.elementsEqual("") {
             return "EUR"
         }
         return account

@@ -104,15 +104,18 @@
                 </stackView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="spx-zg-w4X">
                     <rect key="frame" x="80" y="452" width="233" height="34.333333333333314"/>
+                    <color key="tintColor" red="0.95777768460000001" green="0.74812150850000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="filled" title="Registration"/>
+                    <buttonConfiguration key="configuration" style="filled" title="Registration">
+                        <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </buttonConfiguration>
                     <connections>
                         <action selector="submitButtonTapped" destination="-1" eventType="touchUpInside" id="mcX-pg-YMr"/>
                     </connections>
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <color key="backgroundColor" systemColor="systemGray3Color"/>
+            <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
             <constraints>
                 <constraint firstItem="spx-zg-w4X" firstAttribute="top" secondItem="FZF-2c-WLJ" secondAttribute="bottom" constant="50" id="23a-vH-jQt"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="FZF-2c-WLJ" secondAttribute="trailing" constant="20" id="279-is-xMj"/>
@@ -132,8 +135,8 @@
     </objects>
     <resources>
         <image name="arrowtriangle.down.fill" catalog="system" width="128" height="120"/>
-        <systemColor name="systemGray3Color">
-            <color red="0.7803921568627451" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemGroupedBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -37,8 +37,9 @@ class LoginViewController: UIViewController {
     
     private var availableTextFields: [UITextField] = []
     let dropdown = DropDown()
-    var userManager = UserManager()
+  
 //    var accountManager = AccountManager()
+    let userManager = UserManager
     let loggedInUser = UserManager.loggedInAccount
     private var segment: SegmentMode = .register
     var selectedAccountCurrency: AccountCurrency.RawValue = ""
@@ -97,7 +98,7 @@ private extension LoginViewController {
     
     func login() {
         do {
-            try? userManager.login(phone: phoneNumberTextfield.text,
+            try userManager.login(phone: phoneNumberTextfield.text,
                                    password: passwordTextfield.text)
             
       
@@ -108,7 +109,7 @@ private extension LoginViewController {
                 loggedInUser.password == UserManager.loggedInAccount?.password {
                proceedToHomeScreen()
             }
-            
+        
         } catch let loginError as Errors.Login {
             displayError(message: loginError.error)
         } catch let generalError as Errors.General {
@@ -121,26 +122,27 @@ private extension LoginViewController {
     
     func register() {
         do {
-            try? userManager.register(phone: phoneNumberTextfield.text,
+            try userManager.register(phone: phoneNumberTextfield.text,
                                       password: passwordTextfield.text,
                                       confirmPassword: confirmPasswordTextfield.text,
-                                      accountCurrency: selectedAccountCurrency, balance: "0.00")
-            
+                                     accountCurrency: selectedAccountCurrency, balance: String(userManager.accountBalance))
             if let loggedInUser = UserManager.loggedInAccount {
                 print("LOGGEDIN: \(loggedInUser)")
                 proceedToHomeScreen()
                 return
             }
             
-            } catch let registrationError as Errors.Registration {
+        } catch let registrationError as Errors.Registration {
                 displayError(message: registrationError.error)
-            } catch let generalError as Errors.General {
+            
+        } catch let generalError as Errors.General {
                 displayError(message: generalError.error)
-            } catch let securityError as Errors.Registration {
-                // TODO: Secure identification needed
+            
+        } catch let securityError as Errors.Secure {
                     displayError(message: securityError.error)
-            } catch {
-                displayError(message: Errors.General.unexpectedError.error)
+            
+        } catch {
+            displayError(message: Errors.General.unexpectedError.error)
                 print(Errors.General.unexpectedError)
             }
         }
@@ -175,12 +177,14 @@ extension LoginViewController {
             registrationButton.titleLabel?.text = SegmentTitle.Login.rawValue
             dropdownView.isHidden = true
             clearAllTextfields()
+            hideErrorMessage()
         case .register:
             print("REGISTER SEGMENT")
             confirmPasswordTextfield.isHidden = false
             registrationButton.titleLabel?.text = SegmentTitle.Register.rawValue
             dropdownView.isHidden = false
             clearAllTextfields()
+            hideErrorMessage()
         }
     }
     
@@ -238,9 +242,14 @@ extension LoginViewController {
     private func displayError(message: String) {
         errorLabel.text = message
         errorLabel.isHidden = false
+        errorLabel.textColor = .red
     }
     
-    func proceedToHomeScreen() {
+    private func hideErrorMessage() {
+        errorLabel.isHidden = true
+    }
+    
+    private func proceedToHomeScreen() {
         let homeScreen = HomeViewController()
         homeScreen.modalPresentationStyle = .fullScreen
         present(homeScreen, animated: true)

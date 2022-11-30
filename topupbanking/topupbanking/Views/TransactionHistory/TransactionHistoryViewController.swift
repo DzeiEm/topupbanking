@@ -11,9 +11,16 @@ class TransactionHistoryViewController: UIViewController {
     //MARK: - Variables
     let header = "Transaction History"
     
+    // MARK: - Actions
+
+    @IBAction func backButtonTapped() {
+        proceedToHomeScreen()
+    }
+    
     
     //MARK: - Life Cycles
     override func viewDidLoad() {
+        super.viewDidLoad()
         configureCell()
         setupTableView()
     }
@@ -32,7 +39,7 @@ class TransactionHistoryViewController: UIViewController {
         let cellNib = UINib(nibName: "TransactionHistoryCell", bundle: nil)
         tableView.register(cellNib, forCellReuseIdentifier: "TransactionHistoryCell")
     }
-    
+
     func fetchAllTransactions() {
         //TODO: fetch data
     }
@@ -63,10 +70,15 @@ extension TransactionHistoryViewController: UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
-    func navigateToTransactionsDetailsScreen() {
+    func proceedToTransactionsDetailsScreen() {
         let transactionDetailsScreen = TransactionDetailsViewController()
         transactionDetailsScreen.modalPresentationStyle = .fullScreen
         present(transactionDetailsScreen, animated: true)
     }
     
+    func proceedToHomeScreen() {
+        let homeScreen = HomeViewController()
+        homeScreen.modalPresentationStyle = .fullScreen
+        present(homeScreen, animated: true)
+    }
 }

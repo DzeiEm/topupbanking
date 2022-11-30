@@ -64,11 +64,11 @@ private extension APIEndpoint {
     }
     
     var byId: String {
-        "?id="
+        "id"
     }
     
     var userByPhoneNumer: String {
-        "?phoneNumber"
+        "phoneNumber"
     }
     
     func makeURL(endpoint: String, queryItems: [URLQueryItem]? = nil) -> URL? {

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TransactionHistoryViewController" customModule="topupbanking" customModuleProvider="target">
+            <connections>
+                <outlet property="screenLabel" destination="1Ze-vg-0G1" id="hro-eP-8AS"/>
+                <outlet property="tableView" destination="zMe-Wz-OTk" id="MQs-WO-gnP"/>
+                <outlet property="view" destination="GbB-LL-q12" id="fxR-oH-txA"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="GbB-LL-q12" userLabel="TransactionHistoryView">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ze-vg-0G1">
+                    <rect key="frame" x="20" y="79" width="353" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xS8-sx-r9i">
+                    <rect key="frame" x="20" y="140" width="20" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="20" id="l3O-Ju-Dly"/>
+                        <constraint firstAttribute="height" constant="20" id="oKC-HP-l38"/>
+                    </constraints>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" image="arrowshape.turn.up.left.fill" catalog="system"/>
+                    <connections>
+                        <action selector="backButtonTapped" destination="-1" eventType="touchUpInside" id="mvi-Dj-c9X"/>
+                    </connections>
+                </button>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="zMe-Wz-OTk">
+                    <rect key="frame" x="20" y="203" width="353" height="595"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="CAh-Wi-hcy"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="CAh-Wi-hcy" firstAttribute="trailing" secondItem="1Ze-vg-0G1" secondAttribute="trailing" constant="20" id="E1t-ir-uHA"/>
+                <constraint firstItem="xS8-sx-r9i" firstAttribute="top" secondItem="1Ze-vg-0G1" secondAttribute="bottom" constant="40" id="NWT-ah-47V"/>
+                <constraint firstItem="1Ze-vg-0G1" firstAttribute="leading" secondItem="CAh-Wi-hcy" secondAttribute="leading" constant="20" id="TVA-RK-WCu"/>
+                <constraint firstItem="zMe-Wz-OTk" firstAttribute="top" secondItem="xS8-sx-r9i" secondAttribute="bottom" constant="43" id="dtW-zK-Txq"/>
+                <constraint firstItem="zMe-Wz-OTk" firstAttribute="leading" secondItem="CAh-Wi-hcy" secondAttribute="leading" constant="20" id="ggh-KK-ERm"/>
+                <constraint firstItem="xS8-sx-r9i" firstAttribute="leading" secondItem="CAh-Wi-hcy" secondAttribute="leading" constant="20" id="h4V-Wl-Gbi"/>
+                <constraint firstItem="CAh-Wi-hcy" firstAttribute="bottom" secondItem="zMe-Wz-OTk" secondAttribute="bottom" constant="20" id="iUo-cP-zBg"/>
+                <constraint firstItem="1Ze-vg-0G1" firstAttribute="top" secondItem="CAh-Wi-hcy" secondAttribute="top" constant="20" id="vTQ-b9-Vvl"/>
+                <constraint firstItem="CAh-Wi-hcy" firstAttribute="trailing" secondItem="zMe-Wz-OTk" secondAttribute="trailing" constant="20" id="wjY-CY-FBO"/>
+            </constraints>
+            <point key="canvasLocation" x="35.877862595419849" y="-115.49295774647888"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="arrowshape.turn.up.left.fill" catalog="system" width="128" height="104"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

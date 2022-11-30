@@ -22,30 +22,28 @@ struct APIManager {
     private let decoder = JSONDecoder()
     private let encoder = JSONEncoder()
     
-    let userManager: UserManager
-   
-    private var userIdentifier: Int? {
-        userManager.getUserId()
-    }
-    
     private var urlSession: URLSession {
         let sessionConfiguration = URLSessionConfiguration.default
         sessionConfiguration.httpAdditionalHeaders = [
             HeaderKey.headerContent: HeaderValue.content
         ]
+
         return URLSession(configuration: sessionConfiguration)
     }
+
+    
+//
+//    let userManager: UserManager
+//
+//    private var userIdentifier: Int? {
+//        userManager.getUserId()
+//    }
 }
 
 extension APIManager {
     
-    func registerUser(_ user: User, completion: @escaping(Result<String, APIError>) -> Void) {
-        
-        guard let userIdentifier = userIdentifier else {
-            completion(.failure(APIError.serializationError))
-            return
-        }
-        
+    func registerUser(_ user: User, completion: @escaping(Result<User, APIError>) -> Void) {
+      
         guard let url = APIEndpoint.registerUser.url  else {
             completion(.failure(APIError.invalidURL))
             return
@@ -74,7 +72,7 @@ extension APIManager {
                 completion(.failure(.parsingError))
                 return
             }
-            completion(.success(userResponse.id))
+            completion(.success(User(phone: userResponse.phoneNumber, password: userResponse.password)))
         }).resume()
     }
     

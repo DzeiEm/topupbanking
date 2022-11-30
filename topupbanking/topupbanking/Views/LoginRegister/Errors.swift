@@ -70,4 +70,24 @@ class Errors {
             }
         }
     }
+    
+    enum Secure: Error {
+        case containsNumbers
+        case containsLowerCases
+        case containsUpperCases
+        case containsRequiredPasswordLength
+        
+        var error: String {
+            switch self {
+            case .containsNumbers:
+                return "Password should contains numbers 1️⃣"
+            case .containsLowerCases:
+                return "Password should contains lower case letters 🔤"
+            case .containsUpperCases:
+                return "Password should contains upper case letters 🆙"
+            case .containsRequiredPasswordLength:
+                return "Password should contain at lest 8 characters 8️⃣"
+            }
+        }
+    }
 }
