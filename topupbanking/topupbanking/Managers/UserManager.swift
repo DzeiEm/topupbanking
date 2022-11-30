@@ -79,11 +79,26 @@ struct UserManager {
         }
         
         let registerUser = UserRequest(phoneNumber: user.phoneNumber, password: user.password)
+        let account = AccountRequest(phoneNumber: registerUser.phoneNumber, currency: acc, balance: UserManager.accountBalance)
         
-
+        apiManager.createAccount(account) { result in
+            switch result {
+            case .success:
+                self.onSuccess?()
+            case .failure(let error):
+                self.onFailure?(error.description)
+            }
+        }
+        
+        
+      
         UserDefaultsHelper.saveUser(user)
         UserManager.loggedInAccount = user
+        AccountManager.accounts.append(account)
+        print("ACCOUNT: \(account)")
         UserManager.users.append(registerUser)
+        
+       
         
         
         //var accountCurrency = try? RegisterViewModel.setAccountCurrency(account: accountCurrency)

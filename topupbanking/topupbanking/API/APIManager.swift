@@ -77,6 +77,41 @@ extension APIManager {
         }).resume()
     }
     
+    func createAccount(_ account: AccountRequest, completion: @escaping(Result<AccountRequest, APIError>) -> Void) {
+      
+        guard let url = APIEndpoint.createAccount.url  else {
+            completion(.failure(APIError.invalidURL))
+            return
+        }
+        
+        print("URL: \(url)")
+        
+        let registerUserRequest = AccountRequest(phoneNumber: account.phoneNumber, currency: account.currency, balance: account.balance)
+        guard let requestBodyJSON = try? encoder.encode(registerUserRequest) else {
+            completion(.failure(APIError.serializationError))
+            return
+        }
+        
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = HTTPMethod.post
+        urlRequest.httpBody = requestBodyJSON
+        
+        urlSession.dataTask(with: urlRequest,
+                            completionHandler: { data, _, error in
+            
+            if let error = error {
+                completion(.failure(APIError.requestError(reason: error.localizedDescription)))
+            }
+            guard let data = data,
+                  let accountResponse = try? decoder.decode(AccountResponse.self, from: data)
+            else {
+                completion(.failure(.parsingError))
+                return
+            }
+            completion(.success(AccountRequest(phoneNumber: accountResponse.phoneNumber, currency: accountResponse.currency, balance: accountResponse.balance)))
+        }).resume()
+    }
+    
 //    func getUserbyPhone(_ number: String, completion: @escaping (Result<User, APIError>) -> Void) {
 //        guard let url = APIEndpoint.getUserByPhone(number: number).url else {
 //            completion(.failure(APIError.invalidURL))
