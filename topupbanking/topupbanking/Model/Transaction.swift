@@ -8,4 +8,5 @@ struct Transaction {
     var transactionId: String
     var amount: Double
     var currency: String
+    var subject: String
 }

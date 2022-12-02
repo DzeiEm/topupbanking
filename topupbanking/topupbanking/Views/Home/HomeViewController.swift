@@ -11,17 +11,19 @@ class HomeViewController: UIViewController {
     
     enum CellName: String {
         case transaction = "TransactionCell"
-        case balance = "BalanceCell"
     }
     
     // MARK: - OUTLETS
     
-    @IBOutlet private weak var balanceTableView: UITableView!
+    @IBOutlet weak var amountLabel: UILabel!
+    @IBOutlet weak var accountCurrencylabel: UILabel!
     @IBOutlet private weak var historyButtonLabel: UIButton!
     @IBOutlet private weak var transferMoneyButtonLabel: UIButton!
     @IBOutlet private weak var transactionTableHeader: UILabel!
     @IBOutlet private weak var recentTransactionsTableview: UITableView!
-    
+    var userManager: UserManager!
+    let apiManager = APIManager()
+    var parsedTransactions = [Transaction]()
 
     // MARK: - AUTLETS
     @IBAction func transactionHistoryButtonTapped() {
@@ -39,12 +41,12 @@ class HomeViewController: UIViewController {
     // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        historyButtonLabel.titleLabel?.text = ScreenTitles.historyButtonLabel.rawValue
-        transferMoneyButtonLabel.titleLabel?.text = ScreenTitles.transferButtonLabel.rawValue
-        configureBalanceCell()
+        setupUILabels()
         configureRecentTransactionCell()
-        setupBalanceTableView()
         setupRecentTransactionTableView()
+        fetchRecentTransactions()
+        accountCurrencylabel.text = String(UserManager.accountBalance)
+        amountLabel.text = String(UserManager.accountBalance)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -54,6 +56,25 @@ class HomeViewController: UIViewController {
 
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func fetchRecentTransactions() {
+        apiManager.getAllUserTransactions(completion: { [weak self] result in
+            switch result {
+            case .failure(let error):
+                print(error)
+            case .success(let transactions):
+                print(transactions)
+                self?.setTransactions(transactions)
+                DispatchQueue.main.async {
+                    self?.recentTransactionsTableview.reloadData()
+                }
+            }
+        })
+    }
+    
+    func setTransactions(_ transactions: [Transaction]) {
+        parsedTransactions = transactions
+    }
  
     //MARK: - Balance table view cell
     
@@ -62,41 +83,39 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // MAX 3
-        3
+        
+        return parsedTransactions.prefix(5).count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = balanceTableView.dequeueReusableCell(withIdentifier: CellName.balance.rawValue, for: indexPath)
-        
-        guard let balanceCell = cell as? BalanceCell else {
+
+        let cell = recentTransactionsTableview.dequeueReusableCell(withIdentifier:  CellName.transaction.rawValue, for: indexPath)
+
+        guard let recentTransactionCell = cell as? TransactionCell else {
             return cell
         }
         
-        balanceCell.configureCell(currency: UserManager.curencyAccount,
-                                  balance: String(UserManager.accountBalance))
-        return balanceCell
-    }
-    
-
-    
-    func setupBalanceTableView() {
-        balanceTableView.delegate = self
-        balanceTableView.dataSource = self
-        balanceTableView.rowHeight = 40
+        recentTransactionCell.configure(receiver: parsedTransactions[indexPath.row].receiverNo,
+                                        amount: String(parsedTransactions[indexPath.row].amount),
+                                        subject: parsedTransactions[indexPath.row].subject)
+        return recentTransactionCell
     }
     
     func setupRecentTransactionTableView() {
-        balanceTableView.delegate = self
-        balanceTableView.dataSource = self
-        balanceTableView.rowHeight = 40
+        recentTransactionsTableview.delegate = self
+        recentTransactionsTableview.dataSource = self
+        recentTransactionsTableview.rowHeight = 60
     }
     
-    func configureBalanceCell() {
-        let balanceCell = UINib(nibName: CellName.balance.rawValue, bundle: nil)
-        balanceTableView.register(balanceCell, forCellReuseIdentifier: CellName.balance.rawValue)
+    func setupUILabels() {
+        historyButtonLabel.titleLabel?.text = ScreenTitles.historyButtonLabel.rawValue
+        transferMoneyButtonLabel.titleLabel?.text = ScreenTitles.transferButtonLabel.rawValue
     }
     
+    func setAccountBalance()  {
+      //TODO: Add user balance
+    }
+        
     func configureRecentTransactionCell() {
         let recentTransactionCell = UINib(nibName: CellName.transaction.rawValue, bundle: nil)
         recentTransactionsTableview.register(recentTransactionCell, forCellReuseIdentifier: CellName.transaction.rawValue)

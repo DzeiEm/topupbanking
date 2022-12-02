@@ -9,5 +9,4 @@ struct TransactionsdResponse: Decodable {
     let currency: String
     let createdOn: Double
     let reference: String
-    let balance: Double
 }

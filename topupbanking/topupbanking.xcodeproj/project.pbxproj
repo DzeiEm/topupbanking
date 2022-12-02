@@ -34,8 +34,6 @@
 		CEA7451729211E36009350A0 /* TransactionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEA7451629211E36009350A0 /* TransactionCell.xib */; };
 		CEA7451A2921285F009350A0 /* TransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA745192921285F009350A0 /* TransactionViewController.swift */; };
 		CEA7451C2921287E009350A0 /* TransactionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEA7451B2921287E009350A0 /* TransactionView.xib */; };
-		CEA8F5622922CD790021506B /* BalanceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA8F5612922CD790021506B /* BalanceCell.swift */; };
-		CEA8F5642922CDB30021506B /* BalanceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEA8F5632922CDB30021506B /* BalanceCell.xib */; };
 		CEA8F5672928DBA70021506B /* LoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEA8F5662928DBA70021506B /* LoginView.xib */; };
 		CEA8F5692928E6CB0021506B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA8F5682928E6CB0021506B /* LoginViewController.swift */; };
 		CEA8F56C292903EA0021506B /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA8F56B292903EA0021506B /* CustomButton.swift */; };
@@ -113,8 +111,6 @@
 		CEA7451629211E36009350A0 /* TransactionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionCell.xib; sourceTree = "<group>"; };
 		CEA745192921285F009350A0 /* TransactionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionViewController.swift; sourceTree = "<group>"; };
 		CEA7451B2921287E009350A0 /* TransactionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionView.xib; sourceTree = "<group>"; };
-		CEA8F5612922CD790021506B /* BalanceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceCell.swift; sourceTree = "<group>"; };
-		CEA8F5632922CDB30021506B /* BalanceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BalanceCell.xib; sourceTree = "<group>"; };
 		CEA8F5662928DBA70021506B /* LoginView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginView.xib; sourceTree = "<group>"; };
 		CEA8F5682928E6CB0021506B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		CEA8F56B292903EA0021506B /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
@@ -326,7 +322,6 @@
 				CEA7450F29211B01009350A0 /* HomeView.xib */,
 				CEA7451129211B19009350A0 /* HomeViewController.swift */,
 				CEA7451329211DAB009350A0 /* TransactionCell */,
-				CEA8F5652922D0800021506B /* BalanceCell */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -367,15 +362,6 @@
 				CEA7451B2921287E009350A0 /* TransactionView.xib */,
 			);
 			path = Transaction;
-			sourceTree = "<group>";
-		};
-		CEA8F5652922D0800021506B /* BalanceCell */ = {
-			isa = PBXGroup;
-			children = (
-				CEA8F5632922CDB30021506B /* BalanceCell.xib */,
-				CEA8F5612922CD790021506B /* BalanceCell.swift */,
-			);
-			path = BalanceCell;
 			sourceTree = "<group>";
 		};
 		CEA8F56A292903C70021506B /* CustomElements */ = {
@@ -558,7 +544,6 @@
 				CEC7242C292C0AFD0009C8B9 /* TransactionHistoryCell.xib in Resources */,
 				CEA7451729211E36009350A0 /* TransactionCell.xib in Resources */,
 				CEA744EB291C2F78009350A0 /* LaunchScreen.xib in Resources */,
-				CEA8F5642922CDB30021506B /* BalanceCell.xib in Resources */,
 				CEA7451029211B01009350A0 /* HomeView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -700,7 +685,6 @@
 				CEA744FF29210E03009350A0 /* APIManager.swift in Sources */,
 				CEA8F5692928E6CB0021506B /* LoginViewController.swift in Sources */,
 				CEA7450B292114E8009350A0 /* APIEndpoint.swift in Sources */,
-				CEA8F5622922CD790021506B /* BalanceCell.swift in Sources */,
 				CEC72425292C09E90009C8B9 /* TransactionHistoryViewController.swift in Sources */,
 				CEBF69A4292A50C6009E96F9 /* UserManager.swift in Sources */,
 				CEF3DFB529339EF4005B76C9 /* TokenResponse.swift in Sources */,

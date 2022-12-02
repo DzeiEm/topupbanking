@@ -10,6 +10,12 @@ class TransactionDetailsViewController: UIViewController {
     @IBOutlet weak var receiverNameLabel: UILabel!
     @IBOutlet weak var subjectLabel: UILabel!
     
+    var amount: String? = ""
+    var sender: String? = ""
+    var receiver: String? = ""
+    var subject: String? = ""
+    
+    
     //MARK: - Valriables
     var balance = 0.0
     
@@ -20,7 +26,24 @@ class TransactionDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        amountLabel.text = String(balance)
+        setLabelValue()
+    }
+    
+    func setLabelValue() {
+        if let amount = amount {
+            amountLabel.text = "Amount: \(amount)"
+        }
+        
+        if let sender = sender {
+            senderNameLabel.text = "Sender: \(sender)"
+        }
+        
+        if let receiver = receiver {
+            receiverNameLabel.text = "Receiver: \(receiver)"
+        }
+        if let subject = subject {
+            subjectLabel.text = "Subject \(subject)"
+        }
     }
     
 }

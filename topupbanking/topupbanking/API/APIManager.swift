@@ -30,14 +30,6 @@ struct APIManager {
 
         return URLSession(configuration: sessionConfiguration)
     }
-
-    
-//
-//    let userManager: UserManager
-//
-//    private var userIdentifier: Int? {
-//        userManager.getUserId()
-//    }
 }
 
 extension APIManager {
@@ -111,55 +103,72 @@ extension APIManager {
             completion(.success(AccountRequest(phoneNumber: accountResponse.phoneNumber, currency: accountResponse.currency, balance: accountResponse.balance)))
         }).resume()
     }
-    
-//    func getUserbyPhone(_ number: String, completion: @escaping (Result<User, APIError>) -> Void) {
-//        guard let url = APIEndpoint.getUserByPhone(number: number).url else {
-//            completion(.failure(APIError.invalidURL))
-//            return
-//        }
-//
-//        urlSession.dataTask(with: url) { data, _, error in
-//            if let error {
-//                completion(.failure(APIError.requestError(reason: error.localizedDescription)))
-//            }
-//            guard let data,
-//                  let usersResponse = try? decoder.decode([UserResponse].self, from: data)
-//            else {
-//                completion(.failure(APIError.parsingError))
-//            }
-//            guard usersResponse.count > 0 else {
-//                completion(.failure(APIError.userNotFound))
-//                return
-//            }
-//            completion(.success(usersResponse[0].id)
-//            )}.resume()
-//    }
- 
 }
 
 
 extension APIManager {
     
-//    func getTransactions(completion: @escaping (Result<[Transaction], APIError>) -> Void) {
-//        guard let url = APIEndpoint.getTransactions.url else {
-//            completion(.failure(APIError.invalidURL))
-//            return
-//        }
-//        urlSession.dataTask(with: url, completionHandler: { data, _, error in
-//            if let error = error {
-//                completion(.failure(APIError.requestError(reason: error.localizedDescription)))
-//                return
-//            }
-//            guard let data = data,
-//                  let allTransactions = try? decoder.decode([TransactionsdResponse].self, from: data)
-//            else {
-//                completion(.failure(APIError.parsingError))
-//                return
-//            }
-//            completion(.success(allTransactions.compactMap({ transaction in
-//           // TODO: Transaction model
-//                
-//            })))
-//        }).resume()
-//    }
+    func getAllUserTransactions(completion: @escaping (Result<[Transaction], APIError>) -> Void) {
+        
+        guard let url = APIEndpoint.getAllTransactions.url else {
+            completion(.failure(APIError.invalidURL))
+            return
+        }
+        urlSession.dataTask(with: url, completionHandler: { data, _, error in
+            if let error = error {
+                print("ERRROR: \(error)")
+                completion(.failure(APIError.requestError(reason: error.localizedDescription)))
+                return
+            }
+            guard let data = data,
+                let transactions =  try? decoder.decode([TransactionsdResponse].self, from: data)
+                
+                else {
+                    completion(.failure(APIError.parsingError))
+                    return
+                }
+                completion(.success(transactions.compactMap({ transaction in
+                    
+                    Transaction(senderNo: transaction.senderId,
+                                receiverNo: transaction.receiverId,
+                                transactionId: transaction.id,
+                                amount: transaction.amount,
+                                currency: transaction.currency,
+                                subject: transaction.reference)
+                })))
+            }).resume()
+    }
+    
+    func getRecentUserTransactions(completion: @escaping (Result<[Transaction], APIError>) -> Void) {
+        
+        guard let url = APIEndpoint.getAllTransactions.url else {
+            completion(.failure(APIError.invalidURL))
+            return
+        }
+        urlSession.dataTask(with: url, completionHandler: { data, _, error in
+            if let error = error {
+                print("ERRROR: \(error)")
+                completion(.failure(APIError.requestError(reason: error.localizedDescription)))
+                return
+            }
+            guard let data = data,
+                let transactions =  try? decoder.decode([TransactionsdResponse].self, from: data)
+        
+                else {
+                    completion(.failure(APIError.parsingError))
+                    return
+                }
+                completion(.success(transactions.compactMap({ transaction in
+                    
+                    Transaction(senderNo: transaction.senderId,
+                                receiverNo: transaction.receiverId,
+                                transactionId: transaction.id,
+                                amount: transaction.amount,
+                                currency: transaction.currency,
+                                subject: transaction.reference)
+                })))
+            }).resume()
+    }
+    
+    
 }
