@@ -30,19 +30,21 @@ class TransactionDetailsViewController: UIViewController {
     }
     
     func setLabelValue() {
+        
         if let amount = amount {
-            amountLabel.text = "Amount: \(amount)"
+            amountLabel.text = "Sent amount: \(amount)"
         }
         
         if let sender = sender {
-            senderNameLabel.text = "Sender: \(sender)"
+            senderNameLabel.text = "\(sender)"
         }
         
         if let receiver = receiver {
-            receiverNameLabel.text = "Receiver: \(receiver)"
+            receiverNameLabel.text = "\(receiver)"
         }
+        
         if let subject = subject {
-            subjectLabel.text = "Subject \(subject)"
+            subjectLabel.text = "\(subject)"
         }
     }
     

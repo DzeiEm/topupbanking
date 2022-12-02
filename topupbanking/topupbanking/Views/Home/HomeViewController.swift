@@ -41,11 +41,11 @@ class HomeViewController: UIViewController {
     // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupUILabels()
+        setupButtonLabels()
         configureRecentTransactionCell()
         setupRecentTransactionTableView()
         fetchRecentTransactions()
-        accountCurrencylabel.text = String(UserManager.accountBalance)
+        // Account currency missing
         amountLabel.text = String(UserManager.accountBalance)
     }
     
@@ -107,7 +107,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         recentTransactionsTableview.rowHeight = 60
     }
     
-    func setupUILabels() {
+    func setupButtonLabels() {
         historyButtonLabel.titleLabel?.text = ScreenTitles.historyButtonLabel.rawValue
         transferMoneyButtonLabel.titleLabel?.text = ScreenTitles.transferButtonLabel.rawValue
     }
