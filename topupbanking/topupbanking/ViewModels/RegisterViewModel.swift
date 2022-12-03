@@ -3,7 +3,6 @@ import Foundation
 
 class RegisterViewModel {
     
-    
    static func checkIstextfieldsAreNotEmpty(phoneNo: String?,
                                             password: String?,
                                             confirmPassword: String?) throws -> UserRequest {
@@ -92,6 +91,7 @@ class RegisterViewModel {
     
 }
 
+
 extension RegisterViewModel {
     
     private static func containsUpperCase(_ password: String) -> Bool {
@@ -116,6 +116,7 @@ extension RegisterViewModel {
         password.count >= 8 ? true : false
     }
 }
+
 
 extension String {
     

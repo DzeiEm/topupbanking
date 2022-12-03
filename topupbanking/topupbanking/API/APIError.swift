@@ -2,6 +2,7 @@
 import Foundation
 
 enum APIError: Error {
+    
     case invalidURL
     case serializationError
     case requestError(reason: String)

@@ -2,6 +2,7 @@
 import Foundation
 
 struct LoginURLResponse: Decodable {
+    
     let loginURL: String
 
     enum CodingKeys: String, CodingKey {

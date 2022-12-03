@@ -3,7 +3,6 @@ import UIKit
 
 final class LoginViewModel {
     
-    
     static func checkIsTextfieldsAreNotEmpty(phoneNo: String?,
                                              password: String?) throws -> User? {
         

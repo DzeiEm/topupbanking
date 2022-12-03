@@ -101,6 +101,8 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         return recentTransactionCell
     }
     
+    // MARK: - UI elements set up
+    
     func setupRecentTransactionTableView() {
         recentTransactionsTableview.delegate = self
         recentTransactionsTableview.dataSource = self

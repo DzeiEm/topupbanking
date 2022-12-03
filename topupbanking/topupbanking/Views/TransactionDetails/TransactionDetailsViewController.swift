@@ -5,16 +5,15 @@ import Foundation
 class TransactionDetailsViewController: UIViewController {
     
     // MARK: - Outlets
-    @IBOutlet weak var amountLabel: UILabel!
-    @IBOutlet weak var senderNameLabel: UILabel!
-    @IBOutlet weak var receiverNameLabel: UILabel!
-    @IBOutlet weak var subjectLabel: UILabel!
+    @IBOutlet private weak var amountLabel: UILabel!
+    @IBOutlet private weak var senderNameLabel: UILabel!
+    @IBOutlet private weak var receiverNameLabel: UILabel!
+    @IBOutlet private weak var subjectLabel: UILabel!
     
     var amount: String? = ""
     var sender: String? = ""
     var receiver: String? = ""
     var subject: String? = ""
-    
     
     //MARK: - Valriables
     var balance = 0.0
@@ -47,9 +46,7 @@ class TransactionDetailsViewController: UIViewController {
             subjectLabel.text = "\(subject)"
         }
     }
-    
 }
-
 
 
 extension TransactionDetailsViewController {

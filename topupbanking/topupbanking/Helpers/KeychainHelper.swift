@@ -14,13 +14,3 @@ class KeychainHelper {
         keychain.get(userPhoneKey)
     }
 }
-//
-//extension KeychainHelper {
-//
-//    enum Key {
-//        enum Credentials: String {
-//            case userIdentifier
-//            case userToken
-//        }
-//    }
-//}

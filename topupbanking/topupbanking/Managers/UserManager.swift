@@ -74,6 +74,5 @@ struct UserManager {
         AccountManager.accounts.append(account)
         print("ACCOUNT: \(account)")
         UserManager.users.append(registerUser)
-        
     }
 }

@@ -5,7 +5,6 @@ import DropDown
 class LoginViewController: UIViewController {
     
     enum SegmentTitle: String {
-        
         case Register = "Register"
         case Login = "Login"
     }
@@ -38,7 +37,6 @@ class LoginViewController: UIViewController {
     private var availableTextFields: [UITextField] = []
     let dropdown = DropDown()
   
-//    var accountManager = AccountManager()
     let userManager = UserManager(apiManager: APIManager.init())
     let loggedInUser = UserManager.loggedInAccount
     private var segment: SegmentMode = .register
@@ -208,16 +206,12 @@ extension LoginViewController {
     private func onCurrencyAccountChanged(_ index: Int) {
         switch index {
         case 0:
-            print("EUR SELECTED \((0))")
             return selectedAccountCurrency = AccountCurrency.eur.rawValue
         case 1:
-            print("USD SELECTED \((1))")
             return selectedAccountCurrency = AccountCurrency.usd.rawValue
         case 2:
-            print("gBP SELECTED \((2))")
             return selectedAccountCurrency = AccountCurrency.gbp.rawValue
         default:
-            print("NOTHING SELECTED, default setting applies")
             selectedAccountCurrency = AccountCurrency.eur.rawValue
         }
     }
@@ -231,12 +225,14 @@ extension LoginViewController {
     }
 }
 
+
 extension LoginViewController: UITextFieldDelegate {
     
     func textFieldDidChangeSelection(_ textField: UITextField) {
         configureSubmitButton()
     }
 }
+
 
 extension LoginViewController {
     

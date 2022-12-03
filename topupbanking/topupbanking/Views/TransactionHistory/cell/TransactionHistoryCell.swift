@@ -4,7 +4,6 @@ import UIKit
 
 class TransactionHistoryCell: UITableViewCell {
 
-    
     @IBOutlet weak var receiverNameLabel: UILabel!
     @IBOutlet weak var amountLabel: UILabel!
     

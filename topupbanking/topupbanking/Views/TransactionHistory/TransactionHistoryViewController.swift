@@ -80,14 +80,12 @@ extension TransactionHistoryViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: CellName.transactionHistory.rawValue, for: indexPath)
         
         guard let transactionHistoryCell = cell as? TransactionHistoryCell else {
-            
             return cell
         }
         
         transactionHistoryCell.configureCell(name: parsedTransactions[indexPath.row].receiverNo,
                                              amount: String(parsedTransactions[indexPath.row].amount)
         )
-    
         return transactionHistoryCell
     }
 }
@@ -97,7 +95,6 @@ extension TransactionHistoryViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        print("tapped")
         let transactionDetailsViewController = TransactionDetailsViewController()
         let transactionList = parsedTransactions[indexPath.section]
         transactionDetailsViewController.sender = transactionList.senderNo
@@ -110,6 +107,7 @@ extension TransactionHistoryViewController: UITableViewDelegate {
     }
     
     func proceedToHomeScreen() {
+        
         let homeScreen = HomeViewController()
         homeScreen.modalPresentationStyle = .fullScreen
         present(homeScreen, animated: true)

@@ -7,13 +7,7 @@ enum APIEndpoint {
     case createAccount
     case getAllUsers
     case getAllTransactions
-//    case getUserTokenBy(id: String)
-//    case getUserByPhone(number: String)
-//    case getAllAccounts
-//    case getAccountBy(id: String)
-//    case getAllTransactions
-//    case getTransactionBy(id: String)
-   
+
     var url: URL? {
         switch self {
         case .registerUser:
@@ -24,20 +18,6 @@ enum APIEndpoint {
             return makeURL(endpoint: "user")
         case .getAllTransactions:
             return makeURL(endpoint: "transaction")
-//        case .getUserTokenBy(let id):
-//            let id = URLQueryItem(name: byId , value: String(id))
-//            return makeURL(endpoint: fetchAllUsers, queryItems: [id])
-//        case .getUserByPhone(let number):
-//            let number = URLQueryItem(name: userByPhoneNumer, value: String(number))
-//            return makeURL(endpoint: fetchAllUsers, queryItems: [number] )
-//        case .getAllAccounts:
-//            return makeURL(endpoint: fetchAllAccounts)
-//        case .getAccountBy(let id):
-//            let id = URLQueryItem(name: byId, value: String(id))
-//            return makeURL(endpoint: fetchAllAccounts, queryItems: [id])
-//        case .getTransactionBy(let id):
-//            let id = URLQueryItem(name: byId, value: String(id))
-//            return makeURL(endpoint: "transaction")
         }
     }
 }

@@ -23,7 +23,7 @@ class TransferMoneyViewControlller: UIViewController {
     }
     
     @IBAction func sendButtonTapped() {
-        
+        //TODO
     }
     
     override func viewDidLoad() {

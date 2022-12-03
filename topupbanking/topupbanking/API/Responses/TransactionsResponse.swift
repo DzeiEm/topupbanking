@@ -2,6 +2,7 @@
 import UIKit
 
 struct TransactionsdResponse: Decodable {
+    
     let id: String
     let senderId: String
     let receiverId: String

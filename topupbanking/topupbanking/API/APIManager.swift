@@ -17,7 +17,6 @@ struct APIManager {
         static let content = "application/json"
     }
     
-
     private var keychain: KeychainHelper { KeychainHelper() }
     private let decoder = JSONDecoder()
     private let encoder = JSONEncoder()
@@ -32,6 +31,7 @@ struct APIManager {
     }
 }
 
+
 extension APIManager {
     
     func registerUser(_ user: UserRequest, completion: @escaping(Result<UserRequest, APIError>) -> Void) {
@@ -41,9 +41,8 @@ extension APIManager {
             return
         }
         
-        print("URL: \(url)")
-        
         let registerUserRequest = UserRequest(phoneNumber: user.phoneNumber, password: user.password)
+        
         guard let requestBodyJSON = try? encoder.encode(registerUserRequest) else {
             completion(.failure(APIError.serializationError))
             return
@@ -75,10 +74,11 @@ extension APIManager {
             completion(.failure(APIError.invalidURL))
             return
         }
+
+        let registerUserRequest = AccountRequest(phoneNumber: account.phoneNumber,
+                                                 currency: account.currency,
+                                                 balance: account.balance)
         
-        print("URL: \(url)")
-        
-        let registerUserRequest = AccountRequest(phoneNumber: account.phoneNumber, currency: account.currency, balance: account.balance)
         guard let requestBodyJSON = try? encoder.encode(registerUserRequest) else {
             completion(.failure(APIError.serializationError))
             return
@@ -100,7 +100,9 @@ extension APIManager {
                 completion(.failure(.parsingError))
                 return
             }
-            completion(.success(AccountRequest(phoneNumber: accountResponse.phoneNumber, currency: accountResponse.currency, balance: accountResponse.balance)))
+            completion(.success(AccountRequest(phoneNumber: accountResponse.phoneNumber,
+                                               currency: accountResponse.currency,
+                                               balance: accountResponse.balance)))
         }).resume()
     }
 }
@@ -114,9 +116,10 @@ extension APIManager {
             completion(.failure(APIError.invalidURL))
             return
         }
+        
         urlSession.dataTask(with: url, completionHandler: { data, _, error in
+           
             if let error = error {
-                print("ERRROR: \(error)")
                 completion(.failure(APIError.requestError(reason: error.localizedDescription)))
                 return
             }
@@ -145,9 +148,10 @@ extension APIManager {
             completion(.failure(APIError.invalidURL))
             return
         }
+        
         urlSession.dataTask(with: url, completionHandler: { data, _, error in
+            
             if let error = error {
-                print("ERRROR: \(error)")
                 completion(.failure(APIError.requestError(reason: error.localizedDescription)))
                 return
             }
@@ -169,6 +173,4 @@ extension APIManager {
                 })))
             }).resume()
     }
-    
-    
 }
