@@ -40,44 +40,37 @@ class LoginViewController: UIViewController {
     let userManager = UserManager(apiManager: APIManager.init())
     let loggedInUser = UserManager.loggedInAccount
     var segment: SegmentMode!
-   
-
-    var isChanged: Bool = false {
-        didSet {
-            if isChanged == true {
-                self.segment = .login
-                print("SEGMENT CHANGED: \(isChanged)")
-                
-            } else {
-                self.segment = .register
-            }
-        }
-    }
-    
-    var isSegmentTypeChanged: Bool = false {
-        
-        didSet {
-            if isSegmentTypeChanged == true {
-                
-                print("SEGMENT TYPE CHANGED: \(isSegmentTypeChanged)")
-                registrationTypeSegmentController.selectedSegmentIndex = 1
-            }
-            else {
-                registrationTypeSegmentController.selectedSegmentIndex = 0
-            }
-        }
-    }
-
-    
-    
-    
-    var selectedAccountCurrency: AccountCurrency.RawValue = ""
-    
+  
     let accountCurrencyValues = [
         AccountCurrency.eur.rawValue,
         AccountCurrency.usd.rawValue,
         AccountCurrency.gbp.rawValue
     ]
+    var selectedAccountCurrency: AccountCurrency.RawValue = ""
+    
+    var isChanged: Bool = false {
+        didSet {
+            if isChanged == true {
+                self.segment = .login
+                onSegmentControllerTypeChanged()
+            } else {
+                self.segment = .register
+                onSegmentControllerTypeChanged()
+            }
+        }
+    }
+    
+//    var isSegmentTypeChanged: Bool = false {
+//
+//        didSet {
+//            if isSegmentTypeChanged == true {
+//                onSegmentControllerTypeChanged()
+//            }
+//            else {
+//                onSegmentControllerTypeChanged()
+//            }
+//        }
+//    }
     
     // MARK: - Actions
     
@@ -91,7 +84,6 @@ class LoginViewController: UIViewController {
     
     @IBAction func onSegmentControllerTypeChanged() {
         
-        
         switch registrationTypeSegmentController.selectedSegmentIndex {
         case 0:
             segment = .register
@@ -102,7 +94,6 @@ class LoginViewController: UIViewController {
         }
         configureViewForSegment()
     }
-    
     // MARK: - Life Cycle
     
     override func viewWillAppear(_ animated: Bool) {
@@ -237,7 +228,7 @@ extension LoginViewController {
             self.onCurrencyAccountChanged(index)
         }
     }
-    
+        
     private func onCurrencyAccountChanged(_ index: Int) {
         switch index {
         case 0:
