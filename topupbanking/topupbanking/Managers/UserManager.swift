@@ -25,7 +25,6 @@ struct UserManager {
         let user = try LoginViewModel.checkIsTextfieldsAreNotEmpty(phoneNo: phone, password: password)
         
         try LoginViewModel.checkIsPasswordMatchesWithCredentials(phoneNo: phone, password: password)
-        //UserManager.loggedInAccount = user
     }
     
     func register(phone: String?,
@@ -72,7 +71,6 @@ struct UserManager {
         UserDefaultsHelper.saveUser(user)
         UserManager.loggedInAccount = user
         AccountManager.accounts.append(account)
-        print("ACCOUNT: \(account)")
         UserManager.users.append(registerUser)
     }
 }

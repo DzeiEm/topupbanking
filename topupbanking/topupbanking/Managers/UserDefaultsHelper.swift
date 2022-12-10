@@ -16,8 +16,7 @@ class UserDefaultsHelper {
         var savedUsers: [UserRequest] = []
         savedUsers = users ?? []
         KeychainHelper.savePassword(user)
-       
-//        user.password = ""
+        
         savedUsers.append(user)
         users = savedUsers
     }

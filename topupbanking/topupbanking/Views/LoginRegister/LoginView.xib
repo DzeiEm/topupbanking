@@ -17,8 +17,8 @@
                 <outlet property="errorLabel" destination="FZF-2c-WLJ" id="Git-K6-YOT"/>
                 <outlet property="passwordTextfield" destination="N5d-78-VoA" id="2AQ-yP-oCd"/>
                 <outlet property="phoneNumberTextfield" destination="EiS-Nl-26m" id="bSV-0F-6Dd"/>
-                <outlet property="registrationButton" destination="spx-zg-w4X" id="F3F-Ek-zXg"/>
                 <outlet property="registrationTypeSegmentController" destination="2S3-yP-1BZ" id="Mni-jf-75Z"/>
+                <outlet property="submitBUtton" destination="spx-zg-w4X" id="F3F-Ek-zXg"/>
                 <outlet property="view" destination="iN0-l3-epB" id="SfU-T3-OTy"/>
             </connections>
         </placeholder>
