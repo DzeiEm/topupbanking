@@ -11,10 +11,10 @@
 		CE086B612944A528001D092D /* AuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE086B602944A528001D092D /* AuthenticationViewController.swift */; };
 		CE086B662944ACD7001D092D /* UIElementConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE086B652944ACD7001D092D /* UIElementConfiguration.swift */; };
 		CE086B692944B542001D092D /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE086B682944B542001D092D /* BaseViewController.swift */; };
-		CE086B6D294504AF001D092D /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE086B6C294504AF001D092D /* RegisterViewController.swift */; };
-		CE086B6F294504BC001D092D /* RegisterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE086B6E294504BC001D092D /* RegisterView.xib */; };
+		CE086B6D294504AF001D092D /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE086B6C294504AF001D092D /* RegistrationViewController.swift */; };
+		CE086B6F294504BC001D092D /* RegistrationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE086B6E294504BC001D092D /* RegistrationView.xib */; };
 		CE086B71294504D0001D092D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE086B70294504D0001D092D /* LoginViewController.swift */; };
-		CE086B73294504E0001D092D /* LoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE086B72294504E0001D092D /* LoginView.xib */; };
+		CE086B7929451513001D092D /* LoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE086B7829451513001D092D /* LoginView.xib */; };
 		CEA744AF291C26B0009350A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA744AE291C26B0009350A0 /* AppDelegate.swift */; };
 		CEA744B1291C26B0009350A0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA744B0291C26B0009350A0 /* SceneDelegate.swift */; };
 		CEA744B9291C26B0009350A0 /* topupbanking.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CEA744B7291C26B0009350A0 /* topupbanking.xcdatamodeld */; };
@@ -89,10 +89,10 @@
 		CE086B602944A528001D092D /* AuthenticationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewController.swift; sourceTree = "<group>"; };
 		CE086B652944ACD7001D092D /* UIElementConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIElementConfiguration.swift; sourceTree = "<group>"; };
 		CE086B682944B542001D092D /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
-		CE086B6C294504AF001D092D /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
-		CE086B6E294504BC001D092D /* RegisterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterView.xib; sourceTree = "<group>"; };
+		CE086B6C294504AF001D092D /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		CE086B6E294504BC001D092D /* RegistrationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegistrationView.xib; sourceTree = "<group>"; };
 		CE086B70294504D0001D092D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		CE086B72294504E0001D092D /* LoginView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginView.xib; sourceTree = "<group>"; };
+		CE086B7829451513001D092D /* LoginView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginView.xib; sourceTree = "<group>"; };
 		CEA744AB291C26B0009350A0 /* topupbanking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = topupbanking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEA744AE291C26B0009350A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEA744B0291C26B0009350A0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -212,18 +212,18 @@
 			isa = PBXGroup;
 			children = (
 				CE086B70294504D0001D092D /* LoginViewController.swift */,
-				CE086B72294504E0001D092D /* LoginView.xib */,
+				CE086B7829451513001D092D /* LoginView.xib */,
 			);
 			path = Login;
 			sourceTree = "<group>";
 		};
-		CE086B6B29450490001D092D /* Register */ = {
+		CE086B6B29450490001D092D /* Registration */ = {
 			isa = PBXGroup;
 			children = (
-				CE086B6C294504AF001D092D /* RegisterViewController.swift */,
-				CE086B6E294504BC001D092D /* RegisterView.xib */,
+				CE086B6C294504AF001D092D /* RegistrationViewController.swift */,
+				CE086B6E294504BC001D092D /* RegistrationView.xib */,
 			);
-			path = Register;
+			path = Registration;
 			sourceTree = "<group>";
 		};
 		CEA744A2291C26B0009350A0 = {
@@ -277,10 +277,10 @@
 		CEA744E5291C2E93009350A0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				CE086B6B29450490001D092D /* Register */,
+				CE086B5D2944A406001D092D /* Authentication */,
+				CE086B6B29450490001D092D /* Registration */,
 				CE086B6A29450488001D092D /* Login */,
 				CE086B672944B524001D092D /* BaseViewController */,
-				CE086B5D2944A406001D092D /* Authentication */,
 				CEA744EC291C337E009350A0 /* LoginRegister */,
 				CEF3DFA72932294F005B76C9 /* TransactionDetails */,
 				CEBF69B9292C062B009E96F9 /* TransactionHistory */,
@@ -556,14 +556,14 @@
 				CEA744BB291C26B2009350A0 /* Assets.xcassets in Resources */,
 				CEA744F1291C35F8009350A0 /* SpinnerView.xib in Resources */,
 				CEF3DFB9293540CA005B76C9 /* TransactionHistoryView.xib in Resources */,
-				CE086B6F294504BC001D092D /* RegisterView.xib in Resources */,
+				CE086B6F294504BC001D092D /* RegistrationView.xib in Resources */,
 				CEF3DFAB29322CC4005B76C9 /* TransactionDetailsView.xib in Resources */,
 				CEC72423292C06E20009C8B9 /* TransferMoneyView.xib in Resources */,
 				CEA8F5672928DBA70021506B /* LoginView.xib in Resources */,
 				CE086B5F2944A457001D092D /* AuthenticationView.xib in Resources */,
 				CEA7451C2921287E009350A0 /* TransactionView.xib in Resources */,
 				CEC7242C292C0AFD0009C8B9 /* TransactionHistoryCell.xib in Resources */,
-				CE086B73294504E0001D092D /* LoginView.xib in Resources */,
+				CE086B7929451513001D092D /* LoginView.xib in Resources */,
 				CEA7451729211E36009350A0 /* TransactionCell.xib in Resources */,
 				CEA744EB291C2F78009350A0 /* LaunchScreen.xib in Resources */,
 				CEA7451029211B01009350A0 /* HomeView.xib in Resources */,
@@ -711,7 +711,7 @@
 				CEA8F5692928E6CB0021506B /* LoginViewController.swift in Sources */,
 				CEA7450B292114E8009350A0 /* APIEndpoint.swift in Sources */,
 				CEC72425292C09E90009C8B9 /* TransactionHistoryViewController.swift in Sources */,
-				CE086B6D294504AF001D092D /* RegisterViewController.swift in Sources */,
+				CE086B6D294504AF001D092D /* RegistrationViewController.swift in Sources */,
 				CEBF69A4292A50C6009E96F9 /* UserManager.swift in Sources */,
 				CEF3DFB529339EF4005B76C9 /* TokenResponse.swift in Sources */,
 				CEA74509292114BE009350A0 /* APIError.swift in Sources */,

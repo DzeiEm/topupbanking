@@ -1,8 +1,24 @@
-//
-//  LoginViewController.swift
-//  topupbanking
-//
-//  Created by Julija M. on 2022-12-10.
-//
 
 import Foundation
+import UIKit
+
+
+class LoginViewController: UIViewController {
+    
+    
+    
+    
+    
+    enum TitleName: String {
+        case button = "Submit"
+        case labelName = "Top up banking"
+        
+    }
+    
+    
+    
+    override func viewDidLoad() {
+        <#code#>
+    }
+    
+}
